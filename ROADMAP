@@ -1,0 +1,14 @@
+							-*-org-*-
+
+* v1.0.0
+** v0.1.0
+*** v0.0.1
+**** Implement first version
+- Find a usable licence compatible with libelementary
+- persistance maybe through mongodb ?
+  Save full HTML or only AST representation
+- Add a lineedit and a 'Scrap' button
+- [ ] Add unit etsts using check ?  
+**** Try to build a simple tutorial example
+https://www.enlightenment.org/develop/efl/start
+- [ ] Should use cmake
