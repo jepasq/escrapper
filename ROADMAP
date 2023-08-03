@@ -7,7 +7,7 @@ Most of code example here : https://git.enlightenment.org/enlightenment
 *** v0.0.1
 **** Handle translation using gettext
 **** Maybe a latex-based rasterisation engine
-
+**** Work on doxygen API documentation
 **** Implement first version
 - [X] Find a usable licence compatible with libelementary
   Search in usable application (ecrire : GPLv3, edit etc...)
@@ -15,6 +15,11 @@ Most of code example here : https://git.enlightenment.org/enlightenment
   Save full HTML or only AST representation
 - Add a lineedit and a 'Scrap' button
 - [ ] Add unit etsts using check ?  
-**** Try to build a simple tutorial example
+**** TODO Correct project setup
+:LOGBOOK:
+CLOCK: [2023-08-03 jeu. 04:31]
+:END:
+- [X] Try to build a simple tutorial example
 https://www.enlightenment.org/develop/efl/start
-- [ ] Should use cmake
+- [X] Should use cmake
+- [ ] Make this project public at github

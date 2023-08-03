@@ -1,0 +1,7 @@
+#ifndef __CONFIG_H__
+#define __CONFIG_H__
+
+#define PROJECT_NAME   "@CMAKE_PROJECT_NAME@"
+#define PROJECT_NUMBER "v@CMAKE_PROJECT_VERSION@-@REVISION@"
+
+#endif // !__CONFIG_H__
