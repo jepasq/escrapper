@@ -17,7 +17,7 @@ Most of code example here : https://git.enlightenment.org/enlightenment
 - [ ] Add unit etsts using check ?  
 **** TODO Correct project setup
 :LOGBOOK:
-CLOCK: [2023-08-03 jeu. 04:31]
+CLOCK: [2023-08-03 jeu. 04:31]--[2023-08-03 jeu. 04:49] =>  0:18
 :END:
 - [X] Try to build a simple tutorial example
 https://www.enlightenment.org/develop/efl/start
