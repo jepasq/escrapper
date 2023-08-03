@@ -1,10 +1,16 @@
 							-*-org-*-
 
+Most of code example here : https://git.enlightenment.org/enlightenment
+							
 * v1.0.0
 ** v0.1.0
 *** v0.0.1
+**** Handle translation using gettext
+**** Maybe a latex-based rasterisation engine
+
 **** Implement first version
-- Find a usable licence compatible with libelementary
+- [X] Find a usable licence compatible with libelementary
+  Search in usable application (ecrire : GPLv3, edit etc...)
 - persistance maybe through mongodb ?
   Save full HTML or only AST representation
 - Add a lineedit and a 'Scrap' button
