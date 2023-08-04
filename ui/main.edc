@@ -1,0 +1,50 @@
+collections {
+  group {
+    name: "example";
+    min: 200 175;
+    externals { // On précise qu'on va utiliser Elementary : 
+       external: "elm"; 
+    }      
+    parts {
+      part {
+        name: "background";
+        type: RECT;
+        description {
+          state: "default";
+          color: 64 64 64 255;
+        }
+      }
+      part {
+        name: "label";
+        type: TEXT;
+        description {
+          state: "default";
+          color: 255 255 255 255;
+          text {
+            font: "Sans";
+            size: 10;
+            text: "Hello World";
+          }
+        }
+      }
+      part { // Bouton de validation du formulaire 
+                name: "button"; 
+                type: EXTERNAL; 
+                source: "elm/button"; 
+                description { 
+                    state: "default" 0.0; 
+                    align: 0 0; 
+                    max: 0 1; 
+                    rel1 { 
+                        to_y: "label"; 
+                        relative: 0.0 1.0; 
+                        offset: 25 5; 
+                    } 
+                    params { 
+                        string: "label" "Tester le nombre !"; 
+                    } 
+                } 
+            } 
+    }
+  }
+}
