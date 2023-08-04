@@ -6,22 +6,29 @@ on_click(void *data, Evas_Object *obj, void *event_info)
   evas_object_del(data);
 }
 
+static void
+_signal_cb(void *data, Evas_Object *obj, const char *emission,
+	   const char *source)
+{
+   printf("Info received from layout : %s %s\n", emission, source);
+}
+
 EAPI_MAIN int
 elm_main(int argc, char **argv)
 {
-  Evas_Object *win, *btn;
+  Evas_Object *win, *layout;
   
   elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
   
   win = elm_win_util_standard_add("Main", "Hello, World!");
   elm_win_autodel_set(win, EINA_TRUE);
-  
-  btn = elm_button_add(win);
-  elm_object_text_set(btn, "Goodbye Cruel World");
-  elm_win_resize_object_add(win, btn);
-  evas_object_smart_callback_add(btn, "clicked", on_click, win);
-  evas_object_show(btn);
-  
+
+  layout = elm_layout_add(win);
+  elm_layout_file_set(layout, "example.edj", "example");
+  // Commented oyut, too verbose
+  //  elm_layout_signal_callback_add(layout, "*", "*", _signal_cb, NULL);
+  elm_win_resize_object_add(win, layout);
+  evas_object_show(layout);
   evas_object_show(win);
   
   elm_run();
