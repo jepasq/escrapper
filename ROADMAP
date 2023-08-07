@@ -11,18 +11,21 @@ API documentation https://www.enlightenment.org/develop/api/start
 **** Work on doxygen API documentation
 **** Implement first version
 :LOGBOOK:
+CLOCK: [2023-08-07 lun. 06:45]--[2023-08-07 lun. 07:32] =>  0:47
 CLOCK: [2023-08-04 ven. 02:57]--[2023-08-04 ven. 03:24] =>  0:27
 :END:
 - [X] Find a usable licence compatible with libelementary
   Search in usable application (ecrire : GPLv3, edit etc...)
-- [ ] Add a lineedit and a 'Scrap' button
+- [-] Add a lineedit and a 'Scrap' button
   see https://louis-du-verdier.developpez.com/efl/debuter/?page=edje
   Should we use a EDC file here ? yes, we have the edje_cc compiler
   see https://www.enlightenment.org/docs/themes/start
   - [ ] handle edje_cc here it with cmake ?
     see https://github.com/Enlightenment/efl/blob/master/cmakeconfig/EdjeConfig.cmake.in
-  - [ ] Build UI with cmake
+  - [-] Build UI with cmake
     To build it from build/ =edje_cc ../ui/main.edc main.edj=
+    - [X] Add =add_custom_command= command in cmake script
+    - [ ] Make sure it works
   - [ ] Ads these widgets
 - persistance maybe through mongodb ?
   Save full HTML or only AST representation

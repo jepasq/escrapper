@@ -15,6 +15,18 @@ configure_file(
 find_package(PkgConfig REQUIRED)
 pkg_search_module(DEPS REQUIRED elementary)
 
+# Find edje_cc and build ui
+find_program(EDJE_CC_EXECUTABLE NAMES edje_cc REQUIRED)
+
+set(Input ../ui/main.edc)
+set(Output main.edj)
+
+add_custom_command(OUTPUT ${Output}
+        COMMAND ${EDJE_CC_EXECUTABLE}
+        ARGS ${OPTIONS_COMPILE_FLAGS} ${Input} ${Output}
+        DEPENDS ${Input}
+        COMMENT "edje_cc ${Input}"
+        WORKING_DIRECTORY ${PROJECT_BINARY_DIR})
 add_executable(escrapper src/main.c)
 target_link_libraries(escrapper ${DEPS_LIBRARIES})
 target_include_directories(escrapper PUBLIC ${DEPS_INCLUDE_DIRS})
