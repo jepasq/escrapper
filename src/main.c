@@ -1,3 +1,8 @@
+/** \file main.c
+  * The main entry function implementation file.
+  *
+  */
+    
 #include <Elementary.h>
      
 static void
@@ -13,6 +18,14 @@ _signal_cb(void *data, Evas_Object *obj, const char *emission,
    printf("Info received from layout : %s %s\n", emission, source);
 }
 
+/** The application main function
+  *
+  * This function initialize ELM stack and load example.edj compiled file.
+  *
+  * \param argc Number of command line arguments.
+  * \param argv Array of C-string based arguments.
+  *
+  */
 EAPI_MAIN int
 elm_main(int argc, char **argv)
 {
@@ -25,7 +38,7 @@ elm_main(int argc, char **argv)
 
   layout = elm_layout_add(win);
   elm_layout_file_set(layout, "example.edj", "example");
-  // Commented oyut, too verbose
+  // Commented out, too verbose
   //  elm_layout_signal_callback_add(layout, "*", "*", _signal_cb, NULL);
   elm_win_resize_object_add(win, layout);
   evas_object_show(layout);
