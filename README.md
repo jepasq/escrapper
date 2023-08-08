@@ -22,3 +22,10 @@ Eventually :
 then, from the *build*/ directory :
 	
 	./escrapper
+
+## API documentation
+
+From the `build/` directory, after the cmake call :
+
+	doxygen
+	<your-favorite-browser> html/index.html

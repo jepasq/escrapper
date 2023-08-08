@@ -37,15 +37,16 @@ elm_main(int argc, char **argv)
   elm_win_autodel_set(win, EINA_TRUE);
 
   layout = elm_layout_add(win);
-  elm_layout_file_set(layout, "example.edj", "example");
+  elm_layout_file_set(layout, "main.edj", "escrapper");
+
   // Commented out, too verbose
   //  elm_layout_signal_callback_add(layout, "*", "*", _signal_cb, NULL);
+
   elm_win_resize_object_add(win, layout);
   evas_object_show(layout);
   evas_object_show(win);
   
   elm_run();
-  
   return 0;
 }
 ELM_MAIN()

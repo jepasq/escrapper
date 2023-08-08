@@ -2,10 +2,12 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
 
 
 === ChangeLog ===
+    (8 items by revision)
     Update VERSION and REVISION in CMakeLists.txt    	   
 
 * v0.0.0-1 (02 Aug. 2023 - ???)
-- (5) Improve main.c file documentation
+- (6) Trying to call the right compiled edje file from main.c
+- Improve main.c file documentation
 - Add add_custom_command command in cmake script
 - Some tests with edje file
 - Use cmake
