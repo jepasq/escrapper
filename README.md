@@ -1,10 +1,12 @@
 # escrapper 
 
-An EFL-based  web scrapper, indexer and offline viewer.
+An *EFL*-based web scrapper, indexer and offline viewer.
 
 ## Dependencies
 
-	sudo pamac install efl
+On `manjaro` and other *Arch*-based linux distributions :
+
+	sudo pamac install efl cmake gcc doxygen
 
 ## Build
 

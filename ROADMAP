@@ -22,11 +22,11 @@ CLOCK: [2023-08-04 ven. 02:57]--[2023-08-04 ven. 03:24] =>  0:27
   see https://www.enlightenment.org/docs/themes/start
   - [ ] handle edje_cc here it with cmake ?
     see https://github.com/Enlightenment/efl/blob/master/cmakeconfig/EdjeConfig.cmake.in
-  - [-] Build UI with cmake
+  - [X] Build UI with cmake
     To build it from build/ =edje_cc ../ui/main.edc main.edj=
     - [X] Add =add_custom_command= command in cmake script
-    - [ ] Make sure it works
-  - [ ] Ads these widgets
+    - [X] Make sure it works
+  - [ ] Add these widgets
 - persistance maybe through mongodb ?
   Save full HTML or only AST representation
   
