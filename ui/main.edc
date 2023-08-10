@@ -1,13 +1,13 @@
 collections {
   group {
-    name: "escrapper";
-    min: 200 300;
+  name: "escrapper";
+  min: 200 300;
     externals { // On précise qu'on va utiliser Elementary : 
-       external: "elm"; 
+    external: "elm"; 
     }      
     parts {
       part {
-        name: "background";
+      name: "background";
         type: RECT;
         description {
           state: "default";
@@ -28,20 +28,20 @@ collections {
         }
       }
       part { // Bouton de validation du formulaire 
-                name: "button"; 
-                type: EXTERNAL; 
-                source: "elm/button"; 
-                description { 
-                    state: "default" 0.0; 
-                    align: 0 0; 
-                    max: 0 1; 
-                    rel1 { 
+          name: "button"; 
+          type: EXTERNAL; 
+          source: "elm/button"; 
+          description { 
+               state: "default" 0.0; 
+               align: 0 0; 
+               max: 0 1; 
+               rel1 { 
                         to_y: "label"; 
                         relative: 0.0 1.0; 
                         offset: 25 5; 
-                    } 
-                    params { 
-                        string: "label" "Tester le nombre !"; 
+               } 
+               params { 
+                    string: "label" "Tester le nombre !"; 
                     } 
                 } 
             } 

@@ -26,6 +26,7 @@ target_include_directories(escrapper PUBLIC ${DEPS_INCLUDE_DIRS})
 set(Input ../ui/main.edc)
 set(Output main.edj)
 
+# May become a cmake function later
 add_custom_command(TARGET escrapper PRE_BUILD
         COMMAND ${EDJE_CC_EXECUTABLE} ${Input} ${Output}
         DEPENDS ${Input}
