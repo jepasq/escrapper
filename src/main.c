@@ -4,13 +4,21 @@
   */
     
 #include <Elementary.h>
-     
+
+/** The Quit button callback
+  *
+  * In fact it deletes the caller pointed by the data paramater.
+  *
+  */
 static void
 on_click(void *data, Evas_Object *obj, void *event_info)
 {
   evas_object_del(data);
 }
 
+/** A debugging callback used to print emission and source in console
+  *
+  */
 static void
 _signal_cb(void *data, Evas_Object *obj, const char *emission,
 	   const char *source)

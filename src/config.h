@@ -1,10 +1,13 @@
 #ifndef __CONFIG_H__
 #define __CONFIG_H__
 
+/** The configuration structure
+  *
+  */
 typedef struct {
 
 } Config;
 
 Config* config_create();
-void    config_free();
+void    config_free(Config*);
 #endif // !__CONFIG_H__
