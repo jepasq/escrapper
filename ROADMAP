@@ -9,8 +9,9 @@ API documentation https://www.enlightenment.org/develop/api/start
 **** Handle translation using gettext
 **** Maybe a latex-based rasterisation engine
 **** Work on doxygen API documentation
-**** Implement first version
+**** TODO Implement first version
 :LOGBOOK:
+CLOCK: [2023-08-14 lun. 01:44]--[2023-08-14 lun. 01:59] =>  0:15
 CLOCK: [2023-08-10 jeu. 06:18]--[2023-08-10 jeu. 06:29] =>  0:11
 CLOCK: [2023-08-07 lun. 06:45]--[2023-08-07 lun. 07:32] =>  0:47
 CLOCK: [2023-08-04 ven. 02:57]--[2023-08-04 ven. 03:24] =>  0:27

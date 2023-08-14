@@ -6,7 +6,9 @@ An *EFL*-based web scrapper, indexer and offline viewer.
 
 On `manjaro` and other *Arch*-based linux distributions :
 
-	sudo pamac install efl cmake gcc doxygen
+	sudo pamac install efl cmake gcc doxygen check
+
+`check` is only needed if you want to build and run unit tests.
 
 ## Build
 
