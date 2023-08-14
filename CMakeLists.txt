@@ -22,8 +22,11 @@ endif()
 # Find edje_cc and build ui
 find_program(EDJE_CC_EXECUTABLE NAMES edje_cc REQUIRED)
 
+set(SRCS
+  src/config.c
+  src/main.c)
 
-add_executable(escrapper src/main.c)
+add_executable(escrapper ${SRCS})
 target_link_libraries(escrapper ${DEPS_LIBRARIES})
 target_include_directories(escrapper PUBLIC ${DEPS_INCLUDE_DIRS})
 
@@ -38,8 +41,21 @@ add_custom_command(TARGET escrapper PRE_BUILD
   WORKING_DIRECTORY ${PROJECT_BINARY_DIR})
 
 if(CHCK_FOUND)
-  add_executable(escrapper-tests tests/main.c)
-  target_link_libraries(escrapper-tests ${CHCK_LIBRARIES})
-  target_include_directories(escrapper-tests PUBLIC ${CHCK_INCLUDE_DIRS})
+  add_executable(escrapper-tests ${SRCS}
+    tests/config.c
+    tests/main.c
+  )
+  target_link_libraries(escrapper-tests ${CHCK_LIBRARIES} ${DEPS_LIBRARIES})
+  target_include_directories(escrapper-tests
+    PUBLIC $
+    {PROJECT_SOURCE_DIR}
+    ${CHCK_INCLUDE_DIRS}
+    ${DEPS_INCLUDE_DIRS}
+  )
+
+ # add_custom_target(check ALL
+ #   COMMAND escrapper-tests
+    #DEPENDS escrapper-tests
+ # )
 endif()
       

@@ -19,14 +19,14 @@ This project uses `cmake` :
 	cmake ..
 	make
 
-Eventually :
-
-	make check
-	
 then, from the *build*/ directory :
 	
 	./escrapper
 
+Eventually, to run unit tests :
+
+	./escrapper-tests
+	
 ## API documentation
 
 From the `build/` directory, after the cmake call :
