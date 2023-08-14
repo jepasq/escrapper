@@ -9,11 +9,14 @@ API documentation https://www.enlightenment.org/develop/api/start
 **** Handle translation using gettext
 **** Maybe a latex-based rasterisation engine
 **** Work on doxygen API documentation
-**** Add a config struct
+**** TODO Add a config struct
 :LOGBOOK:
+CLOCK: [2023-08-14 lun. 05:04]--[2023-08-14 lun. 05:18] =>  0:14
 CLOCK: [2023-08-14 lun. 02:47]--[2023-08-14 lun. 03:13] =>  0:26
 :END:
 And unit test this
+
+- [ ] Must fix ctor return value
 
 **** TODO Implement first version
 :LOGBOOK:

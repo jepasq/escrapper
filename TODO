@@ -6,5 +6,6 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     Update VERSION and REVISION in CMakeLists.txt    	   
 
 * v0.0.0-2 (02 Aug. 2023 - ???)
-- (2) Add basic Config test files
+- (3) Fix unit tests building
+- Add basic Config test files
 - Cmake search for check library
