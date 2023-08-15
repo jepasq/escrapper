@@ -2,7 +2,8 @@ collections {
   group {
   name: "escrapper";
   min: 200 300;
-    externals { // On précise qu'on va utiliser Elementary : 
+  max: 600 800;
+    externals {
     external: "elm"; 
     }      
     parts {
@@ -10,21 +11,22 @@ collections {
       name: "background";
         type: RECT;
         description {
-          state: "default";
-          color: 64 64 64 255;
+	state: "default";
+	color: 255 255 255 255;
+	aspect: 1.0 1.0;
         }
       }
       part {
-        name: "label";
-        type: TEXT;
+      name: "label";
+      type: EXTERNAL;
+      source: "elm/label";
         description {
-          state: "default";
-          color: 255 255 255 255;
-          text {
-            font: "Sans";
-            size: 10;
-            text: "Hello World";
-          }
+	state: "default" 0.0;
+	align: 0 0;
+	min: 0 0;
+	  params { 
+	  string: "label" "Insérez un nombre entre 0 et 25 :"; 
+	  } 
         }
       }
       part { // Bouton de validation du formulaire 
@@ -32,19 +34,19 @@ collections {
           type: EXTERNAL; 
           source: "elm/button"; 
           description { 
-               state: "default" 0.0; 
-               align: 0 0; 
-               max: 0 1; 
-               rel1 { 
-                        to_y: "label"; 
-                        relative: 0.0 1.0; 
-                        offset: 25 5; 
-               } 
-               params { 
-                    string: "label" "Tester le nombre !"; 
-                    } 
-                } 
-            } 
+	  state: "default" 0.0; 
+	  align: 0 0; 
+	  max: 0 1; 
+	    rel1 { 
+	    to_y: "label"; 
+	    relative: 0.0 0.5; 
+#	    offset: 25 5; 
+	    }
+	    params { 
+	    string: "label" "Scrap URL"; 
+	    } 
+	  } 
+      } 
     }
   }
 }
