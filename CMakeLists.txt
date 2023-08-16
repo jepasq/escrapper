@@ -23,7 +23,9 @@ endif()
 find_program(EDJE_CC_EXECUTABLE NAMES edje_cc REQUIRED)
 
 set(SRCS
-  src/config.c)
+  src/config.c
+  src/scrapper.c
+)
 
 add_executable(escrapper ${SRCS} src/main.c)
 target_link_libraries(escrapper ${DEPS_LIBRARIES})
@@ -43,6 +45,7 @@ if(CHCK_FOUND)
   add_executable(escrapper-tests ${SRCS}
     tests/config.c
     tests/main.c
+    tests/scrapper_test.c
   )
   target_link_libraries(escrapper-tests ${CHCK_LIBRARIES} ${DEPS_LIBRARIES})
   target_include_directories(escrapper-tests
