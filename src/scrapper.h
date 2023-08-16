@@ -7,7 +7,14 @@
 typedef struct _Scrapper
 {
 /** current URL, eventually a cache etc... */
+  char* current_url;
 } Scrapper;
+
+Scrapper* scrapper_create();
+void scrapper_free(Scrapper*);
+
+void scrapper_set_url(Scrapper*, const char*);
+
 
 typedef struct _ScrapperResult
 {
@@ -17,7 +24,5 @@ typedef struct _ScrapperResult
 } ScrapperResult;
 
 
-Scrapper* scrapper_create();
-void scrapper_free(Scrapper*);
 
 #endif // !__SCRAPPER_H__

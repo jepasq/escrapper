@@ -10,11 +10,18 @@ API documentation https://www.enlightenment.org/develop/api/start
 **** Maybe a latex-based rasterisation engine
 **** Implement the scrapper
 :LOGBOOK:
+CLOCK: [2023-08-16 mer. 06:26]--[2023-08-16 mer. 06:52] =>  0:26
 CLOCK: [2023-08-16 mer. 05:47]--[2023-08-16 mer. 06:13] =>  0:26
 :END:
 via unit tests
+- [X] Implement scrapper_set_url
+
+- [ ] Now, implement scrapper_run wich must return a 404 status code
+  for a non existant domain/page
+
 - [ ] May return a scrapper_result struct with
   {HTTP status, title and markdown text}
+  
 **** Work on doxygen API documentation
 **** TODO Add a config struct
 :LOGBOOK:
