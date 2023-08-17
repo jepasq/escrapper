@@ -1,6 +1,8 @@
 #include "config.h"
 #include <check.h>
 
+#include <string.h>   // USES strstr()
+
 START_TEST (test_config_create)
 {
   Config *c = config_create();
@@ -16,7 +18,7 @@ START_TEST (test_config_basedir_contains)
   
   Config *c = config_create();
   char* bd = config_basedir_get();
-  ck_assert_int_ne(strtr(bd, must_contain), NULL);
+  ck_assert_ptr_ne(strstr(bd, must_contain), NULL);
   config_free(c);
 }
 END_TEST

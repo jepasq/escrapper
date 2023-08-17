@@ -25,6 +25,8 @@ via unit tests
 **** Work on doxygen API documentation
 **** TODO Add a config struct
 :LOGBOOK:
+CLOCK: [2023-08-17 jeu. 08:31]--[2023-08-17 jeu. 08:41] =>  0:10
+CLOCK: [2023-08-17 jeu. 07:58]--[2023-08-17 jeu. 08:20] =>  0:22
 CLOCK: [2023-08-14 lun. 05:32]--[2023-08-14 lun. 05:54] =>  0:22
 CLOCK: [2023-08-14 lun. 05:04]--[2023-08-14 lun. 05:18] =>  0:14
 CLOCK: [2023-08-14 lun. 02:47]--[2023-08-14 lun. 03:13] =>  0:26
@@ -32,9 +34,13 @@ CLOCK: [2023-08-14 lun. 02:47]--[2023-08-14 lun. 03:13] =>  0:26
 And unit test this
 
 - [X] Must fix ctor return value
-- [ ] Must have a basedir directtry that return $HOME/.scrapper
+- [X] Must have a basedir directory that return $HOME/.scrapper
 - [ ] basedir_concat(filename) to get the name of the given file
-  
+  How to link this basedir with the Config struct ?
+
+- [ ] How to deal with a generated 'config.h' from config.h.in file
+  as we already have src/.h/c for the struct
+
 **** TODO Implement first version
 :LOGBOOK:
 CLOCK: [2023-08-17 jeu. 06:34]--[2023-08-17 jeu. 07:20] =>  0:46

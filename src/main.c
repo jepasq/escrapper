@@ -5,6 +5,8 @@
     
 #include <Elementary.h>
 
+#include "config.h"
+
 /** The Quit button callback
   *
   * In fact it deletes the caller pointed by the data paramater.
@@ -37,6 +39,9 @@ _signal_cb(void *data, Evas_Object *obj, const char *emission,
 EAPI_MAIN int
 elm_main(int argc, char **argv)
 {
+
+  config_basedir_get();
+  
   Evas_Object *win, *layout;
   
   elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
