@@ -4,13 +4,7 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
 === ChangeLog ===
     (8 items by revision)
     Update VERSION and REVISION in CMakeLists.txt    	   
+    SLOC is the result of `sloc src/ test/`
 
-* v0.0.0-2 (02 Aug. 2023 - ???)
-- (8) config_basedir_get implementation
-- scrapper_set_url implementation
-- Add empty scrapper base and unit tests
-- Scrap button from edje file is now visible
-- Fix Config constructor unit tests
-- Fix unit tests building
-- Add basic Config test files
-- Cmake search for check library
+* v0.0.0-3 (17 Aug. 2023 - ???) SLOC ???
+

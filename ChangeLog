@@ -1,4 +1,14 @@
-* v0.0.0-1 (02 Aug. 2023 - ???)
+* v0.0.0-2 (10 Aug. 2023 - 17 Aug. 2023) SLOC 303
+- config_basedir_get implementation
+- scrapper_set_url implementation
+- Add empty scrapper base and unit tests
+- Scrap button from edje file is now visible
+- Fix Config constructor unit tests
+- Fix unit tests building
+- Add basic Config test files
+- Cmake search for check library
+
+* v0.0.0-1 (02 Aug. 2023 - 10 Aug. 2023)
 - Add emacs major mode for edje files
 - Fix edje call using a TARGET-based add_custom_command cmake rule
 - Trying to call the right compiled edje file from main.c

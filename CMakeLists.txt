@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 3.27)
 project (escrapper VERSION 0.0.0)
-set(REVISION 1)
+set(REVISION 2)
 
 configure_file(
   "${PROJECT_SOURCE_DIR}/Doxyfile.in"
