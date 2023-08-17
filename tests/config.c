@@ -3,12 +3,24 @@
 
 START_TEST (test_config_create)
 {
-  /* unit test code */
   Config *c = config_create();
   ck_assert_ptr_ne(c, NULL);
   config_free(c);
 }
 END_TEST
+
+/// Check that basedir contains .escrapper text
+START_TEST (test_config_basedir_contains)
+{
+  char* must_contain = ".escrapper";
+  
+  Config *c = config_create();
+  char* bd = config_basedir_get();
+  ck_assert_int_ne(strtr(bd, must_contain), NULL);
+  config_free(c);
+}
+END_TEST
+
 
 /// A config struct unit tests suite
 Suite*
@@ -23,6 +35,7 @@ config_suite(void)
     tc_core = tcase_create("Core");
 
     tcase_add_test(tc_core, test_config_create);
+    tcase_add_test(tc_core, test_config_basedir_contains);
     suite_add_tcase(s, tc_core);
 
     return s;

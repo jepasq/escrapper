@@ -25,9 +25,14 @@ collections {
 	align: 0 0;
 	min: 0 0;
 	  params { 
-	  string: "label" "Insérez un nombre entre 0 et 25 :"; 
+	  string: "label" "Insert URL to scrap :"; 
 	  } 
         }
+      }
+      part { // Bouton de validation du formulaire 
+      name: "input"; 
+      type: EXTERNAL; 
+      source: "elm/entry"; 
       }
       part { // Bouton de validation du formulaire 
           name: "button"; 

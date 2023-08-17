@@ -31,10 +31,13 @@ CLOCK: [2023-08-14 lun. 02:47]--[2023-08-14 lun. 03:13] =>  0:26
 :END:
 And unit test this
 
-- [ ] Must fix ctor return value
-
+- [X] Must fix ctor return value
+- [ ] Must have a basedir directtry that return $HOME/.scrapper
+- [ ] basedir_concat(filename) to get the name of the given file
+  
 **** TODO Implement first version
 :LOGBOOK:
+CLOCK: [2023-08-17 jeu. 06:34]--[2023-08-17 jeu. 07:20] =>  0:46
 CLOCK: [2023-08-15 mar. 08:19]--[2023-08-15 mar. 08:43] =>  0:24
 CLOCK: [2023-08-14 lun. 02:26]--[2023-08-14 lun. 02:46] =>  0:20
 CLOCK: [2023-08-14 lun. 01:44]--[2023-08-14 lun. 01:59] =>  0:15
@@ -58,8 +61,12 @@ CLOCK: [2023-08-04 ven. 02:57]--[2023-08-04 ven. 03:24] =>  0:27
   May add the `make check` rule and fix README
 - [ ] Fix actual edje file and add needed ui
   see https://louis-du-verdier.developpez.com/efl/debuter/?page=edje
-  
-- persistance maybe through mongodb ?
+  - [ ] Can't find a text input widget
+    Search in the ecrire package
+    For example, in the open dialog, there's the 'Search/Rechercher' input
+    https://github.com/Obsidian-StudiosInc/ecrire/blob/master/src/bin/ui/search_dialog.c
+    or the find dialog
+- persistance maybe through mongodb ? in persist.h/c
   Save full HTML or only AST representation
 
 - [ ] May test memory leaks using valgrind
