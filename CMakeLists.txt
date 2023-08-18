@@ -8,8 +8,8 @@ configure_file(
   )
 
 configure_file(
-  "${PROJECT_SOURCE_DIR}/src/config.h.in"
-  "${PROJECT_BINARY_DIR}/config.h"
+  "${PROJECT_SOURCE_DIR}/src/_config.h.in"
+  "${PROJECT_BINARY_DIR}/_config.h"
   )
 
 find_package(PkgConfig REQUIRED)
@@ -29,7 +29,10 @@ set(SRCS
 
 add_executable(escrapper ${SRCS} src/main.c)
 target_link_libraries(escrapper ${DEPS_LIBRARIES})
-target_include_directories(escrapper PUBLIC ${DEPS_INCLUDE_DIRS})
+target_include_directories(escrapper PUBLIC
+  ${DEPS_INCLUDE_DIRS}
+  ${PROJECT_BINARY_DIR}
+)
 
 set(Input ../ui/main.edc)
 set(Output main.edj)
@@ -53,6 +56,7 @@ if(CHCK_FOUND)
     ${PROJECT_SOURCE_DIR}
     ${CHCK_INCLUDE_DIRS}
     ${DEPS_INCLUDE_DIRS}
+    ${PROJECT_BINARY_DIR}
   )
 
  # add_custom_target(check ALL

@@ -2,6 +2,8 @@
 
 #include <stdlib.h> // USES malloc() and free()
 #include <assert.h> // USES assert()
+#include <string.h> // USES strdup
+
 
 Scrapper* scrapper_create()
 {

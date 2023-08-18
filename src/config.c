@@ -1,6 +1,7 @@
 #include <stdlib.h> // USES malloc() and free()
 
 #include "config.h"
+#include "_config.h"  // USES PROJECT_NAME
 
 #include <unistd.h>    // USES getuid()
 #include <sys/types.h> // USES uid_t type
@@ -35,7 +36,7 @@ config_basedir_get()
     homedir = getpwuid(getuid())->pw_dir;
 
   strcat(homedir, "/.");
-  strcat(homedir, APPNAME);
+  strcat(homedir, PROJECT_NAME);
   strcat(homedir, "/");
   return homedir;
 }
