@@ -17,7 +17,9 @@
 Config*
 config_create()
 {
-  return malloc(sizeof(Config));
+  Config* ret = malloc(sizeof(Config));
+  ret->basedir = config_basedir_get();
+  return ret;
 }
 
 void
@@ -26,6 +28,9 @@ config_free(Config* c)
   free(c);
 }
 
+/** Get the base directory of all config files
+  *
+  */
 char*
 config_basedir_get()
 {

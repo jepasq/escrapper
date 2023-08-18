@@ -29,6 +29,7 @@ via unit tests
 **** Work on doxygen API documentation
 **** TODO Add a config struct
 :LOGBOOK:
+CLOCK: [2023-08-18 ven. 05:53]--[2023-08-18 ven. 06:01] =>  0:08
 CLOCK: [2023-08-18 ven. 05:10]--[2023-08-18 ven. 05:16] =>  0:06
 CLOCK: [2023-08-17 jeu. 08:31]--[2023-08-17 jeu. 08:41] =>  0:10
 CLOCK: [2023-08-17 jeu. 07:58]--[2023-08-17 jeu. 08:20] =>  0:22
@@ -43,6 +44,7 @@ And unit test this
 - [X] How to deal with a generated 'config.h' from config.h.in file
   as we already have src/.h/c for the struct
   Maybe a underscore _config.h ? OK
+- [X] basedir is part of the config struct
 
 - [ ] basedir_concat(filename) to get the name of the given file
   How to link this basedir with the Config struct ?

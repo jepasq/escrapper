@@ -3,6 +3,10 @@
 
 #include <string.h>   // USES strstr()
 
+/** The text the basedir must contain */
+char* must_contain = ".escrapper";
+
+
 START_TEST (test_config_create)
 {
   Config *c = config_create();
@@ -13,9 +17,7 @@ END_TEST
 
 /// Check that basedir contains .escrapper text
 START_TEST (test_config_basedir_contains)
-{
-  char* must_contain = ".escrapper";
-  
+{  
   Config *c = config_create();
   char* bd = config_basedir_get();
   ck_assert_ptr_ne(strstr(bd, must_contain), NULL);
@@ -23,6 +25,14 @@ START_TEST (test_config_basedir_contains)
 }
 END_TEST
 
+/// Basedir is a config member
+START_TEST (test_config_basedir_member)
+{
+  Config *c = config_create();
+  ck_assert_ptr_ne(strstr(c->basedir, must_contain), NULL);
+  config_free(c);
+}
+END_TEST
 
 /// A config struct unit tests suite
 Suite*
@@ -38,6 +48,7 @@ config_suite(void)
 
     tcase_add_test(tc_core, test_config_create);
     tcase_add_test(tc_core, test_config_basedir_contains);
+    tcase_add_test(tc_core, test_config_basedir_member);
     suite_add_tcase(s, tc_core);
 
     return s;
