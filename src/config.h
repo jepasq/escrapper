@@ -12,4 +12,5 @@ Config* config_create();
 void    config_free(Config*);
 
 char* config_basedir_get();
+char* config_basedir_concat(Config*, const char*);
 #endif // !__CONFIG_H__

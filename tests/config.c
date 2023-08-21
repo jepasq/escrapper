@@ -34,6 +34,17 @@ START_TEST (test_config_basedir_member)
 }
 END_TEST
 
+/// Basedir is a config member
+START_TEST (test_config_basedir_concat)
+{
+  Config *c = config_create();
+  char* ced = config_basedir_concat(c, "aze");
+  ck_assert_ptr_ne(strstr(ced, "/aze"), NULL);
+  config_free(c);
+}
+END_TEST
+
+
 /// A config struct unit tests suite
 Suite*
 config_suite(void)
@@ -49,6 +60,7 @@ config_suite(void)
     tcase_add_test(tc_core, test_config_create);
     tcase_add_test(tc_core, test_config_basedir_contains);
     tcase_add_test(tc_core, test_config_basedir_member);
+    tcase_add_test(tc_core, test_config_basedir_concat);
     suite_add_tcase(s, tc_core);
 
     return s;

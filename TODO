@@ -7,5 +7,6 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     SLOC is the result of `sloc src/ test/`
 
 * v0.0.0-3 (17 Aug. 2023 - ???) SLOC ???
-- (2) Basedir is a config struct member
+- (3) config_basedir_concat() test and implementation
+- Basedir is a config struct member
 - Rename generated config.h file

@@ -45,3 +45,22 @@ config_basedir_get()
   strcat(homedir, "/");
   return homedir;
 }
+
+/** Return a concatenated file with basedir
+  *
+  * Teh goal of this function is to get 
+  *
+  * \param c  The config struct used to retrieve basedir.
+  * \param fn The filename to append to basedir.
+  *
+  * \return The concatenated strings.
+  *
+  */
+char*
+config_basedir_concat(Config* c, const char* fn)
+{
+  char* ret = c->basedir;
+  strcat(ret, fn);
+  return ret;
+}
+
