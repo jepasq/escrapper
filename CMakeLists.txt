@@ -59,6 +59,9 @@ if(CHCK_FOUND)
     ${PROJECT_BINARY_DIR}
   )
 
+  enable_testing()
+  add_test(NAME escrapper-tests COMMAND escrapper-tests)
+  
  # add_custom_target(check ALL
  #   COMMAND escrapper-tests
     #DEPENDS escrapper-tests

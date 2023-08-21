@@ -89,10 +89,12 @@ CLOCK: [2023-08-04 ven. 02:57]--[2023-08-04 ven. 03:24] =>  0:27
 
 **** TODO Correct project setup
 :LOGBOOK:
+CLOCK: [2023-08-21 lun. 04:21]--[2023-08-21 lun. 04:27] =>  0:06
 CLOCK: [2023-08-03 jeu. 04:31]--[2023-08-03 jeu. 04:49] =>  0:18
 :END:
 - [X] Try to build a simple tutorial example
 https://www.enlightenment.org/develop/efl/start
 - [X] Should use cmake
+- [ ] Configure github action to launch unit tests
 - [ ] Make this project public at github
 - [ ] May configure github actions to run unitt tests
