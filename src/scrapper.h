@@ -15,14 +15,22 @@ void scrapper_free(Scrapper*);
 
 void scrapper_set_url(Scrapper*, const char*);
 
-
+/** The result of a scrapper run
+  *
+  * 
+  *
+  */
 typedef struct _ScrapperResult
 {
-  int   httpStatusCode;
+  /** The HTTP status code
+    *  https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+    */
+  int   httpStatusCode;   
   char* markdownContent;
   
 } ScrapperResult;
 
+ScrapperResult* scrapper_run(Scrapper*);
 
 
 #endif // !__SCRAPPER_H__

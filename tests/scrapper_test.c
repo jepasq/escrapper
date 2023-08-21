@@ -1,6 +1,14 @@
 #include "scrapper_test.h"
 #include <check.h>
 
+/** The URL that should trigger a 404 HTTP error
+  *
+  * Check it with :
+  *   curl -sw '%{http_code}' URL
+  *
+  */
+#define URL_404 "https://google.com/non-accessible-page"
+
 /// A Scrapper struct unit tests suite
 START_TEST (test_scrapper_create)
 {
@@ -28,6 +36,24 @@ START_TEST (test_scrapper_set_url)
 }
 END_TEST
 
+/// Should run a 404 status code for a non-existant URL
+START_TEST (test_scrapper_run_404)
+{
+  /* unit test code */
+  Scrapper *c = scrapper_create();
+  ck_assert_ptr_ne(c, NULL);
+
+  scrapper_set_url(c, URL_404);
+  
+  ScrapperResult* resp = scrapper_run(c);
+  ck_assert_int_eq(resp->httpStatusCode, 404);
+  
+  
+  scrapper_free(c);
+}
+END_TEST
+
+
 Suite*
 scrapper_suite(void)
 {
@@ -41,6 +67,7 @@ scrapper_suite(void)
 
     tcase_add_test(tc_core, test_scrapper_create);
     tcase_add_test(tc_core, test_scrapper_set_url);
+    tcase_add_test(tc_core, test_scrapper_run_404);
     suite_add_tcase(s, tc_core);
 
     return s;

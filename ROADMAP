@@ -10,6 +10,7 @@ API documentation https://www.enlightenment.org/develop/api/start
 **** Maybe a latex-based rasterisation engine
 **** Implement the scrapper
 :LOGBOOK:
+CLOCK: [2023-08-21 lun. 07:22]--[2023-08-21 lun. 07:46] =>  0:24
 CLOCK: [2023-08-16 mer. 06:26]--[2023-08-16 mer. 06:52] =>  0:26
 CLOCK: [2023-08-16 mer. 05:47]--[2023-08-16 mer. 06:13] =>  0:26
 :END:
@@ -18,6 +19,8 @@ via unit tests
 
 - [ ] Now, implement scrapper_run wich must return a 404 status code
   for a non existant domain/page
+
+- [ ] CMake should search for libcurl
 
 - [ ] If we run the main binary with an URL, we automatically scrap it
 - [ ] Handle a argument to make the scrapper use multiple core at once  
@@ -95,6 +98,8 @@ CLOCK: [2023-08-03 jeu. 04:31]--[2023-08-03 jeu. 04:49] =>  0:18
 - [X] Try to build a simple tutorial example
 https://www.enlightenment.org/develop/efl/start
 - [X] Should use cmake
-- [ ] Configure github action to launch unit tests
 - [ ] Make this project public at github
+  - [ ] Then configure github action to launch unit tests
+    The simplest way to run test is =ctest= but it doesn't show the
+    unit test output
 - [ ] May configure github actions to run unitt tests

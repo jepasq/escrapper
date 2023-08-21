@@ -23,3 +23,14 @@ scrapper_set_url(Scrapper* s, const char* u)
   assert(s && "Is a valid scrapper");
   s->current_url = strdup(u);
 }
+
+/** Run the scrappe with the given scrapper
+  *
+  *
+  *
+  */
+ScrapperResult*
+scrapper_run(Scrapper*)
+{
+
+}
