@@ -34,7 +34,7 @@ START_TEST (test_config_basedir_member)
 }
 END_TEST
 
-/// Basedir is a config member
+/// We can get the full path of a config file by its name
 START_TEST (test_config_basedir_concat)
 {
   Config *c = config_create();
