@@ -64,11 +64,15 @@ scrapper_suite(void)
 
     /* Core test case */
     tc_core = tcase_create("Core");
-
     tcase_add_test(tc_core, test_scrapper_create);
     tcase_add_test(tc_core, test_scrapper_set_url);
-    tcase_add_test(tc_core, test_scrapper_run_404);
     suite_add_tcase(s, tc_core);
 
+    TCase* tc_long = tcase_create("ScrapperLong");
+    tcase_set_timeout(tc_long, 20); // Set timeout to 20s
+    tcase_add_test(tc_long, test_scrapper_run_404);
+    suite_add_tcase(s, tc_long);
+
+    
     return s;
 }

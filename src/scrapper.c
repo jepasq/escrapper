@@ -39,13 +39,14 @@ scrapper_run(Scrapper* s)
   curl = curl_easy_init();
   if(curl) {
     curl_easy_setopt(curl, CURLOPT_URL, s->current_url);
-    //    curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "name=daniel&project=curl");
     
     res = curl_easy_perform(curl);
+    fprintf(stderr, "curl_easy_perform() returned: %d\n", res);
+    /*
     if(res != CURLE_OK)
       fprintf(stderr, "curl_easy_perform() failed: %s\n",
 	      curl_easy_strerror(res));
-    
+    */
     curl_easy_cleanup(curl);
     }
     curl_global_cleanup();
