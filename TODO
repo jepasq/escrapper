@@ -7,7 +7,8 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     SLOC is the result of `sloc src/ test/`
 
 * v0.0.0-3 (17 Aug. 2023 - ???) SLOC ???
-- (5) Add a failing scrapper_run unit test on a 404 status code
+- (6) Cmake searches for libcurl
+- Add a failing scrapper_run unit test on a 404 status code
 - Add ctest handling code to cmake
 - config_basedir_concat() test and implementation
 - Basedir is a config struct member

@@ -13,8 +13,8 @@ configure_file(
   )
 
 find_package(PkgConfig REQUIRED)
-pkg_search_module(DEPS REQUIRED elementary)
-pkg_search_module(CHCK check)
+pkg_check_modules(DEPS REQUIRED elementary libcurl)
+
 if(NOT CHCK_FOUND)
   message(WARNING "Check library not found. Can't enable unit tests")
 endif()
