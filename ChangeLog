@@ -1,3 +1,13 @@
+* v0.0.0-3 (17 Aug. 2023 - 23 Aug. 2023) SLOC 432
+- Fix the run 404 scrapper unit test
+- Use curl easy perform to check for 404 URL
+- Cmake searches for libcurl
+- Add a failing scrapper_run unit test on a 404 status code
+- Add ctest handling code to cmake
+- config_basedir_concat() test and implementation
+- Basedir is a config struct member
+- Rename generated config.h file
+
 * v0.0.0-2 (10 Aug. 2023 - 17 Aug. 2023) SLOC 303
 - config_basedir_get implementation
 - scrapper_set_url implementation
