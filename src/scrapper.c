@@ -33,21 +33,33 @@ scrapper_set_url(Scrapper* s, const char* u)
 ScrapperResult*
 scrapper_run(Scrapper* s)
 {
-  CURL *curl;
-  CURLcode res;
-  curl_global_init(CURL_GLOBAL_ALL);
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, s->current_url);
+  CURL* session;
+  CURLcode curl_code;
+  long http_code = 0;
     
-    res = curl_easy_perform(curl);
-    fprintf(stderr, "curl_easy_perform() returned: %d\n", res);
-    /*
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-	      curl_easy_strerror(res));
-    */
-    curl_easy_cleanup(curl);
+  curl_global_init(CURL_GLOBAL_ALL);
+  session = curl_easy_init();
+  if (session)
+    {
+      curl_easy_setopt(session, CURLOPT_URL, s->current_url);
+      // Speed up and disable print in terminal
+      curl_easy_setopt(session, CURLOPT_NOBODY, 1); 
+      
+      curl_code = curl_easy_perform(session);
+      curl_easy_getinfo (session, CURLINFO_RESPONSE_CODE, &http_code);
+      curl_easy_cleanup(session);
     }
-    curl_global_cleanup();
+  curl_global_cleanup();
+  
+  // Return
+  ScrapperResult* ret = malloc(sizeof(ScrapperResult));
+  if (curl_code != CURLE_ABORTED_BY_CALLBACK)
+    {
+      ret->httpStatusCode = http_code;
+    }
+  else
+    {
+      ret->httpStatusCode = -1;
+    }
+  return ret;
 }

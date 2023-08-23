@@ -36,7 +36,7 @@ START_TEST (test_scrapper_set_url)
 }
 END_TEST
 
-/// Should run a 404 status code for a non-existant URL
+/// Run Should get a 404 status code for a non-existant URL
 START_TEST (test_scrapper_run_404)
 {
   /* unit test code */
@@ -47,7 +47,6 @@ START_TEST (test_scrapper_run_404)
   
   ScrapperResult* resp = scrapper_run(c);
   ck_assert_int_eq(resp->httpStatusCode, 404);
-  
   
   scrapper_free(c);
 }
