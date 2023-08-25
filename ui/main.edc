@@ -30,12 +30,12 @@ collections {
         }
       }
       part { // Bouton de validation du formulaire 
-      name: "input"; 
+      name: "scrap-url"; 
       type: EXTERNAL; 
       source: "elm/entry"; 
       }
       part { // Bouton de validation du formulaire 
-          name: "button"; 
+          name: "scrap-btn"; 
           type: EXTERNAL; 
           source: "elm/button"; 
           description { 

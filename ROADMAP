@@ -59,6 +59,7 @@ And unit test this
 
 **** TODO Implement first version
 :LOGBOOK:
+CLOCK: [2023-08-25 ven. 03:51]--[2023-08-25 ven. 04:17] =>  0:26
 CLOCK: [2023-08-23 mer. 09:00]--[2023-08-23 mer. 09:16] =>  0:16
 CLOCK: [2023-08-17 jeu. 06:34]--[2023-08-17 jeu. 07:20] =>  0:46
 CLOCK: [2023-08-15 mar. 08:19]--[2023-08-15 mar. 08:43] =>  0:24
@@ -79,6 +80,10 @@ CLOCK: [2023-08-04 ven. 02:57]--[2023-08-04 ven. 03:24] =>  0:27
     To build it from build/ =edje_cc ../ui/main.edc main.edj=
     - [X] Add =add_custom_command= command in cmake script
     - [X] Make sure it works
+
+- [-] Trying to launch scrapping via elm ui
+  - [X] Handle button click
+  - [ ] How to get input widget text ?
 
 - [ ] Add unit tests using check ?
   May add the `make check` rule and fix README
@@ -103,7 +108,7 @@ CLOCK: [2023-08-03 jeu. 04:31]--[2023-08-03 jeu. 04:49] =>  0:18
 https://www.enlightenment.org/develop/efl/start
 - [X] Should use cmake
 - [ ] Make this project public at github
-  - [ ] Then configure github action to launch unit tests
-    The simplest way to run test is =ctest= but it doesn't show the
-    unit test output
-- [ ] May configure github actions to run unitt tests
+- [ ] Then configure github action to launch unit tests
+  The simplest way to run test is =ctest= but it doesn't show the
+  unit test output
+  

@@ -28,6 +28,25 @@ _signal_cb(void *data, Evas_Object *obj, const char *emission,
    printf("Info received from layout : %s %s\n", emission, source);
 }
 
+/** The scrap button has been changed
+  *
+  */
+static void
+scrap_cb(void *data, Evas_Object *obj, const char *emission,
+	   const char *source)
+{
+   printf("Scrap buttion has been pressed!\n");
+}
+
+static void
+input_cb(void *data, Evas_Object *obj, const char *emission,
+	   const char *source)
+{
+  printf("Text changed : %s!\n", (char*)data);
+}
+
+
+
 /** The application main function
   *
   * This function initialize ELM stack and load example.edj compiled file.
@@ -52,8 +71,13 @@ elm_main(int argc, char **argv)
   layout = elm_layout_add(win);
   elm_layout_file_set(layout, "main.edj", "escrapper");
 
+  elm_layout_signal_callback_add(layout, "clicked", "scrap-btn",scrap_cb,NULL);
+  elm_layout_signal_callback_add(layout, "changed", "scrap-url",input_cb,NULL);
+  
+  
   // Commented out, too verbose
   //  elm_layout_signal_callback_add(layout, "*", "*", _signal_cb, NULL);
+
 
   elm_win_resize_object_add(win, layout);
   evas_object_show(layout);
