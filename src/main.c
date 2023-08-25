@@ -38,14 +38,20 @@ scrap_cb(void *data, Evas_Object *obj, const char *emission,
    printf("Scrap buttion has been pressed!\n");
 }
 
+/** The elm/entry input callback
+  *
+  * See for more :
+  * https://docs.enlightenment.org/auto/group__Elm__Entry__Group.html
+  *
+  */
 static void
 input_cb(void *data, Evas_Object *obj, const char *emission,
 	   const char *source)
 {
-  printf("Text changed : %s!\n", (char*)data);
+  const char* txt = elm_object_text_get(obj);//elm_object_part_content_get(obj, NULL);
+  printf("Text changed : %s !\n", txt);
+  
 }
-
-
 
 /** The application main function
   *
@@ -69,15 +75,15 @@ elm_main(int argc, char **argv)
   elm_win_autodel_set(win, EINA_TRUE);
 
   layout = elm_layout_add(win);
+  evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND); 
   elm_layout_file_set(layout, "main.edj", "escrapper");
 
   elm_layout_signal_callback_add(layout, "clicked", "scrap-btn",scrap_cb,NULL);
-  elm_layout_signal_callback_add(layout, "changed", "scrap-url",input_cb,NULL);
-  
+  elm_layout_signal_callback_add(layout, "changed,user", "scrap-url",
+				 input_cb,NULL);
   
   // Commented out, too verbose
   //  elm_layout_signal_callback_add(layout, "*", "*", _signal_cb, NULL);
-
 
   elm_win_resize_object_add(win, layout);
   evas_object_show(layout);

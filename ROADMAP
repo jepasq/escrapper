@@ -59,6 +59,7 @@ And unit test this
 
 **** TODO Implement first version
 :LOGBOOK:
+CLOCK: [2023-08-25 ven. 04:45]--[2023-08-25 ven. 05:14] =>  0:29
 CLOCK: [2023-08-25 ven. 03:51]--[2023-08-25 ven. 04:17] =>  0:26
 CLOCK: [2023-08-23 mer. 09:00]--[2023-08-23 mer. 09:16] =>  0:16
 CLOCK: [2023-08-17 jeu. 06:34]--[2023-08-17 jeu. 07:20] =>  0:46
@@ -84,6 +85,8 @@ CLOCK: [2023-08-04 ven. 02:57]--[2023-08-04 ven. 03:24] =>  0:27
 - [-] Trying to launch scrapping via elm ui
   - [X] Handle button click
   - [ ] How to get input widget text ?
+
+- [ ] Scrapper shouldn't scrap an empty URL : unit test
 
 - [ ] Add unit tests using check ?
   May add the `make check` rule and fix README

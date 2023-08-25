@@ -6,7 +6,7 @@
   */
 typedef struct _Scrapper
 {
-/** current URL, eventually a cache etc... */
+  /** current URL, eventually a cache etc... */
   char* current_url;
 } Scrapper;
 
@@ -17,7 +17,8 @@ void scrapper_set_url(Scrapper*, const char*);
 
 /** The result of a scrapper run
   *
-  * 
+  * The result of a scrapping action. Mainly returned (and malloc'ed) by
+  * scrapper_run() function.
   *
   */
 typedef struct _ScrapperResult
@@ -26,7 +27,7 @@ typedef struct _ScrapperResult
     *  https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
     */
   int   httpStatusCode;   
-  char* markdownContent;
+  char* markdownContent; //!< Cuurently unused char*
   
 } ScrapperResult;
 

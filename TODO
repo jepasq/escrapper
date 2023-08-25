@@ -7,4 +7,5 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     SLOC is the result of `sloc src/ test/`
 
 * v0.0.0-4 (23 Aug. 2023 - ???) SLOC ???
-- (1) Handle scrap button click event callback
+- (2) eml/input event handling and Scrapper API documentation
+- Handle scrap button click event callback

@@ -6,6 +6,14 @@
 
 #include <curl/curl.h>
 
+/** Create and malloc a new Scrapper struct
+  *
+  * The scrapper is initialized with empty current_url;
+  * The returned object must be freed with a call to scrapper_free().
+  *
+  * \return A newly malloc'ed Scrapper object.
+  *
+  */
 Scrapper* scrapper_create()
 {
   Scrapper* s = malloc(sizeof(Scrapper*));
@@ -27,7 +35,11 @@ scrapper_set_url(Scrapper* s, const char* u)
 
 /** Run the scrappe with the given scrapper
   *
+  * You can change the scrapped URL using the scrapper_set_url() function.
   *
+  * \param s The scrapper to run on.
+  *
+  * \return A malloc'ed result. This should be freed when not anymore in use.
   *
   */
 ScrapperResult*
