@@ -7,6 +7,8 @@
 
 #include "config.h"
 
+Evas_Object* layout;
+
 /** The Quit button callback
   *
   * In fact it deletes the caller pointed by the data paramater.
@@ -43,20 +45,32 @@ scrap_cb(void *data, Evas_Object *obj, const char *emission,
   * See for more :
   * https://docs.enlightenment.org/auto/group__Elm__Entry__Group.html
   *
+  * \param data     Always null.
+  *
+  * \param emission The emitted signal name (i.e. 'changed,user').
+  * \param source   The emetter of the callback (i.e. 'scrap-url').
+  *
   */
 static void
 input_cb(void *data, Evas_Object *obj, const char *emission,
 	   const char *source)
 {
- 
   //elm_object_part_content_get(obj, NULL);
   //elm_object_text_get(obj);
-//efl_text_get(obj);
-  const char* txt = elm_entry_entry_get(obj);
-					
-  printf("Text changed : %s !\n", txt);
- 
+  //efl_text_get(obj);
+
+  // From http://www.enlightenment.org/develop/legacy/api/c/start#group__Evas__Object__Group__Basic.html
+  //  printf("Source : %s !\n", (char*)obj);
+  printf("Evas obj. : %s !\n", evas_object_name_get(layout));
   
+  Evas_Object* url_entry = evas_object_name_child_find(layout, "scrap-url", 3);
+  if (url_entry)
+    {
+      const char* txt = elm_entry_entry_get(url_entry);
+      printf("Text changed : %s !\n", txt);
+    }
+  else
+    printf("Cannot get 'scrap-url' object\n");
 }
 
 /** The application main function
@@ -73,7 +87,7 @@ elm_main(int argc, char **argv)
 
   config_basedir_get();
   
-  Evas_Object *win, *layout;
+  Evas_Object *win;
   
   elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
   

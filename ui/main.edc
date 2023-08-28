@@ -29,18 +29,18 @@ collections {
 	  } 
         }
       }
-      part { // Bouton de validation du formulaire 
+      part {
       name: "scrap-url"; 
       type: EXTERNAL; 
       source: "elm/entry";
 	description {
 	  params {
 	  string: "style" "default";
-	  string: "default" "some text";
+	  string: "text" "some text";
 	  }
 	}
       }
-      part { // Bouton de validation du formulaire 
+      part {
           name: "scrap-btn"; 
           type: EXTERNAL; 
           source: "elm/button"; 
@@ -51,7 +51,6 @@ collections {
 	    rel1 { 
 	    to_y: "label"; 
 	    relative: 0.0 0.5; 
-#	    offset: 25 5; 
 	    }
 	    params { 
 	    string: "label" "Scrap URL"; 
