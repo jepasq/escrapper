@@ -32,7 +32,13 @@ collections {
       part { // Bouton de validation du formulaire 
       name: "scrap-url"; 
       type: EXTERNAL; 
-      source: "elm/entry"; 
+      source: "elm/entry";
+	description {
+	  params {
+	  string: "style" "default";
+	  string: "default" "some text";
+	  }
+	}
       }
       part { // Bouton de validation du formulaire 
           name: "scrap-btn"; 

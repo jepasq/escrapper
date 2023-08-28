@@ -48,8 +48,14 @@ static void
 input_cb(void *data, Evas_Object *obj, const char *emission,
 	   const char *source)
 {
-  const char* txt = elm_object_text_get(obj);//elm_object_part_content_get(obj, NULL);
+ 
+  //elm_object_part_content_get(obj, NULL);
+  //elm_object_text_get(obj);
+//efl_text_get(obj);
+  const char* txt = elm_entry_entry_get(obj);
+					
   printf("Text changed : %s !\n", txt);
+ 
   
 }
 

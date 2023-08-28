@@ -59,6 +59,7 @@ And unit test this
 
 **** TODO Implement first version
 :LOGBOOK:
+CLOCK: [2023-08-28 lun. 07:32]--[2023-08-28 lun. 08:26] =>  0:54
 CLOCK: [2023-08-25 ven. 04:45]--[2023-08-25 ven. 05:14] =>  0:29
 CLOCK: [2023-08-25 ven. 03:51]--[2023-08-25 ven. 04:17] =>  0:26
 CLOCK: [2023-08-23 mer. 09:00]--[2023-08-23 mer. 09:16] =>  0:16
@@ -84,8 +85,10 @@ CLOCK: [2023-08-04 ven. 02:57]--[2023-08-04 ven. 03:24] =>  0:27
 
 - [-] Trying to launch scrapping via elm ui
   - [X] Handle button click
-  - [ ] How to get input widget text ?
-
+  - [ ] How to get input widget text ? Should be =elm_entry_entry_get=
+    Trying to put a startup text to see the part name
+    - [ ] Maybe after getting the enry from the layout file ?
+    
 - [ ] Scrapper shouldn't scrap an empty URL : unit test
 
 - [ ] Add unit tests using check ?
