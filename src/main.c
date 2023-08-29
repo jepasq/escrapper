@@ -37,7 +37,14 @@ static void
 scrap_cb(void *data, Evas_Object *obj, const char *emission,
 	   const char *source)
 {
-   printf("Scrap buttion has been pressed!\n");
+  Evas_Object* url_entry = evas_object_name_child_find(layout, "scrap-url", 8);
+  if (url_entry)
+    {
+      const char* txt = elm_entry_entry_get(url_entry);
+      printf("Text changed : %s !\n", txt);
+    }
+  else
+    printf("Cannot get 'scrap-url' object\n");
 }
 
 /** The elm/entry input callback
@@ -55,22 +62,17 @@ static void
 input_cb(void *data, Evas_Object *obj, const char *emission,
 	   const char *source)
 {
-  //elm_object_part_content_get(obj, NULL);
-  //elm_object_text_get(obj);
-  //efl_text_get(obj);
-
-  // From http://www.enlightenment.org/develop/legacy/api/c/start#group__Evas__Object__Group__Basic.html
-  //  printf("Source : %s !\n", (char*)obj);
-  printf("Evas obj. : %s !\n", evas_object_name_get(layout));
-  
-  Evas_Object* url_entry = evas_object_name_child_find(layout, "scrap-url", 3);
-  if (url_entry)
+  Edje_Entry_Change_Info* info = data;
+  if (info)
     {
-      const char* txt = elm_entry_entry_get(url_entry);
-      printf("Text changed : %s !\n", txt);
+      //      const char* ce = elm_entry_entry_get(obj);
+      // see https://docs.enlightenment.org/auto/struct__Edje__Entry__Change__Info.html
+      printf("Evas obj. : %s !\n", info->insert);
+
+     
     }
   else
-    printf("Cannot get 'scrap-url' object\n");
+      printf("Can't get Edje_Entry_Change_Info struct\n");
 }
 
 /** The application main function

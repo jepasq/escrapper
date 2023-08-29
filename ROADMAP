@@ -59,6 +59,7 @@ And unit test this
 
 **** TODO Implement first version
 :LOGBOOK:
+CLOCK: [2023-08-29 mar. 09:27]--[2023-08-29 mar. 10:21] =>  0:54
 CLOCK: [2023-08-28 lun. 11:10]--[2023-08-28 lun. 11:22] =>  0:12
 CLOCK: [2023-08-28 lun. 08:49]--[2023-08-28 lun. 09:10] =>  0:21
 CLOCK: [2023-08-28 lun. 07:32]--[2023-08-28 lun. 08:26] =>  0:54
@@ -90,9 +91,12 @@ CLOCK: [2023-08-04 ven. 02:57]--[2023-08-04 ven. 03:24] =>  0:27
   - [ ] How to get input widget text ? Should be =elm_entry_entry_get=
     Trying to put a startup text to see the part name
     - [ ] Maybe after getting the enry from the layout file ?
+      Here the issue still
 
 - [ ] Maybe try http://www.enlightenment.org/about-enventor
-
+  Trying enventor 1.0.0 from https://download.enlightenment.org/rel/apps/enventor/
+  There is an issue when calling EOLIAN
+  
 - [ ] Scrapper shouldn't scrap an empty URL : unit test
 
 - [ ] Maybe create main UI with a conformant ?
