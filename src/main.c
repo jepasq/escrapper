@@ -6,8 +6,11 @@
 #include <Elementary.h>
 
 #include "config.h"
+#include "scrapper.h"
 
 Evas_Object* url_entry;
+Evas_Object* status;   //!< The status label
+Scrapper* scrapper;
 
 /** The Quit button callback
   *
@@ -63,7 +66,7 @@ static void
 input_cb(void* data, Evas_Object* obj, void* event)
 {
   const char* ce = elm_entry_entry_get(url_entry);
-  printf("Evas obj. : %s !\n", ce);
+  //  printf("Evas obj. : %s !\n", ce);
 }
 
 /** The application main function
@@ -80,6 +83,8 @@ elm_main(int argc, char **argv)
 
   config_basedir_get();
 
+  scrapper = scrapper_create();
+  
   elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
 
   //  load_elm_file("main.edj");
@@ -102,6 +107,9 @@ elm_main(int argc, char **argv)
   url_entry = elm_entry_add(table);
   evas_object_show(url_entry);
   elm_table_pack(table, url_entry, 0, 1, 1, 1);
+  elm_entry_entry_set(url_entry, "https://");
+  elm_bg_color_set(url_entry, 255, 127, 256);  // Example color
+  evas_object_size_hint_weight_set(url_entry,EVAS_HINT_EXPAND,EVAS_HINT_EXPAND);
   
   evas_object_smart_callback_add(url_entry, "changed,user", input_cb, NULL);
   
@@ -111,12 +119,22 @@ elm_main(int argc, char **argv)
   elm_table_pack(table, scrap_btn, 1, 1, 1, 1);
 
   evas_object_smart_callback_add(scrap_btn, "clicked", scrap_cb, NULL);
+
+  Evas_Object* status = elm_label_add(win);
+  elm_object_text_set(status, "Scrap result will pe printed here");
+  evas_object_show(status);
+  elm_table_pack(table, status, 0, 2, 1, 1);
+  elm_fg_color_set(status, 255, 127, 256);  // Example color
+
   
   //  elm_win_resize_object_add(win, box);
   //  evas_object_show(box);
   evas_object_show(win);
 
   elm_run();
+
+  scrapper_free(scrapper);
+  
   return 0;
 }
 ELM_MAIN()

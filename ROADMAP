@@ -59,6 +59,7 @@ And unit test this
 
 **** TODO Implement first version
 :LOGBOOK:
+CLOCK: [2023-08-30 mer. 07:23]--[2023-08-30 mer. 07:57] =>  0:34
 CLOCK: [2023-08-30 mer. 06:50]--[2023-08-30 mer. 07:06] =>  0:16
 CLOCK: [2023-08-30 mer. 05:57]--[2023-08-30 mer. 06:15] =>  0:18
 CLOCK: [2023-08-29 mar. 09:27]--[2023-08-29 mar. 10:21] =>  0:54
@@ -88,20 +89,24 @@ CLOCK: [2023-08-04 ven. 02:57]--[2023-08-04 ven. 03:24] =>  0:27
     - [X] Add =add_custom_command= command in cmake script
     - [X] Make sure it works
 - [X] Create our own gui without using edje
-  
-- [ ] May add an icon to scrap button
-  see https://docs.enlightenment.org/elementary/1.15.0/button_example_01.html
-
-- [-] Trying to launch scrapping via elm ui
+- [X] Trying to launch scrapping via elm ui
   - [X] Handle button click
-  - [ ] How to get input widget text ? Should be =elm_entry_entry_get=
+  - [X] How to get input widget text ? Should be =elm_entry_entry_get=
     Trying to put a startup text to see the part name
-    - [ ] Maybe after getting the enry from the layout file ?
+    - [X] Maybe after getting the enry from the layout file ?
       Here the issue still
-
-- [ ] Maybe try http://www.enlightenment.org/about-enventor
+- [X] Maybe try http://www.enlightenment.org/about-enventor
   Trying enventor 1.0.0 from https://download.enlightenment.org/rel/apps/enventor/
   There is an issue when calling EOLIAN
+
+- [ ] URL is not completely shown : change width
+- [ ] Should add a scrap result label below scrap button
+
+- [ ] Test URL in real time and print it in red if not an URL
+  Using changed,user callback
+
+- [ ] May add an icon to scrap button
+  see https://docs.enlightenment.org/elementary/1.15.0/button_example_01.html
   
 - [ ] Scrapper shouldn't scrap an empty URL : unit test
 

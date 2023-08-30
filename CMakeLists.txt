@@ -20,7 +20,7 @@ if(NOT CHCK_FOUND)
 endif()
 
 # Find edje_cc and build ui
-find_program(EDJE_CC_EXECUTABLE NAMES edje_cc REQUIRED)
+#find_program(EDJE_CC_EXECUTABLE NAMES edje_cc REQUIRED)
 
 set(SRCS
   src/config.c
