@@ -59,6 +59,7 @@ And unit test this
 
 **** TODO Implement first version
 :LOGBOOK:
+CLOCK: [2023-08-30 mer. 05:57]--[2023-08-30 mer. 06:15] =>  0:18
 CLOCK: [2023-08-29 mar. 09:27]--[2023-08-29 mar. 10:21] =>  0:54
 CLOCK: [2023-08-28 lun. 11:10]--[2023-08-28 lun. 11:22] =>  0:12
 CLOCK: [2023-08-28 lun. 08:49]--[2023-08-28 lun. 09:10] =>  0:21
@@ -85,6 +86,11 @@ CLOCK: [2023-08-04 ven. 02:57]--[2023-08-04 ven. 03:24] =>  0:27
     To build it from build/ =edje_cc ../ui/main.edc main.edj=
     - [X] Add =add_custom_command= command in cmake script
     - [X] Make sure it works
+
+- [ ] Create our own gui without using edje
+  
+- [ ] May add an icon to scrap button
+  see https://docs.enlightenment.org/elementary/1.15.0/button_example_01.html
 
 - [-] Trying to launch scrapping via elm ui
   - [X] Handle button click
