@@ -1,3 +1,13 @@
+* v0.0.0-4 (23 Aug. 2023 - ???) SLOC ???
+- Add a standard icon to scrap button
+- Cmake doesn't check for edje_cc anymore
+- Fix manually created layout and remove edje file
+- Start to handle UI creation from C code
+- Still having issue getting entry widget from edje file
+- Trying to set default entry value from edje file
+- eml/input event handling and Scrapper API documentation
+- Handle scrap button click event callback
+
 * v0.0.0-3 (17 Aug. 2023 - 23 Aug. 2023) SLOC 432
 - Fix the run 404 scrapper unit test
 - Use curl easy perform to check for 404 URL
