@@ -108,7 +108,7 @@ elm_main(int argc, char **argv)
   evas_object_show(url_entry);
   elm_table_pack(table, url_entry, 0, 1, 1, 1);
   elm_entry_entry_set(url_entry, "https://");
-  elm_bg_color_set(url_entry, 255, 127, 256);  // Example color
+  elm_bg_color_set(url_entry, 250, 127, 250);  // Example color
   evas_object_size_hint_weight_set(url_entry,EVAS_HINT_EXPAND,EVAS_HINT_EXPAND);
   
   evas_object_smart_callback_add(url_entry, "changed,user", input_cb, NULL);
@@ -120,11 +120,14 @@ elm_main(int argc, char **argv)
 
   evas_object_smart_callback_add(scrap_btn, "clicked", scrap_cb, NULL);
 
+  Evas_Object* icon = elm_icon_add(win);
+  elm_icon_standard_set(icon, "edit-find");  // go-next is also good
+  elm_object_part_content_set(scrap_btn, "icon", icon);
+  
   Evas_Object* status = elm_label_add(win);
   elm_object_text_set(status, "Scrap result will pe printed here");
   evas_object_show(status);
   elm_table_pack(table, status, 0, 2, 1, 1);
-  elm_fg_color_set(status, 255, 127, 256);  // Example color
 
   
   //  elm_win_resize_object_add(win, box);

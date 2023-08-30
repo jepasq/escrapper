@@ -57,8 +57,49 @@ And unit test this
 
 - [ ] We now should be able to retrieve a filename in app's config dir
 
-**** TODO Implement first version
+**** TODO Continue implementation
+- [ ] URL is not completely shown : change entry width
+
+- [ ] Should add a scrap result label below scrap button
+
+- [ ] Test URL in real time and print it in red if not an URL
+  Using changed,user callback
+  
+- [ ] Scrapper shouldn't scrap an empty URL : unit test
+
+- [ ] Maybe create main UI with a conformant ?
+  https://docs.tizen.org/application/native/guides/ui/efl/container-conformant/
+
+- [ ] Add unit tests using check ?
+  May add the `make check` rule and fix README
+- [ ] Fix actual edje file and add needed ui
+  see https://louis-du-verdier.developpez.com/efl/debuter/?page=edje
+  - [ ] Can't find a text input widget
+    Search in the ecrire package
+    For example, in the open dialog, there's the 'Search/Rechercher' input
+    https://github.com/Obsidian-StudiosInc/ecrire/blob/master/src/bin/ui/search_dialog.c
+    or the find dialog
+- persistance maybe through mongodb ? in persist.h/c
+  Save full HTML or only AST representation
+
+- [ ] May test memory leaks using valgrind
+
+**** TODO Correct project setup
 :LOGBOOK:
+CLOCK: [2023-08-21 lun. 04:21]--[2023-08-21 lun. 04:27] =>  0:06
+CLOCK: [2023-08-03 jeu. 04:31]--[2023-08-03 jeu. 04:49] =>  0:18
+:END:
+- [X] Try to build a simple tutorial example
+https://www.enlightenment.org/develop/efl/start
+- [X] Should use cmake
+- [ ] Make this project public at github
+- [ ] Then configure github action to launch unit tests
+  The simplest way to run test is =ctest= but it doesn't show the
+  unit test output
+  
+**** DONE Implement first version
+:LOGBOOK:
+CLOCK: [2023-08-30 mer. 09:52]--[2023-08-30 mer. 10:02] =>  0:10
 CLOCK: [2023-08-30 mer. 07:23]--[2023-08-30 mer. 07:57] =>  0:34
 CLOCK: [2023-08-30 mer. 06:50]--[2023-08-30 mer. 07:06] =>  0:16
 CLOCK: [2023-08-30 mer. 05:57]--[2023-08-30 mer. 06:15] =>  0:18
@@ -98,45 +139,5 @@ CLOCK: [2023-08-04 ven. 02:57]--[2023-08-04 ven. 03:24] =>  0:27
 - [X] Maybe try http://www.enlightenment.org/about-enventor
   Trying enventor 1.0.0 from https://download.enlightenment.org/rel/apps/enventor/
   There is an issue when calling EOLIAN
-
-- [ ] URL is not completely shown : change width
-- [ ] Should add a scrap result label below scrap button
-
-- [ ] Test URL in real time and print it in red if not an URL
-  Using changed,user callback
-
-- [ ] May add an icon to scrap button
+- [X] May add an icon to scrap button
   see https://docs.enlightenment.org/elementary/1.15.0/button_example_01.html
-  
-- [ ] Scrapper shouldn't scrap an empty URL : unit test
-
-- [ ] Maybe create main UI with a conformant ?
-  https://docs.tizen.org/application/native/guides/ui/efl/container-conformant/
-
-- [ ] Add unit tests using check ?
-  May add the `make check` rule and fix README
-- [ ] Fix actual edje file and add needed ui
-  see https://louis-du-verdier.developpez.com/efl/debuter/?page=edje
-  - [ ] Can't find a text input widget
-    Search in the ecrire package
-    For example, in the open dialog, there's the 'Search/Rechercher' input
-    https://github.com/Obsidian-StudiosInc/ecrire/blob/master/src/bin/ui/search_dialog.c
-    or the find dialog
-- persistance maybe through mongodb ? in persist.h/c
-  Save full HTML or only AST representation
-
-- [ ] May test memory leaks using valgrind
-
-**** TODO Correct project setup
-:LOGBOOK:
-CLOCK: [2023-08-21 lun. 04:21]--[2023-08-21 lun. 04:27] =>  0:06
-CLOCK: [2023-08-03 jeu. 04:31]--[2023-08-03 jeu. 04:49] =>  0:18
-:END:
-- [X] Try to build a simple tutorial example
-https://www.enlightenment.org/develop/efl/start
-- [X] Should use cmake
-- [ ] Make this project public at github
-- [ ] Then configure github action to launch unit tests
-  The simplest way to run test is =ctest= but it doesn't show the
-  unit test output
-  

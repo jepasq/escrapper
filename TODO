@@ -7,7 +7,8 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     SLOC is the result of `sloc src/ test/`
 
 * v0.0.0-4 (23 Aug. 2023 - ???) SLOC ???
-- (7) Cmake doesn't check for edje_cc anymore
+- (8) Add a standard icon to scrap button
+- Cmake doesn't check for edje_cc anymore
 - Fix manually created layout and remove edje file
 - Start to handle UI creation from C code
 - Still having issue getting entry widget from edje file
