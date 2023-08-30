@@ -34,16 +34,6 @@ target_include_directories(escrapper PUBLIC
   ${PROJECT_BINARY_DIR}
 )
 
-set(Input ../ui/main.edc)
-set(Output main.edj)
-
-# May become a cmake function later
-add_custom_command(TARGET escrapper PRE_BUILD
-  COMMAND ${EDJE_CC_EXECUTABLE} ${Input} ${Output}
-  DEPENDS ${Input}
-  COMMENT "edje_cc ${Input} ${Output}"
-  WORKING_DIRECTORY ${PROJECT_BINARY_DIR})
-
 if(CHCK_FOUND)
   add_executable(escrapper-tests ${SRCS}
     tests/config.c

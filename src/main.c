@@ -34,8 +34,7 @@ _signal_cb(void *data, Evas_Object *obj, const char *emission,
   *
   */
 static void
-scrap_cb(void *data, Evas_Object *obj, const char *emission,
-	   const char *source)
+scrap_cb(void *data, Evas_Object *obj, void* event)
 {
   const char* txt = elm_entry_entry_get(url_entry);
   printf("Text changed : %s !\n", txt);
@@ -67,36 +66,6 @@ input_cb(void* data, Evas_Object* obj, void* event)
   printf("Evas obj. : %s !\n", ce);
 }
 
-void
-load_elm_file(const char* file)
-{
-  Evas_Object* win;
-  
-  elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
-  
-  win = elm_win_util_standard_add("Main", "Hello, World!");
-  elm_win_autodel_set(win, EINA_TRUE);
-
-  Evas_Object* layout = elm_layout_add(win);
-  evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND); 
-  elm_layout_file_set(layout, file, "escrapper");
-
-  /* Signature not compatible anymore
-  elm_layout_signal_callback_add(layout, "clicked", "scrap-btn",scrap_cb,NULL);
-  elm_layout_signal_callback_add(layout, "changed,user", "scrap-url",
-				 input_cb,NULL);
-  */
-  
-  // Commented out, too verbose
-  //  elm_layout_signal_callback_add(layout, "*", "*", _signal_cb, NULL);
-
-  elm_win_resize_object_add(win, layout);
-  evas_object_show(layout);
-  evas_object_show(win);
-}
-
-
-
 /** The application main function
   *
   * This function initialize ELM stack and load example.edj compiled file.
@@ -119,23 +88,29 @@ elm_main(int argc, char **argv)
   Evas_Object *win = elm_win_util_standard_add("Main", "Hello, World!");
   elm_win_autodel_set(win, EINA_TRUE);
 
-  //  Evas_Object* box = elm_box_add(win);
 
-
-  Evas_Object *table = elm_table_add(win);
+  Evas_Object* table = elm_table_add(win);
+  elm_win_resize_object_add(win, table);
   evas_object_show(table);
+  elm_table_padding_set(table, 5, 5);
+
+  Evas_Object* label = elm_label_add(win);
+  elm_object_text_set(label, "Enter new URL to scrap than press button :");
+  evas_object_show(label);
+  elm_table_pack(table, label, 0, 0, 1, 1);
+  
   url_entry = elm_entry_add(table);
   evas_object_show(url_entry);
-
+  elm_table_pack(table, url_entry, 0, 1, 1, 1);
+  
   evas_object_smart_callback_add(url_entry, "changed,user", input_cb, NULL);
   
   Evas_Object* scrap_btn = elm_button_add(table);
   elm_object_text_set(scrap_btn, "Scrap!");
   evas_object_show(scrap_btn);
+  elm_table_pack(table, scrap_btn, 1, 1, 1, 1);
 
-  elm_object_signal_callback_add(scrap_btn, "clicked", "scrap-btn",
-				 scrap_cb,NULL);
-
+  evas_object_smart_callback_add(scrap_btn, "clicked", scrap_cb, NULL);
   
   //  elm_win_resize_object_add(win, box);
   //  evas_object_show(box);
