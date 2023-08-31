@@ -6,7 +6,7 @@ An *EFL*-based web scrapper, indexer and offline viewer.
 
 On `manjaro` and other *Arch*-based linux distributions :
 
-	sudo pamac install efl cmake gcc doxygen check
+	sudo pamac install efl cmake gcc doxygen check pcre2
 
 `check` is only needed if you want to build and run unit tests.
 

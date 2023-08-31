@@ -7,4 +7,4 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     SLOC is the result of `sloc src/ test/`
 
 * v0.0.0-5 (23 Aug. 2023 - ???) SLOC ???
-
+- (1) Add pcre2 to the list of checked dependencies

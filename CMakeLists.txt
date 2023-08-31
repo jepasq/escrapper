@@ -13,7 +13,7 @@ configure_file(
   )
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(DEPS REQUIRED elementary libcurl)
+pkg_check_modules(DEPS REQUIRED elementary libcurl libpcre2-posix)
 
 if(NOT CHCK_FOUND)
   message(WARNING "Check library not found. Can't enable unit tests")
