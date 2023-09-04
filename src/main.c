@@ -41,6 +41,9 @@ scrap_cb(void *data, Evas_Object *obj, void* event)
 {
   const char* txt = elm_entry_entry_get(url_entry);
   printf("Text changed : %s !\n", txt);
+
+  elm_object_text_set(status, "Scrap result will pe printed here");
+  
   /*  url_entry = evas_object_name_child_find(layout, "scrap-url", 8);
   url_entry = edje_object_part_object_get(layout, "scrap-url");
   if (url_entry)
@@ -100,10 +103,11 @@ elm_main(int argc, char **argv)
   elm_table_padding_set(table, 5, 5);
 
   Evas_Object* label = elm_label_add(win);
-  elm_object_text_set(label, "Enter new URL to scrap than press button :");
+  elm_object_text_set(label, "Enter new URL to scrap then press button :");
   evas_object_show(label);
   elm_table_pack(table, label, 0, 0, 1, 1);
-  
+
+  // The URL entry
   url_entry = elm_entry_add(table);
   evas_object_show(url_entry);
   elm_table_pack(table, url_entry, 0, 1, 1, 1);
@@ -111,23 +115,25 @@ elm_main(int argc, char **argv)
   elm_bg_color_set(url_entry, 250, 127, 250);  // Example color
   evas_object_size_hint_weight_set(url_entry,EVAS_HINT_EXPAND,EVAS_HINT_EXPAND);
   
-  evas_object_smart_callback_add(url_entry, "changed,user", input_cb, NULL);
   
   Evas_Object* scrap_btn = elm_button_add(table);
   elm_object_text_set(scrap_btn, "Scrap!");
   evas_object_show(scrap_btn);
   elm_table_pack(table, scrap_btn, 1, 1, 1, 1);
 
-  evas_object_smart_callback_add(scrap_btn, "clicked", scrap_cb, NULL);
 
   Evas_Object* icon = elm_icon_add(win);
   elm_icon_standard_set(icon, "edit-find");  // go-next is also good
   elm_object_part_content_set(scrap_btn, "icon", icon);
   
-  Evas_Object* status = elm_label_add(win);
-  elm_object_text_set(status, "Scrap result will pe printed here");
+  status = elm_label_add(win);
   evas_object_show(status);
   elm_table_pack(table, status, 0, 2, 1, 1);
+
+
+  // Callbacks setup
+  evas_object_smart_callback_add(url_entry, "changed,user", input_cb, NULL);
+  evas_object_smart_callback_add(scrap_btn, "clicked", scrap_cb, NULL);
 
   
   //  elm_win_resize_object_add(win, box);

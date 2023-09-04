@@ -58,28 +58,31 @@ And unit test this
 - [ ] We now should be able to retrieve a filename in app's config dir
 
 **** TODO Continue implementation
-- [ ] URL is not completely shown : change entry width
-  May try the wrap attribute
-  
-- [ ] Should add a scrap result label below scrap button
-
-- [ ] Test URL in real time and print it in red if not an URL
-  Using changed,user callback
-  
-- [ ] Scrapper shouldn't scrap an empty URL : unit test
-
-- [ ] Maybe create main UI with a conformant ?
-  https://docs.tizen.org/application/native/guides/ui/efl/container-conformant/
-
-- [ ] Add unit tests using check ?
-  May add the `make check` rule and fix README
-- [ ] Fix actual edje file and add needed ui
+:LOGBOOK:
+CLOCK: [2023-09-04 lun. 11:08]--[2023-09-04 lun. 11:40] =>  0:32
+:END:
+- [X] Fix actual edje file and add needed ui : CANCELED
   see https://louis-du-verdier.developpez.com/efl/debuter/?page=edje
-  - [ ] Can't find a text input widget
+  - [X] Can't find a text input widget
     Search in the ecrire package
     For example, in the open dialog, there's the 'Search/Rechercher' input
     https://github.com/Obsidian-StudiosInc/ecrire/blob/master/src/bin/ui/search_dialog.c
     or the find dialog
+- [X] Should add a scrap result label below scrap button
+  Added, now test it
+
+- [ ] URL is not completely shown : change entry width
+  May try the wrap attribute
+  
+- [ ] Test URL in real time and print it in red if not an URL
+  Using changed,user callback
+
+- [ ] Scrapper shouldn't scrap an empty URL : unit test
+
+- [ ] Maybe create main UI with a conformant ?
+  https://docs.tizen.org/application/native/guides/ui/efl/container-conformant/
+- [ ] Add unit tests using check ?
+  May add the `make check` rule and fix README
 - persistance maybe through mongodb ? in persist.h/c
   Save full HTML or only AST representation
 
