@@ -6,6 +6,7 @@
 #include <Elementary.h>
 
 #include "config.h"
+#include "persist.h"
 #include "scrapper.h"
 
 Evas_Object* url_entry;
@@ -90,6 +91,8 @@ elm_main(int argc, char **argv)
   
   elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
 
+  Persist* pers = persist_create();
+  
   //  load_elm_file("main.edj");
 
   // Create UI manually
@@ -130,11 +133,9 @@ elm_main(int argc, char **argv)
   evas_object_show(status);
   elm_table_pack(table, status, 0, 2, 1, 1);
 
-
   // Callbacks setup
   evas_object_smart_callback_add(url_entry, "changed,user", input_cb, NULL);
   evas_object_smart_callback_add(scrap_btn, "clicked", scrap_cb, NULL);
-
   
   //  elm_win_resize_object_add(win, box);
   //  evas_object_show(box);
@@ -143,6 +144,7 @@ elm_main(int argc, char **argv)
   elm_run();
 
   scrapper_free(scrapper);
+  persist_free(pers);
   
   return 0;
 }

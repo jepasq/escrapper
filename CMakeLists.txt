@@ -24,6 +24,7 @@ endif()
 
 set(SRCS
   src/config.c
+  src/persist.c
   src/scrapper.c
 )
 
@@ -38,6 +39,7 @@ if(CHCK_FOUND)
   add_executable(escrapper-tests ${SRCS}
     tests/config.c
     tests/main.c
+    tests/persist_test.c
     tests/scrapper_test.c
   )
   target_link_libraries(escrapper-tests ${CHCK_LIBRARIES} ${DEPS_LIBRARIES})

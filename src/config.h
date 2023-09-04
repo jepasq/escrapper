@@ -4,7 +4,8 @@
 /** The configuration structure
   *
   */
-typedef struct {
+typedef struct
+{
   char* basedir; //!< The basedir of all config files
 } Config;
 
