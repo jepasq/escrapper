@@ -21,7 +21,8 @@ char* config_basedir_get();
 char* config_basedir_concat(Config*, const char*);
 
 // Key/value work
-char* config_get_value(const char*);
+char* config_get_value(Config*, const char*);
+char* config_get_file_content(const char*);
 
 
 #endif // !__CONFIG_H__

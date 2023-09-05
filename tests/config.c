@@ -50,18 +50,32 @@ START_TEST (test_config_get_value_str_null)
   const char* key = "inexistant-key";
   
   Config *c = config_create();
-  val = config_get_value(key);
+  val = config_get_value(c, key);
   ck_assert_ptr_eq(val, NULL);    // This key shouldn't exist
 
-  val = config_get_value(NULL);
+  val = config_get_value(c, NULL);
   ck_assert_ptr_eq(val, NULL);    // This key shouldn't exist
 
-  val = config_get_value("");
+  val = config_get_value(c, "");
   ck_assert_ptr_eq(val, NULL);    // This key shouldn't exist
   
   config_free(c);
 }
 END_TEST
+
+START_TEST (test_config_get_content)
+{
+
+  char* c;
+
+  // Non-existant file must return NULL
+  c=config_get_file_content("/dev/inexting-device-should-return-NULL");
+  ck_assert_ptr_eq(c, NULL);
+
+  // Whatever the content of the device we get, we can find it
+  c=config_get_file_content("Doxyfile");
+  ck_assert_ptr_ne(c, NULL);
+}
 
 /// A config struct unit tests suite
 Suite*
@@ -80,6 +94,7 @@ config_suite(void)
     tcase_add_test(tc_core, test_config_basedir_member);
     tcase_add_test(tc_core, test_config_basedir_concat);
     tcase_add_test(tc_core, test_config_get_value_str_null);
+    tcase_add_test(tc_core, test_config_get_content);
     suite_add_tcase(s, tc_core);
 
     return s;
