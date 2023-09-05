@@ -64,3 +64,19 @@ config_basedir_concat(Config* c, const char* fn)
   return ret;
 }
 
+/** Return the value of the given configuration key
+  *
+  * It will retrieve and return the content of the file found at the
+  * <tt>{basedir}/key</tt> location where the basedir is the string returned
+  * by the config_basedir_get() function.
+  *
+  * \return NULL in case of error.
+  *
+  */
+char*
+config_get_value(const char* key)
+{
+
+}
+
+

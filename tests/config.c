@@ -44,6 +44,18 @@ START_TEST (test_config_basedir_concat)
 }
 END_TEST
 
+START_TEST (test_config_get_value_str)
+{
+  const char* key = "inexistant-key";
+  
+  Config *c = config_create();
+  char* val = config_get_value(key);
+  ck_assert_ptr_eq(val, NULL);    // This key shouldn't exist
+  config_free(c);
+}
+END_TEST
+
+
 
 /// A config struct unit tests suite
 Suite*
@@ -61,6 +73,7 @@ config_suite(void)
     tcase_add_test(tc_core, test_config_basedir_contains);
     tcase_add_test(tc_core, test_config_basedir_member);
     tcase_add_test(tc_core, test_config_basedir_concat);
+    tcase_add_test(tc_core, test_config_get_value_str);
     suite_add_tcase(s, tc_core);
 
     return s;

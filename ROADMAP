@@ -32,16 +32,19 @@ via unit tests
 - [ ] May return a scrapper_result struct with
   {HTTP status, title and markdown text}
   
-**** Wotk on persistence
+**** TODO Wotk on persistence
 :LOGBOOK:
 CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21
 :END:
 - persistence maybe through mongodb ? in persist.h/c
   Save full HTML or only AST representation
 
+- [ ] Must be able to retrieve mongo URI, user and password
+
 **** Work on doxygen API documentation
 **** TODO Add a config struct
 :LOGBOOK:
+CLOCK: [2023-09-05 mar. 06:21]--[2023-09-05 mar. 06:45] =>  0:24
 CLOCK: [2023-08-21 lun. 04:06]--[2023-08-21 lun. 04:16] =>  0:10
 CLOCK: [2023-08-18 ven. 05:53]--[2023-08-18 ven. 06:01] =>  0:08
 CLOCK: [2023-08-18 ven. 05:10]--[2023-08-18 ven. 05:16] =>  0:06
@@ -63,6 +66,13 @@ And unit test this
   How to link this basedir with the Config struct ?
 
 - [ ] We now should be able to retrieve a filename in app's config dir
+  To be able to unit test this, should have a final filename as param
+  and add a tests/keys files to unit tests content
+  - [ ] Should also check with a null string as key
+  
+- [ ] Must handle a key/value work
+  as a $(configdir)/key-name file containing the value
+
 
 **** TODO Continue implementation
 :LOGBOOK:
