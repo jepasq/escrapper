@@ -1,10 +1,15 @@
+/** \file scrapper.h
+  * The header file of Scrapper work functions.
+  *
+  */
+
 #ifndef __SCRAPPER_H__
 #define __SCRAPPER_H__
 
 /** The scrapper configuration and running object
   *
   */
-typedef struct _Scrapper
+typedef struct
 {
   /** current URL, eventually a cache etc... */
   char* current_url;
@@ -21,7 +26,7 @@ void scrapper_set_url(Scrapper*, const char*);
   * scrapper_run() function.
   *
   */
-typedef struct _ScrapperResult
+typedef struct
 {
   /** The HTTP status code
     *  https://developer.mozilla.org/en-US/docs/Web/HTTP/Status

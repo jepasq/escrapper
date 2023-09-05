@@ -1,11 +1,10 @@
-#ifndef __CONFIG_H__
-#define __CONFIG_H__
-
 /** \file config.h
   * The header file of the config and config files-related functions.
   *
   */
 
+#ifndef __CONFIG_H__
+#define __CONFIG_H__
 
 /** The configuration structure
   *

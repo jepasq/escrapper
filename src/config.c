@@ -1,3 +1,8 @@
+/** \file config.c
+  * The config files-related implementation file.
+  *
+  */
+
 #include <stdlib.h> // USES malloc() and free()
 
 #include "config.h"
@@ -22,6 +27,11 @@ config_create()
   return ret;
 }
 
+/** Free the memory malloc'ed for an object instanciated with config_create()
+  *
+  * \param c A pointer to fhe object to be freed.
+  *
+  */
 void
 config_free(Config* c)
 {

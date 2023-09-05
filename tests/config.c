@@ -63,8 +63,6 @@ START_TEST (test_config_get_value_str_null)
 }
 END_TEST
 
-
-
 /// A config struct unit tests suite
 Suite*
 config_suite(void)

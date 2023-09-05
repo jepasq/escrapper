@@ -40,8 +40,11 @@ CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21
   Save full HTML or only AST representation
 
 - [ ] Must be able to retrieve mongo URI, user and password
-
 **** Work on doxygen API documentation
+:LOGBOOK:
+CLOCK: [2023-09-05 mar. 07:28]--[2023-09-05 mar. 07:47] =>  0:19
+:END:
+- [ ] Must add \file block for each header and implementation
 **** TODO Add a config struct
 :LOGBOOK:
 CLOCK: [2023-09-05 mar. 07:13]--[2023-09-05 mar. 07:21] =>  0:08
@@ -74,8 +77,6 @@ And unit test this
     
 - [ ] Must handle a key/value work
   as a $(configdir)/key-name file containing the value
-
-
 **** TODO Continue implementation
 :LOGBOOK:
 CLOCK: [2023-09-04 lun. 11:08]--[2023-09-04 lun. 11:40] =>  0:32

@@ -17,6 +17,12 @@ Scrapper* scrapper;
   *
   * In fact it deletes the caller pointed by the data paramater.
   *
+  * Note : not in use aactually.
+  *
+  * \param data       The emmiter object.
+  * \param obj        Not used.
+  * \param event_info Not used.
+  *
   */
 static void
 on_click(void *data, Evas_Object *obj, void *event_info)
@@ -26,6 +32,11 @@ on_click(void *data, Evas_Object *obj, void *event_info)
 
 /** A debugging callback used to print emission and source in console
   *
+  * \param data     Nor used.
+  * \param obj      Not used.
+  * \param emission The name of the emitter value.
+  * \param source   The source string.
+  *
   */
 static void
 _signal_cb(void *data, Evas_Object *obj, const char *emission,
@@ -34,7 +45,11 @@ _signal_cb(void *data, Evas_Object *obj, const char *emission,
    printf("Info received from layout : %s %s\n", emission, source);
 }
 
-/** The scrap button has been changed
+/** The scrap button has been clicked
+  *
+  * \param data     Nor used.
+  * \param obj      Not used.
+  * \param event    Not used.
   *
   */
 static void
