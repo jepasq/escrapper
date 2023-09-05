@@ -7,7 +7,7 @@
 #include <sys/types.h> // USES uid_t type
 #include <pwd.h>       // USES getpwuid()
 
-#include <string.h>    // USES strcat()
+#include <string.h>    // USES strcat() and strlen()
 
 /** Create and return a dynamically allocated Config pointer
   *
@@ -70,13 +70,21 @@ config_basedir_concat(Config* c, const char* fn)
   * <tt>{basedir}/key</tt> location where the basedir is the string returned
   * by the config_basedir_get() function.
   *
+  * Note: will always return NULL if key is NULL or an empty string.
+  *
   * \return NULL in case of error.
   *
   */
 char*
 config_get_value(const char* key)
 {
+  if ((key == NULL) || (strlen(key) < 1))
+    return  NULL;
 
+  //  char* filen = config_basedir_concat(config, key);
+  
+  
+  return "value";
 }
 
 

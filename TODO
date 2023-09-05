@@ -7,7 +7,8 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     SLOC is the result of `sloc src/ test/`
 
 * v0.0.0-5 (23 Aug. 2023 - ???) SLOC ???
-- (4) Add failing config_get_value implementation
+- (5) More config_get_value NULL tests
+- Add failing config_get_value implementation
 - Add empty persistence files and tests
 - Can change status URL after from scrap button callback
 - Add pcre2 to the list of checked dependencies
