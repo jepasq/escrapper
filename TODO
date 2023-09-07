@@ -5,13 +5,7 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     (8 items by revision)
     Update VERSION and REVISION in CMakeLists.txt    	   
     SLOC is the result of `sloc src/ test/`
+    UT the number of ./escrapper-tests Checks
 
-* v0.0.0-5 (23 Aug. 2023 - ???) SLOC ???
-- (8) Fix actual config_get_value unit tests
-- config_get_value takes a Config* argument
-- Doxygen API documentation update
-- More config_get_value NULL tests
-- Add failing config_get_value implementation
-- Add empty persistence files and tests
-- Can change status URL after from scrap button callback
-- Add pcre2 to the list of checked dependencies
+* v0.0.0-6 (07 Aug. 2023 - ???) SLOC ??? UT ?
+

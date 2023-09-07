@@ -1,3 +1,13 @@
+* v0.0.0-5 (23 Aug. 2023 - 07 Aug. 2023) SLOC 745 UT 9
+- Fix actual config_get_value unit tests
+- config_get_value takes a Config* argument
+- Doxygen API documentation update
+- More config_get_value NULL tests
+- Add failing config_get_value implementation
+- Add empty persistence files and tests
+- Can change status URL after from scrap button callback
+- Add pcre2 to the list of checked dependencies
+
 * v0.0.0-4 (23 Aug. 2023 - ???) SLOC ???
 - Add a standard icon to scrap button
 - Cmake doesn't check for edje_cc anymore
