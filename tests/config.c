@@ -65,7 +65,6 @@ END_TEST
 
 START_TEST (test_config_get_content)
 {
-
   char* c;
 
   // Non-existant file must return NULL

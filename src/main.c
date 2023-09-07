@@ -9,9 +9,9 @@
 #include "persist.h"
 #include "scrapper.h"
 
-Evas_Object* url_entry;
-Evas_Object* status;   //!< The status label
-Scrapper* scrapper;
+Evas_Object* url_entry; //!< The elementary widget used to enter URL 
+Evas_Object* status;    //!< The status label
+Scrapper* scrapper;     //!< The general static scrapper object
 
 /** The Quit button callback
   *
@@ -75,10 +75,9 @@ scrap_cb(void *data, Evas_Object *obj, void* event)
   * See for more :
   * https://docs.enlightenment.org/auto/group__Elm__Entry__Group.html
   *
-  * \param data     Always null.
-  *
-  * \param emission The emitted signal name (i.e. 'changed,user').
-  * \param source   The emetter of the callback (i.e. 'scrap-url').
+  * \param data  Always null.
+  * \param obj   The evas object that emitted the signal.
+  * \param event The event parametter.
   *
   */
 static void
@@ -94,6 +93,8 @@ input_cb(void* data, Evas_Object* obj, void* event)
   *
   * \param argc Number of command line arguments.
   * \param argv Array of C-string based arguments.
+  *
+  * \return Always 0.
   *
   */
 EAPI_MAIN int

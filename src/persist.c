@@ -1,3 +1,8 @@
+/** \file persist.h
+  * The persistence-related functions implementation.
+  *
+  */
+
 #include "persist.h"
 
 Persist*

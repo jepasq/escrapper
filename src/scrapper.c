@@ -1,3 +1,8 @@
+/** \file scrapper.c
+  * The implementation file of Scrapper structure related functions.
+  *
+  */
+
 #include "scrapper.h"
 
 #include <stdlib.h> // USES malloc() and free()
@@ -21,11 +26,22 @@ Scrapper* scrapper_create()
   return s;
 }
 
+/** Free the memory used by the given Scrapper
+  *
+  * \param s A scrapper pointer.
+  *
+  */
 void scrapper_free(Scrapper* s)
 {
   free(s);
 }
 
+/** Set the current_url value for the given Scrapper
+  *
+  * \param s A scrapper pointer.
+  * \param u The new URL.
+  *
+  */
 void
 scrapper_set_url(Scrapper* s, const char* u)
 {

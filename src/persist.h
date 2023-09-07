@@ -1,3 +1,8 @@
+/** \file persist.h
+  * The header of the persistence functions.
+  *
+  */
+
 #ifndef __PERSIST_H__
 #define __PERSIST_H__
 
