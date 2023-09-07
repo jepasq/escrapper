@@ -96,6 +96,12 @@ config_get_value(Config* config, const char* key)
   char* filen = config_basedir_concat(config, key);
   printf("Testing key file '%s'\n", filen);
 
+  char* ctn = config_get_file_content(filen);
+  if (ctn == NULL)
+    return NULL;
+
+
+  free(ctn);
   // USe config_get_file_content here
   
   return "value";
