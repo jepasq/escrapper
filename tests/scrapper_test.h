@@ -6,4 +6,5 @@
 #include "src/scrapper.h"
 
 Suite* scrapper_suite(void);
+
 #endif // !__SCRAPPER_TEST_H__

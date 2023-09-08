@@ -12,7 +12,6 @@
 /// A Scrapper struct unit tests suite
 START_TEST (test_scrapper_create)
 {
-  /* unit test code */
   Scrapper *c = scrapper_create();
   ck_assert_ptr_ne(c, NULL);
 

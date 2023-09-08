@@ -39,6 +39,7 @@ if(CHCK_FOUND)
   add_executable(escrapper-tests ${SRCS}
     tests/config.c
     tests/main.c
+    tests/logger_test.c
     tests/persist_test.c
     tests/scrapper_test.c
   )
