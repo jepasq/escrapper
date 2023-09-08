@@ -3,6 +3,6 @@
 
 #include <check.h>
 
-Suite* scrapper_suite(void);
+Suite* logger_suite(void);
 
 #endif // !__LOGGER_TEST_H__

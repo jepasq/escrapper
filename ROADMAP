@@ -34,6 +34,7 @@ via unit tests
   
 **** May add a logger
 :LOGBOOK:
+CLOCK: [2023-09-08 ven. 09:20]--[2023-09-08 ven. 09:34] =>  0:14
 CLOCK: [2023-09-08 ven. 08:01]--[2023-09-08 ven. 08:40] =>  0:39
 :END:
 - Handle log level (WARN INFO ERRO)
@@ -42,6 +43,8 @@ CLOCK: [2023-09-08 ven. 08:01]--[2023-09-08 ven. 08:40] =>  0:39
 - Maybe intro with appname and version
   build date and GCC version
 - [ ] May be overriden by environment variable
+- [ ] Must also implement getter and setter
+  Only an environment setter, because for file, it's more complicated
 **** TODO Wotk on persistence
 :LOGBOOK:
 CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21

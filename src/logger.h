@@ -6,6 +6,9 @@
 #ifndef __LOGGER_H__
 #define __LOGGER_H__
 
+/** Defines the logger environment
+  *
+  */
 typedef enum {
   LOGENV_PROD,      //!< We're in production mod (the default)
   LOGENV_TEST,      //!< We're in test mode, io in terminal is blocked

@@ -24,6 +24,7 @@ endif()
 
 set(SRCS
   src/config.c
+  src/logger.c
   src/persist.c
   src/scrapper.c
 )
