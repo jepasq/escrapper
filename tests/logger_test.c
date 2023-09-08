@@ -80,6 +80,24 @@ START_TEST (test_logger_log_in_file)
 }
 END_TEST
 
+START_TEST (test_logger_level_to_str)
+{
+  char* val;
+  
+  val = logger_static_level_to_str(LL_INFO);
+  ck_assert_str_eq(val, "II");
+  free (val);
+
+  val = logger_static_level_to_str(LL_WARN);
+  ck_assert_str_eq(val, "WW");
+  free (val);
+
+  val = logger_static_level_to_str(LL_ERR);
+  ck_assert_str_eq(val, "EE");
+  free (val);
+}
+END_TEST
+
 /// \return A Scrapper struct unit tests suite
 Suite*
 logger_suite(void)
@@ -94,6 +112,7 @@ logger_suite(void)
     tcase_add_test(tc_core, test_logger_create);
     tcase_add_test(tc_core, test_logger_check_inexistant_file_size);
     tcase_add_test(tc_core, test_logger_log_in_file);
+    tcase_add_test(tc_core, test_logger_level_to_str);
     suite_add_tcase(s, tc_core);
 
     return s;

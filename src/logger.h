@@ -27,6 +27,6 @@ int logger_static_create(tLoggerEnvironment, const char*);
 void logger_static_free();
 
 void logger_static_log(const char*, int, tLoggerLevel, const char*);
-
+char* logger_static_level_to_str(tLoggerLevel);
 
 #endif // !__LOGGER_H__

@@ -34,6 +34,7 @@ via unit tests
   
 **** May add a logger
 :LOGBOOK:
+CLOCK: [2023-09-08 ven. 12:37]--[2023-09-08 ven. 13:20] =>  0:43
 CLOCK: [2023-09-08 ven. 10:59]--[2023-09-08 ven. 11:34] =>  0:35
 CLOCK: [2023-09-08 ven. 09:20]--[2023-09-08 ven. 09:34] =>  0:14
 CLOCK: [2023-09-08 ven. 08:01]--[2023-09-08 ven. 08:40] =>  0:39
@@ -43,11 +44,11 @@ CLOCK: [2023-09-08 ven. 08:01]--[2023-09-08 ven. 08:40] =>  0:39
 - And environment (PROD, TEST)
 - Maybe intro with appname and version
   build date and GCC version
-- [ ] Check for file size to know if log was written in
-- [ ] Log level to str implementation
-- [ ] May be overriden by environment variable
+- [X] Check for file size to know if log was written in
+- [X] Log level to str implementation
 - [ ] Must also implement getter and setter
   Only an environment setter, because for file, it's more complicated
+- [ ] May be overriden by environment variable
 **** TODO Wotk on persistence
 :LOGBOOK:
 CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21
