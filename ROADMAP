@@ -34,6 +34,7 @@ via unit tests
   
 **** May add a logger
 :LOGBOOK:
+CLOCK: [2023-09-08 ven. 10:59]--[2023-09-08 ven. 11:34] =>  0:35
 CLOCK: [2023-09-08 ven. 09:20]--[2023-09-08 ven. 09:34] =>  0:14
 CLOCK: [2023-09-08 ven. 08:01]--[2023-09-08 ven. 08:40] =>  0:39
 :END:
@@ -42,6 +43,8 @@ CLOCK: [2023-09-08 ven. 08:01]--[2023-09-08 ven. 08:40] =>  0:39
 - And environment (PROD, TEST)
 - Maybe intro with appname and version
   build date and GCC version
+- [ ] Check for file size to know if log was written in
+- [ ] Log level to str implementation
 - [ ] May be overriden by environment variable
 - [ ] Must also implement getter and setter
   Only an environment setter, because for file, it's more complicated

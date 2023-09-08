@@ -14,8 +14,19 @@ typedef enum {
   LOGENV_TEST,      //!< We're in test mode, io in terminal is blocked
 } tLoggerEnvironment;
 
-int logger_static_create(tLoggerEnvironment, const char*);
+/** Defines the level of a log message
+  *
+  */
+typedef enum {
+  LL_INFO,
+  LL_WARN,
+  LL_ERR,
+} tLoggerLevel;
 
+int logger_static_create(tLoggerEnvironment, const char*);
 void logger_static_free();
+
+void logger_static_log(const char*, int, tLoggerLevel, const char*);
+
 
 #endif // !__LOGGER_H__
