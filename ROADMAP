@@ -135,7 +135,7 @@ CLOCK: [2023-08-03 jeu. 04:31]--[2023-08-03 jeu. 04:49] =>  0:18
 https://www.enlightenment.org/develop/efl/start
 - [X] Should use cmake
 - [X] We'll need the pcre2 library
-- [ ] Make this project public at github
+- [X] Make this project public at github
 - [ ] Then configure github action to launch unit tests
   The simplest way to run test is =ctest= but it doesn't show the
   unit test output
