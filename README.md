@@ -8,6 +8,10 @@ On `manjaro` and other *Arch*-based linux distributions :
 
 	sudo pamac install efl cmake gcc doxygen check pcre2
 
+On debian-based distributions, such as ubuntu :
+
+	sudo apt-get install libefl-all-dev libcurl4-gnutls-dev check
+
 `check` is only needed if you want to build and run unit tests.
 
 ## Build
