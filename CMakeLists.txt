@@ -15,10 +15,6 @@ configure_file(
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(DEPS REQUIRED elementary libcurl libpcre2-posix)
 
-if(NOT CHCK_FOUND)
-  message(WARNING "Check library not found. Can't enable unit tests")
-endif()
-
 # Find edje_cc and build ui
 #find_program(EDJE_CC_EXECUTABLE NAMES edje_cc REQUIRED)
 
@@ -36,7 +32,10 @@ target_include_directories(escrapper PUBLIC
   ${PROJECT_BINARY_DIR}
 )
 
-if(CHCK_FOUND)
+pkg_check_modules(CHCK check)
+if(NOT CHCK_FOUND)
+  message(WARNING "Check library not found. Can't enable unit tests")
+else()
   add_executable(escrapper-tests ${SRCS}
     tests/config.c
     tests/main.c
