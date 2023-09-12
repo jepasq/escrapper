@@ -6,6 +6,8 @@
 #ifndef __SCRAPPER_H__
 #define __SCRAPPER_H__
 
+#include <stdbool.h>  // USES bool
+
 /** The scrapper configuration and running object
   *
   */
@@ -37,6 +39,8 @@ typedef struct
 } ScrapperResult;
 
 ScrapperResult* scrapper_run(Scrapper*);
+
+bool scrapper_url_is_valid(const char*);
 
 
 #endif // !__SCRAPPER_H__

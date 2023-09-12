@@ -91,3 +91,29 @@ scrapper_run(Scrapper* s)
     }
   return ret;
 }
+
+/** Check if the parameter is a valid URL
+  *
+  * \param url The url to check
+  *
+  */
+bool
+scrapper_url_is_valid(const char* url)
+{
+  if (url == NULL)
+    return false;
+  
+  CURLUcode rc;
+  CURLU* u = curl_url();
+  rc = curl_url_set(u, CURLUPART_URL, url, 0);
+  curl_url_cleanup(u);
+  if (rc != 0)
+    {
+      // See https://curl.se/libcurl/c/libcurl-errors.htmlfor numeric value
+      // meaning
+      printf("Url '%s' is not valid : %d\n", url, rc);
+      return false;
+    }
+  return true;
+}
+
