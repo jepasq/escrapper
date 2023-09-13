@@ -1,3 +1,13 @@
+* v0.0.0-6 (07 Aug. 2023 - 13 Aug. 2023) SLOC 704 UT 14
+- UI prints URL check results
+- Implement scrapper_url_is_valid() function
+- Fix the cmake check handling statement
+- Add back the guthub action as the project is now public
+- Implement logger level to str
+- Starting log_in_file implementation
+- Fix actual logger unit tests
+- Add static logger creation failing tests
+
 * v0.0.0-5 (23 Aug. 2023 - 07 Aug. 2023) SLOC 745 UT 9
 - Fix actual config_get_value unit tests
 - config_get_value takes a Config* argument
