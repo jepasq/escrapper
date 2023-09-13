@@ -98,6 +98,7 @@ And unit test this
   as a $(configdir)/key-name file containing the value
 **** TODO Continue implementation
 :LOGBOOK:
+CLOCK: [2023-09-13 mer. 12:02]--[2023-09-13 mer. 12:21] =>  0:19
 CLOCK: [2023-09-12 mar. 08:53]--[2023-09-12 mar. 09:21] =>  0:28
 CLOCK: [2023-09-04 lun. 11:08]--[2023-09-04 lun. 11:40] =>  0:32
 :END:
@@ -110,12 +111,11 @@ CLOCK: [2023-09-04 lun. 11:08]--[2023-09-04 lun. 11:40] =>  0:32
     or the find dialog
 - [X] Should add a scrap result label below scrap button
   Added, now test it
-
-- [-] Test URL in real time and print it in red if not an URL
+- [X] Test URL in real time and print it in red if not an URL
   Using changed,user callback
   Trying https://curl.se/libcurl/c/curl_url_set.html
   - [X] scrapper_url_is_valid is implemented
-  - [ ] Print scrapper_url_is_valid result  
+  - [X] Print scrapper_url_is_valid result  
   
 - [ ] Make the main window resizable
   

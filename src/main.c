@@ -47,6 +47,9 @@ _signal_cb(void *data, Evas_Object *obj, const char *emission,
 
 /** The scrap button has been clicked
   *
+  * It checks the URL we get from the elm entry using the
+  * scrapper_url_is_valid
+  *
   * \param data     Nor used.
   * \param obj      Not used.
   * \param event    Not used.
@@ -55,19 +58,21 @@ _signal_cb(void *data, Evas_Object *obj, const char *emission,
 static void
 scrap_cb(void *data, Evas_Object *obj, void* event)
 {
-  const char* txt = elm_entry_entry_get(url_entry);
-  printf("Text changed : %s !\n", txt);
+  const char* url = elm_entry_entry_get(url_entry);
+  printf("New URL is : '%s'\n", url);
 
-  elm_object_text_set(status, "Scrap result will pe printed here");
+  char* msg;
   
-  /*  url_entry = evas_object_name_child_find(layout, "scrap-url", 8);
-  url_entry = edje_object_part_object_get(layout, "scrap-url");
-  if (url_entry)
+  if (scrapper_url_is_valid(url))
     {
+      msg = "URL is valid, scrapping...";
+      scrapper_set_url(scrapper, url);
     }
   else
-    printf("Cannot get 'scrap-url' object\n");
-  */
+    {
+      msg = "URL is not valid";
+    }
+  elm_object_text_set(status, msg);
 }
 
 /** The elm/entry input callback
