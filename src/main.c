@@ -9,6 +9,8 @@
 #include "persist.h"
 #include "scrapper.h"
 
+#include "_config.h"
+
 Evas_Object* url_entry; //!< The elementary widget used to enter URL 
 Evas_Object* status;    //!< The status label
 Scrapper* scrapper;     //!< The general static scrapper object
@@ -117,7 +119,13 @@ elm_main(int argc, char **argv)
   //  load_elm_file("main.edj");
 
   // Create UI manually
-  Evas_Object *win = elm_win_util_standard_add("Main", "Hello, World!");
+  char title[50];
+  strcpy(title, PROJECT_NAME);
+  strcat(title, " ");
+  strcat(title, PROJECT_NUMBER);
+  
+  Evas_Object *win = elm_win_util_standard_add("Main", title);
+  //Evas_Object *win = elm_win_add(NULL, "main_window", ELM_WIN_BASIC);
   elm_win_autodel_set(win, EINA_TRUE);
 
 
@@ -160,6 +168,7 @@ elm_main(int argc, char **argv)
   
   //  elm_win_resize_object_add(win, box);
   //  evas_object_show(box);
+  evas_object_resize(win, 800, 600); 
   evas_object_show(win);
 
   elm_run();
