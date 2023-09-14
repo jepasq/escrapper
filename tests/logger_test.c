@@ -2,8 +2,9 @@
 
 #include "src/logger.h"
 
-#include <stdio.h>   // USES fopen(), fclose()
+#include <stdio.h>    // USES fopen(), fclose()
 #include <sys/stat.h> // USES stat()
+#include <stdlib.h>   // USES free()
 
 #define LOG_FILENAME "logfile-test.log"
 

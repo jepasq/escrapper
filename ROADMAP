@@ -98,6 +98,7 @@ And unit test this
   as a $(configdir)/key-name file containing the value
 **** TODO [feature_UiFunction] Continue implementation
 :LOGBOOK:
+CLOCK: [2023-09-14 jeu. 13:03]--[2023-09-14 jeu. 13:09] =>  0:06
 CLOCK: [2023-09-14 jeu. 11:50]--[2023-09-14 jeu. 12:37] =>  0:47
 CLOCK: [2023-09-14 jeu. 11:28]--[2023-09-14 jeu. 11:43] =>  0:15
 CLOCK: [2023-09-13 mer. 12:02]--[2023-09-13 mer. 12:21] =>  0:19
@@ -119,11 +120,13 @@ CLOCK: [2023-09-04 lun. 11:08]--[2023-09-04 lun. 11:40] =>  0:32
   - [X] scrapper_url_is_valid is implemented
   - [X] Print scrapper_url_is_valid result  
   
-- [ ] Make the main window resizable
-  - [ ] Create the ui from another function and move to ui.h/.c
+- [-] Make the main window resizable
+  - [X] Create the ui from another function and move to ui.h/.c
     How to keep static object content ? wia static function ? =ui_get_url= ?
-  - [ ] The callback setup doesn't work
+  - [X] The callback setup doesn't work
     *calling smart object API on non-smart object!*
+  - [ ] May have simpler ui getter and setter (url, status...)
+    We have manu =multiple declaration= errors, mays a macro error
   - [ ] retry to create UI with boxes
   see https://louis-du-verdier.developpez.com/efl/debuter/?page=elementary#LVIII-B
   

@@ -7,8 +7,8 @@
 
 #include "_config.h"  // USES PROJECT_NAME and PROJECT_NUMBER
 
-Evas_Object* url_entry; //!< The elementary widget used to enter URL 
-Evas_Object* status;    //!< The status label
+Evas_Object* url_entry;    //!< The elementary widget used to enter URL 
+Evas_Object* status;       //!< The status label
 Evas_Object* scrap_btn;    //!< The status label
 
 Evas_Object*

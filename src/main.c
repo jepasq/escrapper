@@ -8,6 +8,7 @@
 #include "config.h"
 #include "persist.h"
 #include "scrapper.h"
+#include "ui.h"
 
 Scrapper* scrapper;     //!< The general static scrapper object
 
