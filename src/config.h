@@ -1,6 +1,8 @@
 /** \file config.h
   * The header file of the config and config files-related functions.
   *
+  * Not to be confused with config.h.in that is cmake-processed.
+  *
   */
 
 #ifndef __CONFIG_H__

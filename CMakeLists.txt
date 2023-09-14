@@ -23,6 +23,7 @@ set(SRCS
   src/logger.c
   src/persist.c
   src/scrapper.c
+  src/ui.c
 )
 
 add_executable(escrapper ${SRCS} src/main.c)

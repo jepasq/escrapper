@@ -96,8 +96,9 @@ And unit test this
 
 - [ ] Must handle a key/value work
   as a $(configdir)/key-name file containing the value
-**** TODO Continue implementation
+**** TODO [feature_UiFunction] Continue implementation
 :LOGBOOK:
+CLOCK: [2023-09-14 jeu. 11:50]--[2023-09-14 jeu. 12:37] =>  0:47
 CLOCK: [2023-09-14 jeu. 11:28]--[2023-09-14 jeu. 11:43] =>  0:15
 CLOCK: [2023-09-13 mer. 12:02]--[2023-09-13 mer. 12:21] =>  0:19
 CLOCK: [2023-09-12 mar. 08:53]--[2023-09-12 mar. 09:21] =>  0:28
@@ -119,7 +120,11 @@ CLOCK: [2023-09-04 lun. 11:08]--[2023-09-04 lun. 11:40] =>  0:32
   - [X] Print scrapper_url_is_valid result  
   
 - [ ] Make the main window resizable
-  Maybe create the ui from another function, then retry with boxes
+  - [ ] Create the ui from another function and move to ui.h/.c
+    How to keep static object content ? wia static function ? =ui_get_url= ?
+  - [ ] The callback setup doesn't work
+    *calling smart object API on non-smart object!*
+  - [ ] retry to create UI with boxes
   see https://louis-du-verdier.developpez.com/efl/debuter/?page=elementary#LVIII-B
   
 - [ ] URL is not completely shown : change entry width
