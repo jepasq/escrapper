@@ -23,6 +23,8 @@ typedef enum {
   LL_ERR,
 } tLoggerLevel;
 
+#define LOGI(MSG) logger_static_log(__FILE__, __LINE__, LL_INFO, msg)
+
 int logger_static_create(tLoggerEnvironment, const char*);
 void logger_static_free();
 

@@ -111,8 +111,12 @@ And unit test this
 
 - [ ] May test memory leaks using valgrind
 
-**** TODO Continue implementation
+**** TODO [feature_LogiMacro] Logger may handle vararg values in LOG* macros    
+- [ ] scrapper_url_is_valid function may use logger for output
+
+**** DONE Continue implementation
 :LOGBOOK:
+CLOCK: [2023-09-15 ven. 14:20]--[2023-09-15 ven. 14:39] =>  0:19
 CLOCK: [2023-09-15 ven. 13:22]--[2023-09-15 ven. 13:53] =>  0:31
 CLOCK: [2023-09-14 jeu. 13:03]--[2023-09-14 jeu. 13:09] =>  0:06
 CLOCK: [2023-09-14 jeu. 11:50]--[2023-09-14 jeu. 12:37] =>  0:47
@@ -143,8 +147,6 @@ CLOCK: [2023-09-04 lun. 11:08]--[2023-09-04 lun. 11:40] =>  0:32
   - [X] We have many =multiple declaration= errors, mays a macro error
   - [X] May have simpler ui getter and setter (url, status...)
     Comment widget getter in header and reimplement
-
-- [ ] scrapper_url_is_valid function may use logger for output
 
 **** DONE Correct project setup
 :LOGBOOK:

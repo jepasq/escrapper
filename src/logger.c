@@ -90,7 +90,10 @@ logger_static_log(const char* file, int line,
   char buffer[80];
   char* lvl = logger_static_level_to_str(level);
   sprintf(buffer, "%s:%d %s - %s\n", file, line, "II", message);
-  printf(buffer);
+
+  if (logger->environment == LOGENV_PROD)
+    printf(buffer);
+  
   fprintf(logger->file, buffer);
   fflush(logger->file);
   free(lvl);

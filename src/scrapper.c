@@ -11,6 +11,9 @@
 
 #include <curl/curl.h>
 
+#include "logger.h"   // uses LOGI()
+
+
 /** Create and malloc a new Scrapper struct
   *
   * The scrapper is initialized with empty current_url;
@@ -111,7 +114,9 @@ scrapper_url_is_valid(const char* url)
     {
       // See https://curl.se/libcurl/c/libcurl-errors.htmlfor numeric value
       // meaning
-      printf("Url '%s' is not valid : %d\n", url, rc);
+      char msg[80];
+      sprintf(msg, "Url '%s' is not valid : %d\n", url, rc);
+      LOGI(msg);
       return false;
     }
   return true;

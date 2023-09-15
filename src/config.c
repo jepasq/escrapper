@@ -16,6 +16,8 @@
 #include <stdio.h>     // USES printf()
 #include <errno.h>     // USES errno
 
+#include "logger.h"
+
 /** Create and return a dynamically allocated Config pointer
   *
   * \return The newly allocated struct.
@@ -94,7 +96,9 @@ config_get_value(Config* config, const char* key)
     return  NULL;
 
   char* filen = config_basedir_concat(config, key);
-  printf("Testing key file '%s'\n", filen);
+  char msg[80];
+  sprintf(msg, "Testing key file '%s'\n", filen);
+  LOGI(msg);
 
   char* ctn = config_get_file_content(filen);
   if (ctn == NULL)
@@ -121,15 +125,17 @@ char*
 config_get_file_content(const char* filename)
 {
   char myString[100];
+  char msg[80];
 
   FILE *fptr = fopen(filename, "r");
   if (fptr == NULL)
     {
       if (errno == ENOENT)
-	  printf("File doesn't exist '%s'.\n", filename);
+	sprintf(msg, "File doesn't exist '%s'.\n", filename);
       else
-	  printf("Can't open file '%s' : '%d'\n", filename, errno);
+	sprintf(msg, "Can't open file '%s' : '%d'\n", filename, errno);
 
+      LOGI(msg);
       return NULL;
     }
   // Store the content of the file
@@ -138,8 +144,9 @@ config_get_file_content(const char* filename)
   fgets(myString, 100, fptr);
 
   // Print the file content
-  printf("File '%s' content is '%s'\n", filename, myString);
-
+  sprintf(msg, "File '%s' content is '%s'\n", filename, myString);
+  LOGI(msg);
+  
   // Close the file
   fclose(fptr);
 
