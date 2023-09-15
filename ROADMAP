@@ -112,7 +112,13 @@ And unit test this
 - [ ] May test memory leaks using valgrind
 
 **** TODO [feature_LogiMacro] Logger may handle vararg values in LOG* macros    
+:LOGBOOK:
+CLOCK: [2023-09-15 ven. 14:47]--[2023-09-15 ven. 15:00] =>  0:13
+:END:
 - [ ] scrapper_url_is_valid function may use logger for output
+  - [ ] We now have segfault
+
+- [ ] We have the full path filename in logger, search for the cmake hack
 
 **** DONE Continue implementation
 :LOGBOOK:

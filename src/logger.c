@@ -26,9 +26,9 @@
   */
 struct _Logger
 {
-  tLoggerEnvironment environment;  // The logger's environment
-  char*              filename;     // The filename to log to
-  FILE*              file;         // The opened file handle
+  tLoggerEnvironment environment;  //!< The logger's environment
+  char*              filename;     //!< The filename to log to
+  FILE*              file;         //!< The opened file handle
 }; // No need for a typedef here. It's a private statis struct
 
 // The infamous static logger

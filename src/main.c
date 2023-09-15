@@ -6,6 +6,7 @@
 #include <Elementary.h>
 
 #include "config.h"
+#include "logger.h"  // USES logger_static_create() and logger_static_free()
 #include "persist.h"
 #include "scrapper.h"
 #include "ui.h"
@@ -106,6 +107,8 @@ input_cb(void* data, Evas_Object* obj, void* event)
 EAPI_MAIN int
 elm_main(int argc, char **argv)
 {
+  if (logger_static_create (LOGENV_PROD, "escrapper.log"))
+    printf("Error creating logger!\n");
 
   config_basedir_get();
 
@@ -129,6 +132,7 @@ elm_main(int argc, char **argv)
 
   scrapper_free(scrapper);
   persist_free(pers);
+  logger_static_free();
   
   return 0;
 }
