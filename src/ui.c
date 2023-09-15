@@ -85,3 +85,22 @@ ui_create_win()
   evas_object_resize(win, 800, 600); 
   evas_object_show(win);
 }
+
+
+/** Return the URL from the entry widget
+  *
+  * \return The contry of the entry as a C string
+  *
+  */
+const char*
+ui_get_str_url()
+{
+  return elm_entry_entry_get(ui_get_entry_url());
+}
+
+
+void
+ui_set_str_url(const char* str)
+{
+  elm_object_text_set(ui_get_label_status(), str);
+}

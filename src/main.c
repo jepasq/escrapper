@@ -57,7 +57,7 @@ _signal_cb(void *data, Evas_Object *obj, const char *emission,
 static void
 scrap_cb(void *data, Evas_Object *obj, void* event)
 {
-  const char* url = elm_entry_entry_get(ui_get_entry_url());
+  const char* url = ui_get_str_url();
   printf("New URL is : '%s'\n", url);
 
   char* msg;
@@ -71,7 +71,9 @@ scrap_cb(void *data, Evas_Object *obj, void* event)
     {
       msg = "URL is not valid";
     }
-  elm_object_text_set(ui_get_label_status(), msg);
+  
+  ui_set_str_url(msg);
+  
 }
 
 /** The elm/entry input callback
