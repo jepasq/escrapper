@@ -23,7 +23,12 @@ typedef enum {
   LL_ERR,
 } tLoggerLevel;
 
-#define LOGI(MSG) logger_static_log(__FILE__, __LINE__, LL_INFO, msg)
+/** Please note we don't use the GNU C-defined  __FILE__ macro here because
+  * it contains full path including all parent directories. Instead, we
+  * use an "override" defines at the end of CMakeLists.txt
+  *
+  */
+#define LOGI(MSG) logger_static_log(__FILE_NAME__, __LINE__, LL_INFO, msg)
 
 int logger_static_create(tLoggerEnvironment, const char*);
 void logger_static_free();

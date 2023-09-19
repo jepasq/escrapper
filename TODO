@@ -7,7 +7,8 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-7 (13 Aug. 2023 - ???) SLOC ??? UT ??
-- (7) Fix a memory error due to short logger buffer
+- (8) Fix __FILE__ issue using __FILE_NAME__
+- Fix a memory error due to short logger buffer
 - Both binaries instanciate and free logger
 - scrapper_url_is_valid uses LOG but we have segfault
 - Add needed UI getter and setter
