@@ -52,13 +52,11 @@ START_TEST (test_config_get_value_str_null)
   Config *c = config_create();
   val = config_get_value(c, key);
   ck_assert_ptr_eq(val, NULL);    // This key shouldn't exist
-
   val = config_get_value(c, NULL);
   ck_assert_ptr_eq(val, NULL);    // This key shouldn't exist
 
   val = config_get_value(c, "");
   ck_assert_ptr_eq(val, NULL);    // This key shouldn't exist
-  
   config_free(c);
 }
 END_TEST

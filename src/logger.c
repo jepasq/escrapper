@@ -10,6 +10,13 @@
 #include <stdlib.h>    // USES malloc() and free()
 #include <stdio.h>     // USES fopen(), fclose() etc...
 
+/** The size of the char array used as log message buffer
+  *
+  * If this value is to low, some unit tests may fail.
+  *
+  */
+#define MSGLEN 280
+
 /** The struct that handles all logger-related attributes
   *
   * The logger can log both in a text file and in the terminal. This
@@ -87,7 +94,10 @@ void
 logger_static_log(const char* file, int line,
 		  tLoggerLevel level, const char* message)
 {
-  char buffer[80];
+  if (strlen(message) > MSGLEN - 40)
+    printf("Warning : log message is long and may fail. Please check MSGLEN\n");
+    
+  char buffer[MSGLEN];
   char* lvl = logger_static_level_to_str(level);
   sprintf(buffer, "%s:%d %s - %s\n", file, line, "II", message);
 

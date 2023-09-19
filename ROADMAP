@@ -113,13 +113,15 @@ And unit test this
 
 **** TODO [feature_LogiMacro] Logger may handle vararg values in LOG* macros    
 :LOGBOOK:
+CLOCK: [2023-09-19 mar. 09:57]--[2023-09-19 mar. 10:16] =>  0:19
 CLOCK: [2023-09-15 ven. 14:47]--[2023-09-15 ven. 15:00] =>  0:13
 :END:
-- [ ] scrapper_url_is_valid function may use logger for output
-  - [ ] We now have segfault
+- [X] scrapper_url_is_valid function may use logger for output
+  - [X] We now have segfault
 
 - [ ] We have the full path filename in logger, search for the cmake hack
-
+- [ ] Log messages are printed while running unit tests
+- [ ] In log file, each message has an extra EOL char
 **** DONE Continue implementation
 :LOGBOOK:
 CLOCK: [2023-09-15 ven. 14:20]--[2023-09-15 ven. 14:39] =>  0:19
