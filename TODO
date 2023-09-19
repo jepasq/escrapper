@@ -6,12 +6,5 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     SLOC is the result of `sloc src/ test/`
     UT the number of ./escrapper-tests Checks
 
-* v0.0.0-7 (13 Aug. 2023 - ???) SLOC ??? UT ??
-- (8) Fix __FILE__ issue using __FILE_NAME__
-- Fix a memory error due to short logger buffer
-- Both binaries instanciate and free logger
-- scrapper_url_is_valid uses LOG but we have segfault
-- Add needed UI getter and setter
-- Fix missing ui include
-- Start to move ui creation to a function
-- Print name and version in the title of the main win
+* v0.0.0-8 (19 Sep. 2023 - ???) SLOC ?,??? UT ??
+
