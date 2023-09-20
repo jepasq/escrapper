@@ -23,12 +23,23 @@ typedef enum {
   LL_ERR,
 } tLoggerLevel;
 
+
+#ifdef __FILE_NAME__
+
 /** Please note we don't use the GNU C-defined  __FILE__ macro here because
   * it contains full path including all parent directories. Instead, we
   * use an "override" defines at the end of CMakeLists.txt
   *
   */
-#define LOGI(MSG) logger_static_log(__FILE_NAME__, __LINE__, LL_INFO, msg)
+#  define LOGI(MSG) logger_static_log(__FILE_NAME__, __LINE__, LL_INFO, msg)
+
+#else
+// We don't have __FILE_NAME__ : fallback to FILE (mainly for CI on github
+// actions)
+
+#  define LOGI(MSG) logger_static_log(__FILE__, __LINE__, LL_INFO, msg)
+
+#endif
 
 int logger_static_create(tLoggerEnvironment, const char*);
 void logger_static_free();

@@ -113,6 +113,7 @@ And unit test this
 
 **** TODO Logger may handle vararg values in LOG* macros    
 :LOGBOOK:
+CLOCK: [2023-09-20 mer. 05:13]--[2023-09-20 mer. 05:27] =>  0:14
 CLOCK: [2023-09-19 mar. 10:44]--[2023-09-19 mar. 11:05] =>  0:21
 CLOCK: [2023-09-19 mar. 09:57]--[2023-09-19 mar. 10:16] =>  0:19
 CLOCK: [2023-09-15 ven. 14:47]--[2023-09-15 ven. 15:00] =>  0:13
@@ -122,6 +123,7 @@ CLOCK: [2023-09-15 ven. 14:47]--[2023-09-15 ven. 15:00] =>  0:13
 - [X] We have the full path filename in logger, search for the cmake hack
   
 - [ ] Log messages are printed while running unit tests
+  Maybe we need an =extern static_logger= in logger.h ?
 - [ ] In log file, each message has an extra EOL char
 **** DONE Continue implementation
 :LOGBOOK:
