@@ -38,8 +38,9 @@ struct _Logger
   FILE*              file;         //!< The opened file handle
 }; // No need for a typedef here. It's a private statis struct
 
-// The infamous static logger
-static struct _Logger* logger = NULL;
+// The infamous (not really static) logger
+// More global/extern than static
+struct _Logger* logger = NULL;
   
 /** Create athe unique static logger
   *
@@ -62,9 +63,9 @@ logger_static_create(tLoggerEnvironment env, const char* filename)
 
 
   logger = malloc(sizeof(logger));
-  logger->filename = strdup(filename);
-  logger->file = fopen(filename, "w");
-  
+  logger->environment = env;
+  logger->filename    = strdup(filename);
+  logger->file        = fopen(filename, "w");
   return 0;
 }
 
@@ -99,7 +100,7 @@ logger_static_log(const char* file, int line,
     
   char buffer[MSGLEN];
   char* lvl = logger_static_level_to_str(level);
-  sprintf(buffer, "%s:%d %s - %s\n", file, line, "II", message);
+  sprintf(buffer, "%s:%d %s - %s", file, line, "II", message);
 
   if (logger->environment == LOGENV_PROD)
     printf(buffer);

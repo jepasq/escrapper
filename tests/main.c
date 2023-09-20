@@ -14,8 +14,10 @@
   */
 int main(void)
 {
-  if (logger_static_create (LOGENV_TEST, "escrapper-tests.log"))
-    printf("Error creating logger!\n");
+  // Create logger or print error
+  int lret = logger_static_create(LOGENV_TEST, "escrapper-tests.log");
+  if (lret)
+    printf("Error creating logger : %d!\n", lret);
       
   Suite *s = config_suite();
   SRunner *sr = srunner_create(s);

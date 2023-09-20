@@ -24,6 +24,7 @@ typedef enum {
 } tLoggerLevel;
 
 
+// See https://gcc.gnu.org/onlinedocs/cpp/Common-Predefined-Macros.html
 #ifdef __FILE_NAME__
 
 /** Please note we don't use the GNU C-defined  __FILE__ macro here because
@@ -34,12 +35,13 @@ typedef enum {
 #  define LOGI(MSG) logger_static_log(__FILE_NAME__, __LINE__, LL_INFO, msg)
 
 #else
-// We don't have __FILE_NAME__ : fallback to FILE (mainly for CI on github
-// actions)
-
+// We don't have __FILE_NAME__ : fallback to FILE but it WILL show full path
+// (mainly for CI on github actions)
 #  define LOGI(MSG) logger_static_log(__FILE__, __LINE__, LL_INFO, msg)
 
-#endif
+#endif  /* __FILE_NAME__ */
+
+extern struct _Logger* logger; //!< The global logger defined in impl. file
 
 int logger_static_create(tLoggerEnvironment, const char*);
 void logger_static_free();
