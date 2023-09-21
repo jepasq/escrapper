@@ -99,6 +99,7 @@ And unit test this
   as a $(configdir)/key-name file containing the value
 **** TODO [feature_UiBoxes] Retry to create UI with boxes in ui.h/.c
 :LOGBOOK:
+CLOCK: [2023-09-21 jeu. 13:31]--[2023-09-21 jeu. 13:46] =>  0:15
 CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 :END:
   see https://louis-du-verdier.developpez.com/efl/debuter/?page=elementary#LVIII-B

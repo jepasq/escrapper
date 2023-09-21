@@ -135,20 +135,30 @@ ui_set_str_url(const char* str)
 void
 ui_create_win_box(void)
 {
-Evas_Object *win, *background; 
+  Evas_Object *win, *background; 
 
     win = elm_win_add(NULL, "main_window", ELM_WIN_BASIC);
+    elm_win_autodel_set(win, EINA_TRUE);
+
     elm_win_title_set(win, "escrapper v.....???::");
     elm_win_title_set(win, "Elementary"); 
     //    evas_object_smart_callback_add(win, "delete,request", win_del, NULL); 
 
-    background = elm_bg_add(win); 
+    background = elm_bg_add(win);
+
+    // Background
     evas_object_size_hint_min_set(background, 200, 100); 
     evas_object_size_hint_weight_set(background, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND); 
     elm_win_resize_object_add(win, background); 
     evas_object_show(background); 
+    
+    // Parent box
+    Evas_Object* box = elm_box_add(background);
+    Evas_Object* btn = elm_button_add(box);
+    evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND); 
+    elm_object_text_set(btn, "Scrap");
+    elm_box_pack_end(box, btn);
 
     evas_object_show(win); 
-
 }
 
