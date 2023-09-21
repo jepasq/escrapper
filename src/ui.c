@@ -11,18 +11,36 @@ Evas_Object* url_entry;    //!< The elementary widget used to enter URL
 Evas_Object* status;       //!< The status label
 Evas_Object* scrap_btn;    //!< The status label
 
+
+/** Get the entry that should contain the user entered URL
+  *
+  * \return The evas object entry.
+  *
+  */
 Evas_Object*
 ui_get_entry_url()
 {
   return url_entry;
 }
 
+/** Get the Scrap button
+  *
+  * Mainly used to setup callback.
+  *
+  * \return The object you must click to start scrapping.
+  *
+  */
 Evas_Object*
 ui_get_button_scrap()
 {
   return scrap_btn;
 }
 
+/** Get the status label object
+  *
+  * \return The object, not the text it contains.
+  *
+  */
 Evas_Object*
 ui_get_label_status(void)
 {
@@ -99,6 +117,11 @@ ui_get_str_url()
 }
 
 
+/** Set the content text of the status label
+  *
+  * \param str The new status.
+  *
+  */
 void
 ui_set_str_url(const char* str)
 {

@@ -1,5 +1,5 @@
 /** \file ui.h
-  * The header file that conatins UI-related functions.
+  * The header file that contains UI-related functions.
   *
   */
 
