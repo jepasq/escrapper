@@ -8,7 +8,8 @@
 
 #include <Elementary.h>
 
-Evas_Object* ui_create_win(void);
+void ui_create_win(void);
+void ui_create_win_box(void);
 
 Evas_Object* ui_get_entry_url(void);
 Evas_Object* ui_get_button_scrap(void);

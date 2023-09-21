@@ -97,12 +97,18 @@ And unit test this
 
 - [ ] Must handle a key/value work
   as a $(configdir)/key-name file containing the value
-**** [feature_UiBoxes ?] Retry to create UI with boxes in ui.h/.c
+**** TODO [feature_UiBoxes] Retry to create UI with boxes in ui.h/.c
+:LOGBOOK:
+CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
+:END:
   see https://louis-du-verdier.developpez.com/efl/debuter/?page=elementary#LVIII-B
 
+- [ ] May try with a box layout
+  - [ ] First build with new function
+  
 - [ ] URL is not completely shown : change entry width
   May try the wrap attribute
-
+  
 - [ ] Scrapper shouldn't scrap an empty URL : unit test
 
 - [ ] Maybe create main UI with a conformant ?

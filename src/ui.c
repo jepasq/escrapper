@@ -52,10 +52,8 @@ ui_get_label_status(void)
   *
   * Once the UI is created, you must call elm_run().
   *
-  * \return The window object
-  *
   */
-Evas_Object*
+void
 ui_create_win()
 {
   // Create UI manually
@@ -127,3 +125,30 @@ ui_set_str_url(const char* str)
 {
   elm_object_text_set(ui_get_label_status(), str);
 }
+
+
+/** Create and return elm window (box-based version)
+  *
+  * Mainly tested to fix a bug where the URL entry isn't large enough.
+  *
+  */
+void
+ui_create_win_box(void)
+{
+Evas_Object *win, *background; 
+
+    win = elm_win_add(NULL, "main_window", ELM_WIN_BASIC);
+    elm_win_title_set(win, "escrapper v.....???::");
+    elm_win_title_set(win, "Elementary"); 
+    //    evas_object_smart_callback_add(win, "delete,request", win_del, NULL); 
+
+    background = elm_bg_add(win); 
+    evas_object_size_hint_min_set(background, 200, 100); 
+    evas_object_size_hint_weight_set(background, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND); 
+    elm_win_resize_object_add(win, background); 
+    evas_object_show(background); 
+
+    evas_object_show(win); 
+
+}
+

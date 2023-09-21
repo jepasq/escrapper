@@ -7,7 +7,8 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-8 (19 Sep. 2023 - ???) SLOC ?,??? UT ??
-- (4) Improve ui-related functions documentation
+- (5) Remove window creation function return value
+- Improve ui-related functions documentation
 - Add a missing EOL char in logger unit tests
 - Fix logger's environment affectation bug
 - Fix logger build issue if __FILE__NAME__ is undefined

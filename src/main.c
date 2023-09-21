@@ -117,14 +117,14 @@ elm_main(int argc, char **argv)
   elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
 
   Persist* pers = persist_create();
-  Evas_Object *win = ui_create_win();
+  ui_create_win_box(); //ui_create_win();
 
   // Callbacks setup
-  evas_object_smart_callback_add(ui_get_entry_url(),
+  /*  evas_object_smart_callback_add(ui_get_entry_url(),
 				 "changed,user", input_cb, NULL);
   evas_object_smart_callback_add(ui_get_button_scrap(),
 				 "clicked", scrap_cb, NULL);
-  
+  */
   //  elm_win_resize_object_add(win, box);
   //  evas_object_show(box);
 
