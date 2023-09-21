@@ -73,7 +73,7 @@ START_TEST (test_logger_log_in_file)
   size1 = get_file_size(LOG_FILENAME);
 
   // For instance, use it directly, after implementation, we'll use macros
-  logger_static_log("here.c", 123, LL_INFO, "Message to be printed!!!");
+  logger_static_log("here.c", 123, LL_INFO, "Message to be printed!!!\n");
   
   size2 = get_file_size(LOG_FILENAME);
   ck_assert_int_ne(size1, size2);

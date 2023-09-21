@@ -85,6 +85,9 @@ logger_static_free()
   * This function can be use directly but will be used by macros to
   * feed two or three first arguments later.
   *
+  * Please note that the message should contain the EOL character ("\n"). It
+  * wwon't be automatically added.
+  *
   * \param file    The file the message come from.
   * \param line    The line the message come from.
   * \param level   The message level.

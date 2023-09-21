@@ -113,6 +113,7 @@ And unit test this
 
 **** TODO Logger may handle vararg values in LOG* macros    
 :LOGBOOK:
+CLOCK: [2023-09-21 jeu. 11:02]--[2023-09-21 jeu. 11:18] =>  0:16
 CLOCK: [2023-09-20 mer. 07:07]--[2023-09-20 mer. 07:19] =>  0:12
 CLOCK: [2023-09-20 mer. 05:13]--[2023-09-20 mer. 05:27] =>  0:14
 CLOCK: [2023-09-19 mar. 10:44]--[2023-09-19 mar. 11:05] =>  0:21
@@ -126,6 +127,7 @@ CLOCK: [2023-09-15 ven. 14:47]--[2023-09-15 ven. 15:00] =>  0:13
 - [X] Log messages are printed while running unit tests
   Maybe we need an =extern static_logger= in logger.h ?
   Fixed. Was an affectation issue in "c'tor"
+- [X] A EOL char is missing in unit tests
   
 - [ ] Work on the vararg thing  
 **** DONE Continue implementation
