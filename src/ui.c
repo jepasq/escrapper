@@ -168,9 +168,9 @@ ui_create_win_box(void)
 
     elm_box_horizontal_set(box2, EINA_TRUE);
     Evas_Object* url = elm_entry_add(win);
-    evas_object_size_hint_weight_set(url, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+    evas_object_size_hint_weight_set(box2, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
     evas_object_show(url);
-    elm_box_pack_end(url, url);
+    elm_box_pack_end(box2, url);
     
     Evas_Object* btn = elm_button_add(win);
     elm_object_text_set(btn, "Scrap");
@@ -180,6 +180,6 @@ ui_create_win_box(void)
     elm_box_pack_end(box, box2);
     evas_object_show(box);
     
-    evas_object_show(win); 
+    evas_object_show(win);
 }
 

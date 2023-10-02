@@ -7,7 +7,8 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-8 (19 Sep. 2023 - ???) SLOC ?,??? UT ??
-- (7) Add horizontal box and real app title to ui_box
+- (8) Fix the URL entry parenting in UI box function
+- Add horizontal box and real app title to ui_box
 - Add a box to UI
 - Remove window creation function return value
 - Improve ui-related functions documentation
