@@ -49,7 +49,7 @@ CLOCK: [2023-09-08 ven. 08:01]--[2023-09-08 ven. 08:40] =>  0:39
 - [ ] Must also implement getter and setter
   Only an environment setter, because for file, it's more complicated
 - [ ] May be overriden by environment variable
-**** TODO Wotk on persistence
+**** TODO Work on persistence
 :LOGBOOK:
 CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21
 :END:
@@ -99,6 +99,7 @@ And unit test this
   as a $(configdir)/key-name file containing the value
 **** TODO [feature_UiBoxes] Retry to create UI with boxes in ui.h/.c
 :LOGBOOK:
+CLOCK: [2023-10-02 lun. 12:59]--[2023-10-02 lun. 13:16] =>  0:17
 CLOCK: [2023-10-02 lun. 12:32]--[2023-10-02 lun. 12:48] =>  0:16
 CLOCK: [2023-09-22 ven. 04:58]--[2023-09-22 ven. 05:10] =>  0:12
 CLOCK: [2023-09-21 jeu. 13:31]--[2023-09-21 jeu. 13:46] =>  0:15
@@ -108,7 +109,8 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 - [ ] May try with a box layout
   - [ ] First build with new function
-    https://docs.enlightenment.org/elementary/1.15.0/box_example_01.html  
+    Can't find how to resize URL entry to the window
+    https://docs.enlightenment.org/elementary/1.15.0/box_example_01.html
 - [ ] URL is not completely shown : change entry width
   May try the wrap attribute
   

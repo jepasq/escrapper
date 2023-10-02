@@ -139,15 +139,13 @@ ui_create_win_box(void)
 
     win = elm_win_add(NULL, "main_window", ELM_WIN_BASIC);
     elm_win_autodel_set(win, EINA_TRUE);
-    evas_object_size_hint_min_set(win, 200, 100); 
+    evas_object_size_hint_min_set(win, 600, 400); 
 
     char title[50];
     strcpy(title, PROJECT_NAME);
     strcat(title, " ");
     strcat(title, PROJECT_NUMBER);
-    
     elm_win_title_set(win, title);
-    elm_win_title_set(win, "Elementary");
     
     //    evas_object_smart_callback_add(win, "delete,request", win_del, NULL); 
 
@@ -156,7 +154,7 @@ ui_create_win_box(void)
     // Background
     /*
     evas_object_size_hint_weight_set(background, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND); 
-    elm_win_resize_object_add(win, background); 
+    //    elm_win_resize_object_add(win, background); 
     evas_object_show(background); 
     */
     
@@ -164,14 +162,17 @@ ui_create_win_box(void)
     Evas_Object* box = elm_box_add(win);
 
     Evas_Object* box2 = elm_box_add(win);
+    //elm_bg_color_set(box2, 125, 250, 250);
     evas_object_show(box2);
 
     elm_box_horizontal_set(box2, EINA_TRUE);
     Evas_Object* url = elm_entry_add(win);
-    evas_object_size_hint_weight_set(box2, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+    evas_object_size_hint_weight_set(url, EVAS_HINT_EXPAND, 0.0);
+    elm_bg_color_set(url, 250, 127, 250);
     evas_object_show(url);
     elm_box_pack_end(box2, url);
-    
+
+    // Scrap button
     Evas_Object* btn = elm_button_add(win);
     elm_object_text_set(btn, "Scrap");
     elm_box_pack_end(box2, btn);
