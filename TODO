@@ -6,12 +6,5 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     SLOC is the result of `sloc src/ test/`
     UT the number of ./escrapper-tests Checks
 
-* v0.0.0-8 (19 Sep. 2023 - ???) SLOC ?,??? UT ??
-- (8) Fix the URL entry parenting in UI box function
-- Add horizontal box and real app title to ui_box
-- Add a box to UI
-- Remove window creation function return value
-- Improve ui-related functions documentation
-- Add a missing EOL char in logger unit tests
-- Fix logger's environment affectation bug
-- Fix logger build issue if __FILE__NAME__ is undefined
+* v0.0.0-9 (02 Oct. 2023 - ???) SLOC ?,??? UT ??
+

@@ -1,3 +1,13 @@
+* v0.0.0-8 (19 Sep. 2023 - 02 Oct. 2023) SLOC 1,340 UT 14
+- Fix the URL entry parenting in UI box function
+- Add horizontal box and real app title to ui_box
+- Add a box to UI
+- Remove window creation function return value
+- Improve ui-related functions documentation
+- Add a missing EOL char in logger unit tests
+- Fix logger's environment affectation bug
+- Fix logger build issue if __FILE__NAME__ is undefined
+
 * v0.0.0-7 (13 Aug. 2023 - 19 Sep. 2023) SLOC 1,241 UT 14
 - Fix __FILE__ issue using __FILE_NAME__
 - Fix a memory error due to short logger buffer
