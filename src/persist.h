@@ -14,7 +14,7 @@ typedef struct {
 } Persist;
 
 Persist* persist_create();
-void     persist_free();
+void     persist_free(Persist*);
 
 
 #endif // __PERSIST_H__

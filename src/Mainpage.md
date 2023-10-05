@@ -1,6 +1,7 @@
 # escrapper
 
-An EFL-based  web scrapper, indexer and offline viewer.
+An [EFL](https://en.wikipedia.org/wiki/Enlightenment_Foundation_Libraries)-based
+web scrapper, indexer and offline viewer.
 
 # Starting
 

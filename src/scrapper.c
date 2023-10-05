@@ -99,6 +99,9 @@ scrapper_run(Scrapper* s)
   *
   * \param url The url to check
   *
+  * \return Return true if the URL is valid according to liburl's
+  *         curl_url_set() function, instead, or if URL is NULL, return false.
+  *
   */
 bool
 scrapper_url_is_valid(const char* url)
