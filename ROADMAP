@@ -116,8 +116,9 @@ CLOCK: [2023-09-15 ven. 14:47]--[2023-09-15 ven. 15:00] =>  0:13
 - [X] A EOL char is missing in unit tests
   
 - [ ] Work on the vararg thing  
-**** TODO [feature_UiBoxes] Retry to create UI with boxes in ui.h/.c
+**** TODO Retry to create UI with boxes in ui.h/.c
 :LOGBOOK:
+CLOCK: [2023-10-05 jeu. 14:12]--[2023-10-05 jeu. 14:21] =>  0:09
 CLOCK: [2023-10-05 jeu. 13:54]--[2023-10-05 jeu. 14:01] =>  0:07
 CLOCK: [2023-10-02 lun. 12:59]--[2023-10-02 lun. 13:16] =>  0:17
 CLOCK: [2023-10-02 lun. 12:32]--[2023-10-02 lun. 12:48] =>  0:16
@@ -127,10 +128,14 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 :END:
   see https://louis-du-verdier.developpez.com/efl/debuter/?page=elementary#LVIII-B
 
-- [ ] May try with a box layout
-  - [ ] First build with new function
+- [X] May try with a box layout
+  - [X] First build with new function
     Can't find how to resize URL entry to the window
     https://docs.enlightenment.org/elementary/1.15.0/box_example_01.html
+  - [X] Make the switch possible with a macro
+- [ ] continue box layout version
+  - [ ] event handling
+        
 - [ ] URL is not completely shown : change entry width
   May try the wrap attribute
   

@@ -117,8 +117,15 @@ elm_main(int argc, char **argv)
   elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
 
   Persist* pers = persist_create();
-  ui_create_win_box(); //ui_create_win();
 
+  char* ui = 
+#if UI_USE_BOX > 0
+  ui_create_win_box();
+#else
+  ui_create_win();
+#endif
+  printf("Using '%s' UI version\n", ui);
+  
   // Callbacks setup
   /*  evas_object_smart_callback_add(ui_get_entry_url(),
 				 "changed,user", input_cb, NULL);

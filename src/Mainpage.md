@@ -15,6 +15,14 @@ in a *log file*.
 
 You can also read the file list to know more about the project organisation.
 
+# UI switch
+
+In ui.h is defined a special macro used to chose the UI version between
+*box* and *table*. If you define `UI_USE_BOX` with a value greater than 0,
+you will use **box** version :
+
+	#define UI_USE_BOX 1
+
 # License
 
 `escrapper` is licensed under GPLv3 license.

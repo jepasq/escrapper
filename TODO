@@ -7,5 +7,6 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-9 (02 Oct. 2023 - ???) SLOC ?,??? UT ??
-- (2) Add icon and statis label to UI box version
+- (3) Implement a macro-based compile time UI switcher
+- Add icon and statis label to UI box version
 - Correctly set box-version window's title

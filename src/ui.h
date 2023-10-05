@@ -8,8 +8,11 @@
 
 #include <Elementary.h>
 
-void ui_create_win(void);
-void ui_create_win_box(void);
+/// If not 0, will use a box layout instead of a table
+#define UI_USE_BOX 1
+
+char* ui_create_win(void);
+char* ui_create_win_box(void);
 
 Evas_Object* ui_get_entry_url(void);
 Evas_Object* ui_get_button_scrap(void);

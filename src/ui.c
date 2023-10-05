@@ -52,8 +52,10 @@ ui_get_label_status(void)
   *
   * Once the UI is created, you must call elm_run().
   *
+  * \return the ui version string
+  *
   */
-void
+char*
 ui_create_win()
 {
   // Create UI manually
@@ -100,6 +102,8 @@ ui_create_win()
 
   evas_object_resize(win, 800, 600); 
   evas_object_show(win);
+
+  return "table";
 }
 
 
@@ -131,8 +135,10 @@ ui_set_str_url(const char* str)
   *
   * Mainly tested to fix a bug where the URL entry isn't large enough.
   *
+  * \return the ui version string
+  *
   */
-void
+char*
 ui_create_win_box(void)
 {
     Evas_Object *win, *background; 
@@ -191,5 +197,6 @@ ui_create_win_box(void)
     elm_box_pack_end(box, status);
     
     evas_object_show(win);
+    return "box";
 }
 
