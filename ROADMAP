@@ -97,8 +97,28 @@ And unit test this
 
 - [ ] Must handle a key/value work
   as a $(configdir)/key-name file containing the value
+**** TODO Logger may handle vararg values in LOG* macros    
+:LOGBOOK:
+CLOCK: [2023-09-21 jeu. 11:02]--[2023-09-21 jeu. 11:18] =>  0:16
+CLOCK: [2023-09-20 mer. 07:07]--[2023-09-20 mer. 07:19] =>  0:12
+CLOCK: [2023-09-20 mer. 05:13]--[2023-09-20 mer. 05:27] =>  0:14
+CLOCK: [2023-09-19 mar. 10:44]--[2023-09-19 mar. 11:05] =>  0:21
+CLOCK: [2023-09-19 mar. 09:57]--[2023-09-19 mar. 10:16] =>  0:19
+CLOCK: [2023-09-15 ven. 14:47]--[2023-09-15 ven. 15:00] =>  0:13
+:END:
+- [X] scrapper_url_is_valid function may use logger for output
+  - [X] We now have segfault
+- [X] We have the full path filename in logger, search for the cmake hack
+- [X] In log file, each message has an extra EOL char
+- [X] Log messages are printed while running unit tests
+  Maybe we need an =extern static_logger= in logger.h ?
+  Fixed. Was an affectation issue in "c'tor"
+- [X] A EOL char is missing in unit tests
+  
+- [ ] Work on the vararg thing  
 **** TODO [feature_UiBoxes] Retry to create UI with boxes in ui.h/.c
 :LOGBOOK:
+CLOCK: [2023-10-05 jeu. 13:54]--[2023-10-05 jeu. 14:01] =>  0:07
 CLOCK: [2023-10-02 lun. 12:59]--[2023-10-02 lun. 13:16] =>  0:17
 CLOCK: [2023-10-02 lun. 12:32]--[2023-10-02 lun. 12:48] =>  0:16
 CLOCK: [2023-09-22 ven. 04:58]--[2023-09-22 ven. 05:10] =>  0:12
@@ -123,25 +143,6 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 - [ ] May test memory leaks using valgrind
 
-**** TODO Logger may handle vararg values in LOG* macros    
-:LOGBOOK:
-CLOCK: [2023-09-21 jeu. 11:02]--[2023-09-21 jeu. 11:18] =>  0:16
-CLOCK: [2023-09-20 mer. 07:07]--[2023-09-20 mer. 07:19] =>  0:12
-CLOCK: [2023-09-20 mer. 05:13]--[2023-09-20 mer. 05:27] =>  0:14
-CLOCK: [2023-09-19 mar. 10:44]--[2023-09-19 mar. 11:05] =>  0:21
-CLOCK: [2023-09-19 mar. 09:57]--[2023-09-19 mar. 10:16] =>  0:19
-CLOCK: [2023-09-15 ven. 14:47]--[2023-09-15 ven. 15:00] =>  0:13
-:END:
-- [X] scrapper_url_is_valid function may use logger for output
-  - [X] We now have segfault
-- [X] We have the full path filename in logger, search for the cmake hack
-- [X] In log file, each message has an extra EOL char
-- [X] Log messages are printed while running unit tests
-  Maybe we need an =extern static_logger= in logger.h ?
-  Fixed. Was an affectation issue in "c'tor"
-- [X] A EOL char is missing in unit tests
-  
-- [ ] Work on the vararg thing  
 **** DONE Continue implementation
 :LOGBOOK:
 CLOCK: [2023-09-15 ven. 14:20]--[2023-09-15 ven. 14:39] =>  0:19

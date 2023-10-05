@@ -173,13 +173,22 @@ ui_create_win_box(void)
     elm_box_pack_end(box2, url);
 
     // Scrap button
-    Evas_Object* btn = elm_button_add(win);
-    elm_object_text_set(btn, "Scrap");
-    elm_box_pack_end(box2, btn);
-    evas_object_show(btn);
+    scrap_btn = elm_button_add(win);
+    elm_object_text_set(scrap_btn, "Scrap");
+    elm_box_pack_end(box2, scrap_btn);
+    evas_object_show(scrap_btn);
+
+    Evas_Object* icon = elm_icon_add(win);
+    elm_icon_standard_set(icon, "edit-find");  // go-next is also good
+    elm_object_part_content_set(scrap_btn, "icon", icon);
 
     elm_box_pack_end(box, box2);
     evas_object_show(box);
+
+    // Status label
+    status = elm_label_add(win);
+    evas_object_show(status);
+    elm_box_pack_end(box, status);
     
     evas_object_show(win);
 }
