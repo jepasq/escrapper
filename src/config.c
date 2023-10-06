@@ -104,11 +104,11 @@ config_get_value(Config* config, const char* key)
   if (ctn == NULL)
     return NULL;
 
-
+  char* ret = strdup(ctn);
   free(ctn);
   // USe config_get_file_content here
   
-  return "value";
+  return ret;
 }
 
 /** Return the content of the given file or NULL if not found

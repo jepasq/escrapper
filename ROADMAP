@@ -32,31 +32,6 @@ via unit tests
 - [ ] May return a scrapper_result struct with
   {HTTP status, title and markdown text}
   
-**** May add a logger
-:LOGBOOK:
-CLOCK: [2023-09-08 ven. 12:37]--[2023-09-08 ven. 13:20] =>  0:43
-CLOCK: [2023-09-08 ven. 10:59]--[2023-09-08 ven. 11:34] =>  0:35
-CLOCK: [2023-09-08 ven. 09:20]--[2023-09-08 ven. 09:34] =>  0:14
-CLOCK: [2023-09-08 ven. 08:01]--[2023-09-08 ven. 08:40] =>  0:39
-:END:
-- Handle log level (WARN INFO ERRO)
-- Log file name
-- And environment (PROD, TEST)
-- Maybe intro with appname and version
-  build date and GCC version
-- [X] Check for file size to know if log was written in
-- [X] Log level to str implementation
-- [ ] Must also implement getter and setter
-  Only an environment setter, because for file, it's more complicated
-- [ ] May be overriden by environment variable
-**** TODO Work on persistence
-:LOGBOOK:
-CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21
-:END:
-- persistence maybe through mongodb ? in persist.h/c
-  Save full HTML or only AST representation
-
-- [ ] Must be able to retrieve mongo URI, user and password
 **** Work on doxygen API documentation
 :LOGBOOK:
 CLOCK: [2023-09-21 jeu. 11:45]--[2023-09-21 jeu. 12:36] =>  0:51
@@ -64,39 +39,6 @@ CLOCK: [2023-09-07 jeu. 07:30]--[2023-09-07 jeu. 07:58] =>  0:28
 CLOCK: [2023-09-05 mar. 07:28]--[2023-09-05 mar. 07:47] =>  0:19
 :END:
 - [ ] Must add \file block for each header and implementation
-**** TODO Add a config struct
-:LOGBOOK:
-CLOCK: [2023-09-07 jeu. 06:02]--[2023-09-07 jeu. 06:11] =>  0:09
-CLOCK: [2023-09-05 mar. 08:30]--[2023-09-05 mar. 09:10] =>  0:40
-CLOCK: [2023-09-05 mar. 07:13]--[2023-09-05 mar. 07:21] =>  0:08
-CLOCK: [2023-09-05 mar. 06:21]--[2023-09-05 mar. 06:45] =>  0:24
-CLOCK: [2023-08-21 lun. 04:06]--[2023-08-21 lun. 04:16] =>  0:10
-CLOCK: [2023-08-18 ven. 05:53]--[2023-08-18 ven. 06:01] =>  0:08
-CLOCK: [2023-08-18 ven. 05:10]--[2023-08-18 ven. 05:16] =>  0:06
-CLOCK: [2023-08-17 jeu. 08:31]--[2023-08-17 jeu. 08:41] =>  0:10
-CLOCK: [2023-08-17 jeu. 07:58]--[2023-08-17 jeu. 08:20] =>  0:22
-CLOCK: [2023-08-14 lun. 05:32]--[2023-08-14 lun. 05:54] =>  0:22
-CLOCK: [2023-08-14 lun. 05:04]--[2023-08-14 lun. 05:18] =>  0:14
-CLOCK: [2023-08-14 lun. 02:47]--[2023-08-14 lun. 03:13] =>  0:26
-:END:
-And unit test this
-
-- [X] Must fix ctor return value
-- [X] Must have a basedir directory that return $HOME/.scrapper
-- [X] How to deal with a generated 'config.h' from config.h.in file
-  as we already have src/.h/c for the struct
-  Maybe a underscore _config.h ? OK
-- [X] basedir is part of the config struct
-- [X] basedir_concat(filename) to get the name of the given file
-  How to link this basedir with the Config struct ?
-- [X] We now should be able to retrieve a filename in app's config dir
-  To be able to unit test this, should have a final filename as param
-  and add a tests/keys files to unit tests content
-  - [X] Should also check with a null string as key
-  - [X] Should take a Config*  param for basedir
-
-- [ ] Must handle a key/value work
-  as a $(configdir)/key-name file containing the value
 **** TODO Logger may handle vararg values in LOG* macros    
 :LOGBOOK:
 CLOCK: [2023-09-21 jeu. 11:02]--[2023-09-21 jeu. 11:18] =>  0:16
@@ -115,6 +57,9 @@ CLOCK: [2023-09-15 ven. 14:47]--[2023-09-15 ven. 15:00] =>  0:13
   Fixed. Was an affectation issue in "c'tor"
 - [X] A EOL char is missing in unit tests
   
+- [ ] Must also implement getter and setter
+  Only an environment setter, because for file, it's more complicated
+- [ ] May be overriden by environment variable
 - [ ] Work on the vararg thing  
 **** TODO Retry to create UI with boxes in ui.h/.c
 :LOGBOOK:
@@ -152,6 +97,63 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 - [ ] May test memory leaks using valgrind
 
+**** TODO Work on persistence
+:LOGBOOK:
+CLOCK: [2023-10-06 ven. 08:15]--[2023-10-06 ven. 08:42] =>  0:27
+CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21
+:END:
+- persistence maybe through mongodb ? in persist.h/c
+  Save full HTML or only AST representation
+
+- [ ] Must be able to retrieve mongo URI, user and password
+  And issue an error if can't find one of these values
+  - [ ] The key seems to be added twice, test that
+**** DONE Add a config struct
+:LOGBOOK:
+CLOCK: [2023-09-07 jeu. 06:02]--[2023-09-07 jeu. 06:11] =>  0:09
+CLOCK: [2023-09-05 mar. 08:30]--[2023-09-05 mar. 09:10] =>  0:40
+CLOCK: [2023-09-05 mar. 07:13]--[2023-09-05 mar. 07:21] =>  0:08
+CLOCK: [2023-09-05 mar. 06:21]--[2023-09-05 mar. 06:45] =>  0:24
+CLOCK: [2023-08-21 lun. 04:06]--[2023-08-21 lun. 04:16] =>  0:10
+CLOCK: [2023-08-18 ven. 05:53]--[2023-08-18 ven. 06:01] =>  0:08
+CLOCK: [2023-08-18 ven. 05:10]--[2023-08-18 ven. 05:16] =>  0:06
+CLOCK: [2023-08-17 jeu. 08:31]--[2023-08-17 jeu. 08:41] =>  0:10
+CLOCK: [2023-08-17 jeu. 07:58]--[2023-08-17 jeu. 08:20] =>  0:22
+CLOCK: [2023-08-14 lun. 05:32]--[2023-08-14 lun. 05:54] =>  0:22
+CLOCK: [2023-08-14 lun. 05:04]--[2023-08-14 lun. 05:18] =>  0:14
+CLOCK: [2023-08-14 lun. 02:47]--[2023-08-14 lun. 03:13] =>  0:26
+:END:
+And unit test this
+
+- [X] Must fix ctor return value
+- [X] Must have a basedir directory that return $HOME/.scrapper
+- [X] How to deal with a generated 'config.h' from config.h.in file
+  as we already have src/.h/c for the struct
+  Maybe a underscore _config.h ? OK
+- [X] basedir is part of the config struct
+- [X] basedir_concat(filename) to get the name of the given file
+  How to link this basedir with the Config struct ?
+- [X] We now should be able to retrieve a filename in app's config dir
+  To be able to unit test this, should have a final filename as param
+  and add a tests/keys files to unit tests content
+  - [X] Should also check with a null string as key
+  - [X] Should take a Config*  param for basedir
+- [X] Must handle a key/value work
+  as a $(configdir)/key-name file containing the value
+**** DONE May add a logger
+:LOGBOOK:
+CLOCK: [2023-09-08 ven. 12:37]--[2023-09-08 ven. 13:20] =>  0:43
+CLOCK: [2023-09-08 ven. 10:59]--[2023-09-08 ven. 11:34] =>  0:35
+CLOCK: [2023-09-08 ven. 09:20]--[2023-09-08 ven. 09:34] =>  0:14
+CLOCK: [2023-09-08 ven. 08:01]--[2023-09-08 ven. 08:40] =>  0:39
+:END:
+- Handle log level (WARN INFO ERRO)
+- Log file name
+- And environment (PROD, TEST)
+- Maybe intro with appname and version
+  build date and GCC version
+- [X] Check for file size to know if log was written in
+- [X] Log level to str implementation
 **** DONE Continue implementation
 :LOGBOOK:
 CLOCK: [2023-09-15 ven. 14:20]--[2023-09-15 ven. 14:39] =>  0:19

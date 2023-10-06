@@ -33,11 +33,13 @@ typedef enum {
   *
   */
 #  define LOGI(MSG) logger_static_log(__FILE_NAME__, __LINE__, LL_INFO, msg)
+#  define LOGE(MSG) logger_static_log(__FILE_NAME__, __LINE__, LL_ERR, msg)
 
 #else
 // We don't have __FILE_NAME__ : fallback to FILE but it WILL show full path
 // (mainly for CI on github actions)
 #  define LOGI(MSG) logger_static_log(__FILE__, __LINE__, LL_INFO, msg)
+#  define LOGE(MSG) logger_static_log(__FILE__, __LINE__, LL_ERR, msg)
 
 #endif  /* __FILE_NAME__ */
 
