@@ -125,7 +125,7 @@ ui_get_str_url()
   *
   */
 void
-ui_set_str_url(const char* str)
+ui_set_str_status(const char* str)
 {
   elm_object_text_set(ui_get_label_status(), str);
 }

@@ -65,15 +65,17 @@ scrap_cb(void *data, Evas_Object *obj, void* event)
   
   if (scrapper_url_is_valid(url))
     {
-      msg = "URL is valid, scrapping...";
+      ui_set_str_status("URL is valid, scrapping...");
       scrapper_set_url(scrapper, url);
+      ScrapperResult* res = scrapper_run(scrapper);
+      msg = "URL visited. content added to DB.";
     }
   else
     {
       msg = "URL is not valid";
     }
   
-  ui_set_str_url(msg);
+  ui_set_str_status(msg);
   
 }
 
@@ -127,11 +129,11 @@ elm_main(int argc, char **argv)
   printf("Using '%s' UI version\n", ui);
   
   // Callbacks setup
-  /*  evas_object_smart_callback_add(ui_get_entry_url(),
-				 "changed,user", input_cb, NULL);
+  /*evas_object_smart_callback_add(ui_get_entry_url(),
+    "changed,user", input_cb, NULL);*/
   evas_object_smart_callback_add(ui_get_button_scrap(),
 				 "clicked", scrap_cb, NULL);
-  */
+  
   //  elm_win_resize_object_add(win, box);
   //  evas_object_show(box);
 
