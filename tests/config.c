@@ -6,7 +6,7 @@
 /** The text the basedir must contain */
 char* must_contain = ".escrapper";
 
-
+/// Test the config struct can be instantiated
 START_TEST (test_config_create)
 {
   Config *c = config_create();

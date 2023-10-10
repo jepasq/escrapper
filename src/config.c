@@ -44,6 +44,8 @@ config_free(Config* c)
 
 /** Get the base directory of all config files
   *
+  * \return The concatenated result of $HOME and PROJECT_NAME.
+  *
   */
 char*
 config_basedir_get()
