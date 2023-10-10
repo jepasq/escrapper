@@ -6,7 +6,7 @@ An *EFL*-based web scrapper, indexer and offline viewer.
 
 On `manjaro` and other *Arch*-based linux distributions :
 
-	sudo pamac install efl cmake gcc doxygen check pcre2
+	sudo pamac install efl cmake gcc doxygen check pcre2 mongo-c-driver
 
 On debian-based distributions, such as ubuntu :
 

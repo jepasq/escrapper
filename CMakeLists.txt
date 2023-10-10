@@ -13,7 +13,8 @@ configure_file(
   )
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(DEPS REQUIRED elementary libcurl libpcre2-posix)
+pkg_check_modules(DEPS REQUIRED elementary libcurl libpcre2-posix
+  libmongoc-1.0)
 
 # Find edje_cc and build ui
 #find_program(EDJE_CC_EXECUTABLE NAMES edje_cc REQUIRED)
