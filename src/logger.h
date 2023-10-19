@@ -1,6 +1,11 @@
 /** \file logger.h
   * The header file of logger implementation.
   *
+  * Please note we don't use the GNU C-defined  \c __FILE__ macro
+  * here because
+  * it contains full path including all parent directories. Instead, we
+  * use an **override** defines at the end of the *CMakeLists.txt* file.
+  *
   */
 
 #ifndef __LOGGER_H__
@@ -24,21 +29,20 @@ typedef enum {
 } tLoggerLevel;
 
 
-// See https://gcc.gnu.org/onlinedocs/cpp/Common-Predefined-Macros.html
 #ifdef __FILE_NAME__
-
-/** Please note we don't use the GNU C-defined  __FILE__ macro here because
-  * it contains full path including all parent directories. Instead, we
-  * use an "override" defines at the end of CMakeLists.txt
-  *
-  */
+/// Log an information message. See logger.h documentation for more.
 #  define LOGI(MSG) logger_static_log(__FILE_NAME__, __LINE__, LL_INFO, msg)
+/// Log an error message. See logger.h documentation for more.
 #  define LOGE(MSG) logger_static_log(__FILE_NAME__, __LINE__, LL_ERR, msg)
 
 #else
 // We don't have __FILE_NAME__ : fallback to FILE but it WILL show full path
 // (mainly for CI on github actions)
+
+
+/// Log an information message. See logger.h documentation for more.
 #  define LOGI(MSG) logger_static_log(__FILE__, __LINE__, LL_INFO, msg)
+/// Log an error message. See LOGI for more info
 #  define LOGE(MSG) logger_static_log(__FILE__, __LINE__, LL_ERR, msg)
 
 #endif  /* __FILE_NAME__ */

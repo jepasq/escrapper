@@ -69,7 +69,7 @@ config_basedir_get()
   * \param c  The config struct used to retrieve basedir.
   * \param fn The filename to append to basedir.
   *
-  * \return The concatenated strings.
+  * \return The concatenated strings ina new allocated string. Should be freed.
   *
   */
 char*
@@ -88,6 +88,9 @@ config_basedir_concat(Config* c, const char* fn)
   *
   * Note: will always return NULL if key is NULL or an empty string.
   *
+  * \param config The config struct used to retrieve basedir.
+  * \param key    The string key used to identify the config file.
+  *
   * \return NULL in case of error.
   *
   */
@@ -98,7 +101,7 @@ config_get_value(Config* config, const char* key)
     return  NULL;
 
   char* filen = config_basedir_concat(config, key);
-  char msg[80];
+  char msg[180];
   sprintf(msg, "Testing key file '%s'\n", filen);
   LOGI(msg);
 
