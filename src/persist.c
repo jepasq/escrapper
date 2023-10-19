@@ -21,7 +21,7 @@ check_value(const char* value, Config* cfg, const char* key)
   if (value == NULL)
     {
       char msg[180];
-      sprintf(msg, "ERR: Can't find config file '%s'\n",
+      sprintf(msg, "ERR: Can't find config file '%s'\n", 
 	      config_basedir_concat(cfg, key));
       LOGE(msg);
       assert(value);

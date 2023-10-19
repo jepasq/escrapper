@@ -44,6 +44,23 @@ START_TEST (test_config_basedir_concat)
 }
 END_TEST
 
+/// See if baseduir change if concat is called twice
+START_TEST (test_config_basedir_concat_twice)
+{
+  Config *c = config_create();
+  char*c1 = strdup(c->basedir);
+  
+  char* ced = config_basedir_concat(c, "aze");
+  ck_assert_str_eq(c->basedir, c1);
+
+  char* ce2 = config_basedir_concat(c, "again");
+  ck_assert_str_eq(c->basedir, c1);
+  
+  config_free(c);
+}
+END_TEST
+
+
 START_TEST (test_config_get_value_str_null)
 {
   char* val;
@@ -90,6 +107,7 @@ config_suite(void)
     tcase_add_test(tc_core, test_config_basedir_contains);
     tcase_add_test(tc_core, test_config_basedir_member);
     tcase_add_test(tc_core, test_config_basedir_concat);
+    tcase_add_test(tc_core, test_config_basedir_concat_twice);
     tcase_add_test(tc_core, test_config_get_value_str_null);
     tcase_add_test(tc_core, test_config_get_content);
     suite_add_tcase(s, tc_core);

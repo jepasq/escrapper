@@ -75,7 +75,7 @@ config_basedir_get()
 char*
 config_basedir_concat(Config* c, const char* fn)
 {
-  char* ret = c->basedir;
+  char* ret = strdup(c->basedir);
   strcat(ret, fn);
   return ret;
 }
