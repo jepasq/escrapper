@@ -3,15 +3,8 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
 === ChangeLog ===
     (8 items by revision)
     Update VERSION and REVISION in CMakeLists.txt    	   
-    SLOC is the result of `sloc src/ test/`
+    SLOC is the result of `sloc src/`
     UT the number of ./escrapper-tests Checks
 
-* v0.0.0-9 (02 Oct. 2023 - ???) SLOC ?,??? UT ??
-- (8) Fix some API documentation undocumented members
-- config_basedir_concat() uses strdup() to avoid basedir update
-- Link mongo c client and start to use it
-- Fix wrong setter name in ui
-- Improve API documentation in persist
-- Implement a macro-based compile time UI switcher
-- Add icon and statis label to UI box version
-- Correctly set box-version window's title
+* v0.0.0-10 (19 Oct. 2023 - ???) SLOC ?,??? UT ??
+

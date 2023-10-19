@@ -1,3 +1,13 @@
+* v0.0.0-9 (02 Oct. 2023 - 19 Oct. 2023) SLOC 1,040 UT 15
+- Fix some API documentation undocumented members
+- config_basedir_concat() uses strdup() to avoid basedir update
+- Link mongo c client and start to use it
+- Fix wrong setter name in ui
+- Improve API documentation in persist
+- Implement a macro-based compile time UI switcher
+- Add icon and statis label to UI box version
+- Correctly set box-version window's title
+
 * v0.0.0-8 (19 Sep. 2023 - 02 Oct. 2023) SLOC 1,340 UT 14
 - Fix the URL entry parenting in UI box function
 - Add horizontal box and real app title to ui_box
