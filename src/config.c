@@ -69,13 +69,15 @@ config_basedir_get()
   * \param c  The config struct used to retrieve basedir.
   * \param fn The filename to append to basedir.
   *
-  * \return The concatenated strings ina new allocated string. Should be freed.
+  * \return The concatenated strings in a newly allocated string.
+  *         Should be freed.
   *
   */
 char*
 config_basedir_concat(Config* c, const char* fn)
 {
-  char* ret = strdup(c->basedir);
+  char* ret = (char*)malloc(strlen(c->basedir) + strlen(fn) + 1);
+  strcpy(ret, c->basedir);
   strcat(ret, fn);
   return ret;
 }
