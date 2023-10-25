@@ -44,7 +44,7 @@ config_free(Config* c)
 
 /** Get the base directory of all config files
   *
-  * \return The concatenated result of $HOME and PROJECT_NAME.
+  * \return The concatenated result of $HOME and PROJECT_NAME. Must be freed.
   *
   */
 char*
@@ -56,10 +56,9 @@ config_basedir_get()
   if ((homedir = getenv("HOME")) == NULL)
     homedir = getpwuid(getuid())->pw_dir;
 
-  strcat(homedir, "/.");
-  strcat(homedir, PROJECT_NAME);
-  strcat(homedir, "/");
-  return homedir;
+  char* ret=(char*)malloc(strlen(homedir) + 3 + strlen(PROJECT_NAME) + 1);
+  snprintf(ret, 100, "%s/.%s/", homedir, PROJECT_NAME);
+  return ret;
 }
 
 /** Return a concatenated file with basedir
@@ -101,6 +100,8 @@ config_get_value(Config* config, const char* key)
 {
   if ((key == NULL) || (strlen(key) < 1))
     return  NULL;
+
+  printf("%s\n", config->basedir);
 
   char* filen = config_basedir_concat(config, key);
   char msg[180];
