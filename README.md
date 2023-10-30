@@ -51,3 +51,12 @@ It was initially found at https://www.emacswiki.org/emacs/edje-mode.el
 (load "edje-mode")
 (add-to-list 'auto-mode-alist '("\\.edc\\'" . edje-mode))
 ```
+
+## Configuration
+
+The `escrapper` binary will try to open etxt files in `~/.escrapper/`
+directory 
+
+* mongo_uri : The URI without the protocol. Often the IP and the dbname (i.e
+  **127.0.0.1/dbname**).
+* mongo_user :   

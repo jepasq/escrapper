@@ -112,9 +112,12 @@ config_get_value(Config* config, const char* key)
   if (ctn == NULL)
     return NULL;
 
+  // Should work (from https://stackoverflow.com/a/28462221)
+  //  ctn[strcspn(ctn, "\n")] = 0;
+  
   char* ret = strdup(ctn);
   free(ctn);
-  // USe config_get_file_content here
+  // Use config_get_file_content here
   
   return ret;
 }

@@ -46,7 +46,9 @@ persist_create()
   char* uri = config_get_value(cfg, "mongo_uri");
   check_value(uri, cfg, "mongo_uri");
   char* usr = config_get_value(cfg, "mongo_user");
+  check_value(usr, cfg, "mongo_user");
   char* pwd = config_get_value(cfg, "mongo_pwd");
+  check_value(pwd, cfg, "mongo_pwd");
 
   char connstr[180];
   sprintf(connstr, "mongodb+srv://%s:%s@%s:%d", usr, pwd, uri);

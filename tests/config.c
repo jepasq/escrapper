@@ -91,6 +91,19 @@ START_TEST (test_config_get_content)
   ck_assert_ptr_ne(c, NULL);
 }
 
+START_TEST (test_config_eol)
+{
+  char* c;
+
+  // Non-existant file must return NULL
+  c=config_get_file_content("./../fixtures/config_eol");
+  ck_assert_ptr_eq(c, NULL);
+
+  printf("%s\n", c );
+  
+}
+
+
 /// A config struct unit tests suite
 Suite*
 config_suite(void)
@@ -110,6 +123,9 @@ config_suite(void)
     tcase_add_test(tc_core, test_config_basedir_concat_twice);
     tcase_add_test(tc_core, test_config_get_value_str_null);
     tcase_add_test(tc_core, test_config_get_content);
+
+    tcase_add_test(tc_core, test_config_eol);
+
     suite_add_tcase(s, tc_core);
 
     return s;
