@@ -3,6 +3,10 @@
 
 #include <string.h>   // USES strstr()
 
+#include <unistd.h>   // USES getcwd()
+#include <limits.h>   // USES PATH_MAX
+
+
 /** The text the basedir must contain */
 char* must_contain = ".escrapper";
 
@@ -91,18 +95,24 @@ START_TEST (test_config_get_content)
   ck_assert_ptr_ne(c, NULL);
 }
 
+
+#include <stdio.h>
 START_TEST (test_config_eol)
 {
-  char* c;
+  // Compute fixture directory
+  char cwd[PATH_MAX];
+  char* ret =  getcwd(cwd, sizeof(cwd));
+  ck_assert_ptr_ne(ret, NULL);
+  char cc[PATH_MAX];
+  memcpy(cc, cwd, strlen(cwd) - strlen("build"));
+  strcat(cc, "fixtures/config_eol");
 
-  // Non-existant file must return NULL
-  c=config_get_file_content("./../fixtures/config_eol");
-  ck_assert_ptr_eq(c, NULL);
+  char* c;
+  c=config_get_file_content(cc);
+  ck_assert_ptr_ne(c, NULL);
 
   printf("%s\n", c );
-  
 }
-
 
 /// A config struct unit tests suite
 Suite*
