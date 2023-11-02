@@ -127,6 +127,8 @@ config_get_value(Config* config, const char* key)
   * The returned string, if not NULL is malloc'ed and must
   * be freed with a free() call.
   *
+  * Will remove any trailing EOL character if needed.
+  *
   * \param filename The full path of the file.
   *
   * \return The content ot NULL if not found.
@@ -158,6 +160,9 @@ config_get_file_content(const char* filename)
   // Close the file
   fclose(fptr);
 
-  return strdup(myString);
+  if (myString[strlen(myString) - 1] == '\n')
+    return (char*)memcpy(myString, myString, strlen(myString) - 1);
+  else
+    return strdup(myString);
 }
 
