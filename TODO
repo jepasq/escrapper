@@ -7,7 +7,8 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-10 (19 Oct. 2023 - ???) SLOC ?,??? UT ??
-- (4) Compute fixture path from unit tests
+- (5) Write the last char test for EOL from config file
+- Compute fixture path from unit tests
 - Add a fixture and a failing test on config EOL
 - Fix config basedir containing project name twice
 - Fix config_basedir_concat memory leaf using malloc/strdup/strcat

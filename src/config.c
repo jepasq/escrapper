@@ -145,12 +145,9 @@ config_get_file_content(const char* filename)
 	sprintf(msg, "File doesn't exist '%s'.\n", filename);
       else
 	sprintf(msg, "Can't open file '%s' : '%d'\n", filename, errno);
-
       LOGI(msg);
       return NULL;
     }
-  // Store the content of the file
-
   // Read the content and store it inside myString
   fgets(myString, 100, fptr);
 

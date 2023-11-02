@@ -100,6 +100,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO Work on persistence
 :LOGBOOK:
+CLOCK: [2023-11-02 jeu. 04:06]--[2023-11-02 jeu. 04:48] =>  0:42
 CLOCK: [2023-10-30 lun. 07:05]--[2023-10-30 lun. 07:37] =>  0:32
 CLOCK: [2023-10-30 lun. 06:37]--[2023-10-30 lun. 07:03] =>  0:26
 CLOCK: [2023-10-25 mer. 06:27]--[2023-10-25 mer. 06:49] =>  0:22
@@ -114,7 +115,8 @@ CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21
 
 - [ ] Must check if config check correctly read config file with trailing
   space/EOL char.
-  - WIP but we need more config test
+  - WIP but we need more config test. It seems it doesn't work with full path
+    Fixed using config file generated with fixtures
 - [ ] Must be able to retrieve mongo URI, user and password
   And issue an error if can't find one of these values
   - [ ] The key seems to be added twice, test that

@@ -12,6 +12,13 @@ configure_file(
   "${PROJECT_BINARY_DIR}/_config.h"
   )
 
+# I have issue trying to read absolute path files with fopen()
+configure_file(
+  "${PROJECT_SOURCE_DIR}/fixtures/config_eol"
+  "${PROJECT_BINARY_DIR}/fixtures/config_eol"
+  )
+
+  
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(DEPS REQUIRED elementary libcurl libpcre2-posix
   libmongoc-1.0)

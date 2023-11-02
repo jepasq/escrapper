@@ -99,19 +99,14 @@ START_TEST (test_config_get_content)
 #include <stdio.h>
 START_TEST (test_config_eol)
 {
-  // Compute fixture directory
-  char cwd[PATH_MAX];
-  char* ret =  getcwd(cwd, sizeof(cwd));
-  ck_assert_ptr_ne(ret, NULL);
-  char cc[PATH_MAX];
-  memcpy(cc, cwd, strlen(cwd) - strlen("build"));
-  strcat(cc, "fixtures/config_eol");
-
   char* c;
-  c=config_get_file_content(cc);
+  // This file is generated with cmake's configure_fuile() function
+  c=config_get_file_content("fixtures/config_eol");
   ck_assert_ptr_ne(c, NULL);
 
   printf("%s\n", c );
+  char cl = c[strlen(c) - 1];  // Get last char
+  ck_assert_int_ne(cl, '\n');  // Shouldn't be an EOL char
 }
 
 /// A config struct unit tests suite
