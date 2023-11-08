@@ -5,7 +5,7 @@ API documentation https://www.enlightenment.org/develop/api/start
 
 * v1.0.0
 ** v0.1.0
-*** v0.0.1
+*** v0.0.2
 **** Handle translation using gettext
 **** Maybe a latex-based rasterisation engine
 **** Implement the scrapper
@@ -123,6 +123,7 @@ CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21
   - [ ] The key seems to be added twice, test that
 - [ ] Use mongo C driver
   see https://www.mongodb.com/docs/drivers/c/    
+*** DONE v0.0.1
 **** DONE Add a config struct
 :LOGBOOK:
 CLOCK: [2023-09-07 jeu. 06:02]--[2023-09-07 jeu. 06:11] =>  0:09

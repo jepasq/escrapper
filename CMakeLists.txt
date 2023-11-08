@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.27)
-project (escrapper VERSION 0.0.0)
+project (escrapper VERSION 0.0.1)
 set(REVISION 9)
 
 configure_file(
@@ -17,7 +17,6 @@ configure_file(
   "${PROJECT_SOURCE_DIR}/fixtures/config_eol"
   "${PROJECT_BINARY_DIR}/fixtures/config_eol"
   )
-
   
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(DEPS REQUIRED elementary libcurl libpcre2-posix
