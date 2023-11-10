@@ -91,7 +91,8 @@ START_TEST (test_config_get_content)
   ck_assert_ptr_eq(c, NULL);
 
   // Whatever the content of the device we get, we can find it
-  c=config_get_file_content("Doxyfile");
+  //   This check fails in CI with 'Doxyfile'. Trying with relative filename.
+  c=config_get_file_content("./Doxyfile");
   ck_assert_ptr_ne(c, NULL);
 }
 
