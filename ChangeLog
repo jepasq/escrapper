@@ -1,3 +1,13 @@
+* v0.0.0-10 (19 Oct. 2023 - 10 Nov. 2023) SLOC 1,050 UT 16
+- Trying to open relative Doxyfile in unittest to fix CI
+- Switch to revision 0.0.1 (5 closed ROADMAP sections)
+- config_get_file_content() remove trailing EOL char if needed
+- Write the last char test for EOL from config file
+- Compute fixture path from unit tests
+- Add a fixture and a failing test on config EOL
+- Fix config basedir containing project name twice
+- Fix config_basedir_concat memory leaf using malloc/strdup/strcat
+
 * v0.0.0-9 (02 Oct. 2023 - 19 Oct. 2023) SLOC 1,040 UT 15
 - Fix some API documentation undocumented members
 - config_basedir_concat() uses strdup() to avoid basedir update
