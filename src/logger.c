@@ -136,6 +136,13 @@ logger_static_level_to_str(tLoggerLevel lvl)
   return strdup(ret);
 }
 
+/** Returns the current static logger environment
+  *
+  * Note: this may fail if call before logger creation (a segfault may occur).
+  *
+  * \return The environment
+  *
+  */
 tLoggerEnvironment
 logger_static_get_env(void)
 {
@@ -143,6 +150,11 @@ logger_static_get_env(void)
 }
 
 
+/** Returns the current static logger environment
+  *
+  * \param env The new environment
+  *
+  */
 void
 logger_static_set_env(tLoggerEnvironment env)
 {

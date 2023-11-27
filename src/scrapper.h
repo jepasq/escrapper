@@ -33,7 +33,8 @@ typedef struct
   /** The HTTP status code
     *  https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
     */
-  int   httpStatusCode;   
+  int   httpStatusCode;
+  char* pageTitle;       //!< The title of the webpage   
   char* markdownContent; //!< Cuurently unused char*
   
 } ScrapperResult;

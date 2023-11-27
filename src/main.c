@@ -119,7 +119,9 @@ elm_main(int argc, char **argv)
   /** Try to scrap eventual URL passed in argv */
   if (argc > 1 && scrapper_url_is_valid(argv[1]))
     {
-      printf("arg1 is an URL, trying to scrap it !!: %s\n", argv[1]);
+      char msg[80];
+      sprintf(msg, "arg1 is an URL ('%s'), trying to scrap it !!", argv[1]);
+      LOGI(msg);
       scrapper_set_url(scrapper, argv[1]);
       ScrapperResult* res = scrapper_run(scrapper);
       return res->httpStatusCode == 200;
