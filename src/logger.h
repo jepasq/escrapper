@@ -15,7 +15,7 @@
   *
   */
 typedef enum {
-  LOGENV_PROD,      //!< We're in production mod (the default)
+  LOGENV_PROD,      //!< We're in production mode (the default)
   LOGENV_TEST,      //!< We're in test mode, io in terminal is blocked
 } tLoggerEnvironment;
 
@@ -39,7 +39,6 @@ typedef enum {
 // We don't have __FILE_NAME__ : fallback to FILE but it WILL show full path
 // (mainly for CI on github actions)
 
-
 /// Log an information message. See logger.h documentation for more.
 #  define LOGI(MSG) logger_static_log(__FILE__, __LINE__, LL_INFO, msg)
 /// Log an error message. See LOGI for more info
@@ -54,5 +53,9 @@ void logger_static_free();
 
 void logger_static_log(const char*, int, tLoggerLevel, const char*);
 char* logger_static_level_to_str(tLoggerLevel);
+
+tLoggerEnvironment logger_static_get_env(void);
+void logger_static_set_env(tLoggerEnvironment);
+
 
 #endif // !__LOGGER_H__

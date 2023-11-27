@@ -7,19 +7,25 @@
 #include <limits.h>   // USES PATH_MAX
 #include <stdio.h>    // USES perror() printf()
 
+/** The text the basedir must contain */
+char* must_contain = ".escrapper";
+
+/** Print current working dir to stnadrd output or error in error stream
+  *
+  */
 void
 print_cwd()
 {
   char cwd[PATH_MAX];
-  if (getcwd(cwd, sizeof(cwd)) != NULL) {
-    printf("Current working dir: %s\n", cwd);
-  } else {
-    perror("getcwd() error");
-  }
+  if (getcwd(cwd, sizeof(cwd)) != NULL)
+    {
+      printf("Current working dir: %s\n", cwd);
+    }
+  else
+    {
+      perror("getcwd() error");
+    }
 }
-
-/** The text the basedir must contain */
-char* must_contain = ".escrapper";
 
 /// Test the config struct can be instantiated
 START_TEST (test_config_create)

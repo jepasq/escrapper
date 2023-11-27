@@ -99,6 +99,15 @@ START_TEST (test_logger_level_to_str)
 }
 END_TEST
 
+START_TEST (test_logger_set_env)
+{
+  logger_static_create(LOGENV_TEST, "");
+  ck_assert_int_eq(logger_static_get_env(), LOGENV_TEST);
+  logger_static_set_env(LOGENV_PROD);
+  ck_assert_int_eq(logger_static_get_env(), LOGENV_PROD);
+}
+END_TEST
+
 /// \return A Scrapper struct unit tests suite
 Suite*
 logger_suite(void)
@@ -114,6 +123,7 @@ logger_suite(void)
     tcase_add_test(tc_core, test_logger_check_inexistant_file_size);
     tcase_add_test(tc_core, test_logger_log_in_file);
     tcase_add_test(tc_core, test_logger_level_to_str);
+    tcase_add_test(tc_core, test_logger_set_env);
     suite_add_tcase(s, tc_core);
 
     return s;

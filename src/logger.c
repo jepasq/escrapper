@@ -135,3 +135,20 @@ logger_static_level_to_str(tLoggerLevel lvl)
     }
   return strdup(ret);
 }
+
+tLoggerEnvironment
+logger_static_get_env(void)
+{
+  return logger->environment;
+}
+
+
+void
+logger_static_set_env(tLoggerEnvironment env)
+{
+  if (!logger)
+    return;
+
+  logger->environment = env;
+}
+
