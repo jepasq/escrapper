@@ -7,4 +7,4 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-11 (10 Nov. 2023 - ???) SLOC ?,??? UT ??
-
+- (1) Tests print CWD if opening ./Doxyfile failed

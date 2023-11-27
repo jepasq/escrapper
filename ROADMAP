@@ -5,7 +5,7 @@ API documentation https://www.enlightenment.org/develop/api/start
 
 * v1.0.0
 ** v0.1.0
-*** v0.0.2
+*** TODO v0.0.2
 **** Handle translation using gettext
 **** Maybe a latex-based rasterisation engine
 **** Implement the scrapper
@@ -100,6 +100,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO Work on persistence
 :LOGBOOK:
+CLOCK: [2023-11-27 lun. 07:31]--[2023-11-27 lun. 07:41] =>  0:10
 CLOCK: [2023-11-02 jeu. 04:54]--[2023-11-02 jeu. 05:02] =>  0:08
 CLOCK: [2023-11-02 jeu. 04:06]--[2023-11-02 jeu. 04:48] =>  0:42
 CLOCK: [2023-10-30 lun. 07:05]--[2023-10-30 lun. 07:37] =>  0:32
@@ -114,6 +115,10 @@ CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21
 - persistence maybe through mongodb ? in persist.h/c
   Save full HTML or only AST representation
 
+- [ ] CI still failing when trying to open .Doxyfile in tests/config.c:96
+  Need more debug cause it works locally
+  mainly print pwd
+  
 - [ ] Must check if config check correctly read config file with trailing
   space/EOL char.
   - WIP but we need more config test. It seems it doesn't work with full path

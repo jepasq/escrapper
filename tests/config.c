@@ -7,6 +7,17 @@
 #include <limits.h>   // USES PATH_MAX
 
 
+void
+print_cwd()
+{
+  char cwd[PATH_MAX];
+  if (getcwd(cwd, sizeof(cwd)) != NULL) {
+    printf("Current working dir: %s\n", cwd);
+  } else {
+    perror("getcwd() error");
+  }
+}
+
 /** The text the basedir must contain */
 char* must_contain = ".escrapper";
 
@@ -93,6 +104,10 @@ START_TEST (test_config_get_content)
   // Whatever the content of the device we get, we can find it
   //   This check fails in CI with 'Doxyfile'. Trying with relative filename.
   c=config_get_file_content("./Doxyfile");
+  if (c == NULL)
+    {
+      print_cwd();
+    }
   ck_assert_ptr_ne(c, NULL);
 }
 
