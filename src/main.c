@@ -115,6 +115,15 @@ elm_main(int argc, char **argv)
   config_basedir_get();
 
   scrapper = scrapper_create();
+
+  /** Try to scrap eventual URL passed in argv */
+  if (argc > 1 && scrapper_url_is_valid(argv[1]))
+    {
+      printf("arg1 is an URL, trying to scrap it !!: %s\n", argv[1]);
+      scrapper_set_url(scrapper, argv[1]);
+      ScrapperResult* res = scrapper_run(scrapper);
+      return res->httpStatusCode == 200;
+    }
   
   elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
 
