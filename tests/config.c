@@ -19,7 +19,7 @@ print_cwd()
   char cwd[PATH_MAX];
   if (getcwd(cwd, sizeof(cwd)) != NULL)
     {
-      printf("Current working dir: %s\n", cwd);
+      fprintf(stderr, "Current working dir: %s\n", cwd);
     }
   else
     {
