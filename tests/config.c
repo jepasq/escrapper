@@ -109,7 +109,7 @@ START_TEST (test_config_get_content)
 
   // Whatever the content of the device we get, we can find it
   //   This check fails in CI with 'Doxyfile'. Trying with relative filename.
-  c=config_get_file_content("./Doxyfile");
+  c=config_get_file_content("Doxyfile");
   //  if (c == NULL)
     {
       print_cwd();
