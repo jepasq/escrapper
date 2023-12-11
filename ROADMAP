@@ -66,6 +66,7 @@ CLOCK: [2023-09-15 ven. 14:47]--[2023-09-15 ven. 15:00] =>  0:13
 - [ ] Work on the vararg thing  
 **** TODO Retry to create UI with boxes in ui.h/.c
 :LOGBOOK:
+CLOCK: [2023-12-11 lun. 11:20]--[2023-12-11 lun. 11:28] =>  0:08
 CLOCK: [2023-10-06 ven. 07:42]--[2023-10-06 ven. 07:55] =>  0:13
 CLOCK: [2023-10-05 jeu. 14:30]--[2023-10-05 jeu. 14:47] =>  0:17
 CLOCK: [2023-10-05 jeu. 14:12]--[2023-10-05 jeu. 14:21] =>  0:09
@@ -84,7 +85,10 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
     https://docs.enlightenment.org/elementary/1.15.0/box_example_01.html
   - [X] Make the switch possible with a macro
 - [X] ui's set_str_utlr should be set_str_status
+
+- [ ] We have an =munmap_chunk(): invalid pointer= error when runnign GUI
   
+
 - [ ] continue box layout version
   - [ ] event handling
         

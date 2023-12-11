@@ -7,7 +7,8 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-11 (10 Nov. 2023 - ???) SLOC ?,??? UT ??
-- (5) Print cwd from tests on stderr
+- (6) Add standard port to mongodb  connection string
+- Print cwd from tests on stderr
 - Argv1 scrapping message uses logger
 - Try to scrap forst argv if it's an URL
 - Implement environment getter and setter for logger

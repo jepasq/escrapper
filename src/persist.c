@@ -49,9 +49,10 @@ persist_create()
   check_value(usr, cfg, "mongo_user");
   char* pwd = config_get_value(cfg, "mongo_pwd");
   check_value(pwd, cfg, "mongo_pwd");
-
+  
+  int port = 27017;
   char connstr[180];
-  sprintf(connstr, "mongodb+srv://%s:%s@%s:%d", usr, pwd, uri);
+  sprintf(connstr, "mongodb+srv://%s:%s@%s:%d", usr, pwd, uri, port);
   printf("Trying to connect to '%s'\n", connstr);
 
   mongoc_init();
