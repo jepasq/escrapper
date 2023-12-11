@@ -3,6 +3,14 @@
 An [EFL](https://en.wikipedia.org/wiki/Enlightenment_Foundation_Libraries)-based
 web scrapper, indexer and offline viewer.
 
+This is mainly a desktop application where the user can add the 
+[URL](https://en.wikipedia.org/wiki/URL) of a website and 
+[crawl](https://en.wikipedia.org/wiki/Web_crawler) it.
+
+Once indexed and parsed, the website can then be viewed offline via the
+main application UI. The data and its persistance is done using a 
+*mongodb* server.
+
 # Starting
 
 Its non-standard for C source code, the main entry is called elm_main().

@@ -22,13 +22,15 @@
   * The logger can log both in a text file and in the terminal. This
   * behavior can be change by selecting another environment :
   *
-  * The can be one and only one logger per instance.
+  * There can be one and only one logger per instance. The environment can
+  * be :
   *
-  * - In LOGENV_PROD mode, it will log in both medium;
-  * - In LOGENV_TEST one, it will only log in file to let the terminal
+  * - In \b LOGENV_PROD mode, it will log in both medium;
+  * - In \b LOGENV_TEST one, it will only log in file to let the terminal
   *   output as clean as possible.
   *
-  * According to the 
+  * According to the environment used when you create the logger by calling
+  * logger_static_create().
   *
   */
 struct _Logger
