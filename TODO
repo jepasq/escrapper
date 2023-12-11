@@ -6,12 +6,5 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     SLOC is the result of `sloc src/`
     UT the number of ./escrapper-tests Checks
 
-* v0.0.0-11 (10 Nov. 2023 - ???) SLOC ?,??? UT ??
-- (8) Improve API documentation and add a brief description
-- More LOGI usage in config.c and persist.c
-- Add standard port to mongodb  connection string
-- Print cwd from tests on stderr
-- Argv1 scrapping message uses logger
-- Try to scrap forst argv if it's an URL
-- Implement environment getter and setter for logger
-- Tests print CWD if opening ./Doxyfile failed
+* v0.0.0-12 (11 Dec. 2023 - ???) SLOC ?,??? UT ??
+

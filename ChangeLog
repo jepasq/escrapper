@@ -1,3 +1,13 @@
+* v0.0.0-11 (10 Nov. 2023 - 11 Dec. 2023) SLOC 1,102 UT 17
+- Improve API documentation and add a brief description
+- More LOGI usage in config.c and persist.c
+- Add standard port to mongodb  connection string
+- Print cwd from tests on stderr
+- Argv1 scrapping message uses logger
+- Try to scrap forst argv if it's an URL
+- Implement environment getter and setter for logger
+- Tests print CWD if opening ./Doxyfile failed
+
 * v0.0.0-10 (19 Oct. 2023 - 10 Nov. 2023) SLOC 1,050 UT 16
 - Trying to open relative Doxyfile in unittest to fix CI
 - Switch to revision 0.0.1 (5 closed ROADMAP sections)
