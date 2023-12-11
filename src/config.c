@@ -101,11 +101,13 @@ config_get_value(Config* config, const char* key)
   if ((key == NULL) || (strlen(key) < 1))
     return  NULL;
 
-  printf("%s\n", config->basedir);
+  char ms1[180];
+  sprintf(ms1, "config->basedir is '%s'", config->basedir);
+  LOGI(ms1);
 
   char* filen = config_basedir_concat(config, key);
   char msg[180];
-  sprintf(msg, "Testing key file '%s'\n", filen);
+  sprintf(msg, "Testing key file '%s'", filen);
   LOGI(msg);
 
   char* ctn = config_get_file_content(filen);
@@ -144,9 +146,9 @@ config_get_file_content(const char* filename)
   if (fptr == NULL)
     {
       if (errno == ENOENT)
-	sprintf(msg, "File doesn't exist '%s'.\n", filename);
+	sprintf(msg, "File doesn't exist '%s'.", filename);
       else
-	sprintf(msg, "Can't open file '%s' : '%d'\n", filename, errno);
+	sprintf(msg, "Can't open file '%s' : '%d'", filename, errno);
       LOGI(msg);
       return NULL;
     }
@@ -154,7 +156,7 @@ config_get_file_content(const char* filename)
   fgets(myString, 100, fptr);
 
   // Print the file content
-  sprintf(msg, "File '%s' content is '%s'\n", filename, myString);
+  sprintf(msg, "File '%s' content is '%s'", filename, myString);
   LOGI(msg);
   
   // Close the file

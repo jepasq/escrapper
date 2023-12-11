@@ -103,7 +103,7 @@ logger_static_log(const char* file, int line,
     
   char buffer[MSGLEN];
   char* lvl = logger_static_level_to_str(level);
-  sprintf(buffer, "%s:%d %s - %s", file, line, "II", message);
+  sprintf(buffer, "%s:%d %s - %s\n", file, line, "II", message);
 
   if (logger->environment == LOGENV_PROD)
     printf(buffer);

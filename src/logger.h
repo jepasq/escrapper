@@ -31,18 +31,18 @@ typedef enum {
 
 #ifdef __FILE_NAME__
 /// Log an information message. See logger.h documentation for more.
-#  define LOGI(MSG) logger_static_log(__FILE_NAME__, __LINE__, LL_INFO, msg)
+#  define LOGI(MSG) logger_static_log(__FILE_NAME__, __LINE__, LL_INFO, MSG)
 /// Log an error message. See logger.h documentation for more.
-#  define LOGE(MSG) logger_static_log(__FILE_NAME__, __LINE__, LL_ERR, msg)
+#  define LOGE(MSG) logger_static_log(__FILE_NAME__, __LINE__, LL_ERR, MSG)
 
 #else
 // We don't have __FILE_NAME__ : fallback to FILE but it WILL show full path
 // (mainly for CI on github actions)
 
 /// Log an information message. See logger.h documentation for more.
-#  define LOGI(MSG) logger_static_log(__FILE__, __LINE__, LL_INFO, msg)
+#  define LOGI(MSG) logger_static_log(__FILE__, __LINE__, LL_INFO, MSG)
 /// Log an error message. See LOGI for more info
-#  define LOGE(MSG) logger_static_log(__FILE__, __LINE__, LL_ERR, msg)
+#  define LOGE(MSG) logger_static_log(__FILE__, __LINE__, LL_ERR, MSG)
 
 #endif  /* __FILE_NAME__ */
 

@@ -53,15 +53,18 @@ persist_create()
   int port = 27017;
   char connstr[180];
   sprintf(connstr, "mongodb+srv://%s:%s@%s:%d", usr, pwd, uri, port);
-  printf("Trying to connect to '%s'\n", connstr);
 
+  char msg[180];
+  sprintf(msg, "Trying to connect to '%s'\n", connstr);
+  LOGI(msg);
+  
   mongoc_init();
   p->client = mongoc_client_new(connstr);
   mongoc_server_api_t* api = mongoc_server_api_new (MONGOC_SERVER_API_V1);
   if (!mongoc_client_set_server_api (p->client, api, &error))
     {
       // Error condition.
-      printf("Error: %s\n", error.message);
+      LOGE(error.message);
       return 0;
   }
 
