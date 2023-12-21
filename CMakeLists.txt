@@ -2,6 +2,9 @@ cmake_minimum_required (VERSION 3.27)
 project (escrapper VERSION 0.0.1)
 set(REVISION 11)
 
+# Create gdb symbol table
+set(CMAKE_BUILD_TYPE Debug)
+
 configure_file(
   "${PROJECT_SOURCE_DIR}/Doxyfile.in"
   "${PROJECT_BINARY_DIR}/Doxyfile"

@@ -107,6 +107,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO Work on persistence
 :LOGBOOK:
+CLOCK: [2023-12-21 jeu. 10:39]--[2023-12-21 jeu. 11:21] =>  0:42
 CLOCK: [2023-11-27 lun. 07:31]--[2023-11-27 lun. 07:41] =>  0:10
 CLOCK: [2023-11-02 jeu. 04:54]--[2023-11-02 jeu. 05:02] =>  0:08
 CLOCK: [2023-11-02 jeu. 04:06]--[2023-11-02 jeu. 04:48] =>  0:42
@@ -119,13 +120,19 @@ CLOCK: [2023-10-10 mar. 02:36]--[2023-10-10 mar. 03:01] =>  0:25
 CLOCK: [2023-10-06 ven. 08:15]--[2023-10-06 ven. 08:42] =>  0:27
 CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21
 :END:
-- persistence maybe through mongodb ? in persist.h/c
+   
+- [X] persistence maybe through mongodb ? in persist.h/c
   Save full HTML or only AST representation
+- [X] Use mongo C driver
+  see https://www.mongodb.com/docs/drivers/c/    
 
+- [ ] We still have an invalid pointer error when running without arg
+
+- [ ] May try =html-to-markdown= to save sites as md file
+  
 - [ ] CI still failing when trying to open .Doxyfile in tests/config.c:96
   Need more debug cause it works locally
   mainly print pwd
-  
 - [ ] Must check if config check correctly read config file with trailing
   space/EOL char.
   - WIP but we need more config test. It seems it doesn't work with full path
@@ -133,8 +140,6 @@ CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21
 - [ ] Must be able to retrieve mongo URI, user and password
   And issue an error if can't find one of these values
   - [ ] The key seems to be added twice, test that
-- [ ] Use mongo C driver
-  see https://www.mongodb.com/docs/drivers/c/    
 *** DONE v0.0.1
 **** DONE Add a config struct
 :LOGBOOK:
