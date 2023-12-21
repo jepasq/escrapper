@@ -115,10 +115,8 @@ elm_main(int argc, char **argv)
 
   config_basedir_get();
 
-  scrapper = scrapper_create();
-
-  
   /** Try to scrap eventual URL passed in argv */
+  scrapper = scrapper_create();
   if (argc > 0)
     if (scrapper_url_is_valid(argv[1]))
       {
@@ -128,11 +126,12 @@ elm_main(int argc, char **argv)
 	LOGI(msg);
 	scrapper_set_url(scrapper, argv[1]);
 	ScrapperResult* res = scrapper_run(scrapper);
-	return res->httpStatusCode == 200;
+	return (res->httpStatusCode == 200);
       }
   
   elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
 
+  LOGI("Creating persistence object");
   Persist* pers = persist_create();
 
   char* ui = 
@@ -148,10 +147,6 @@ elm_main(int argc, char **argv)
     "changed,user", input_cb, NULL);*/
   evas_object_smart_callback_add(ui_get_button_scrap(),
 				 "clicked", scrap_cb, NULL);
-  
-  //  elm_win_resize_object_add(win, box);
-  //  evas_object_show(box);
-
   elm_run();
 
   scrapper_free(scrapper);

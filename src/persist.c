@@ -1,4 +1,4 @@
-/** \file persist.h
+/** \file persist.c
   * The persistence-related functions implementation.
   *
   */
@@ -12,7 +12,11 @@
 #include "logger.h"
 #include "config.h"
 
-/** Check for the given value. Print an error if NULL
+/** Check for the given value. Print an error if NULL then assert value
+ *
+ * \param value The value to be NULL-checked.
+ * \param cfg   The config object used to retieve value.
+ * \param key   The config key.
  *
  */
 void
@@ -31,7 +35,13 @@ check_value(const char* value, Config* cfg, const char* key)
 
 /** Create and return a malloc'ed Persist struct
   *
-  * \return a dynamically allocated object that should free with a call to
+  * The returned struct will have feed fields with the values found in
+  * your user's directory, mainly retrieved using config_get_value() calls.
+  *
+  * The retrieved values are then checked with a check_value() for each
+  * field.
+  *
+  * \return A dynamically allocated object that should free with a call to
   *         persist_free().
   *
   */
