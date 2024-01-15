@@ -13,7 +13,8 @@ main application UI. The data and its persistance is done using a
 
 # Starting
 
-Its non-standard for C source code, the main entry is called elm_main().
+It's non-standard for C source code but the main entry function for the 
+binary linking is called elm_main().
 
 To learn more on the API, you can start from the Config or the Scrapper 
 structs.

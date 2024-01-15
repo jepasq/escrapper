@@ -113,7 +113,10 @@ elm_main(int argc, char **argv)
   if (logger_static_create (LOGENV_PROD, "escrapper.log"))
     printf("Error creating logger!\n");
 
-  config_basedir_get();
+  char* cbasedir = config_basedir_get();
+  char msg[80];
+  sprintf(msg, "Config basedir is '%s'", cbasedir);
+  LOGI(msg);
 
   /** Try to scrap eventual URL passed in argv */
   scrapper = scrapper_create();
