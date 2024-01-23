@@ -20,7 +20,11 @@ START_TEST (test_main_invalid_pointer)
 }
 END_TEST
 
-/// Created to check for the main binary call
+/** Created to check for the main binary call
+  *
+  * \return A test Suite containing this file's tests. To be added to a runner.
+  *
+  */
 Suite*
 main_suite(void)
 {

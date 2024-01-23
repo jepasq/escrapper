@@ -161,10 +161,16 @@ config_get_file_content(const char* filename)
   
   // Close the file
   fclose(fptr);
+  sprintf(msg, "File '%s' closed", filename);
+  LOGI(msg);
 
+  LOGD("Creating return value");
+  char* ret;
   if (myString[strlen(myString) - 1] == '\n')
-    return (char*)memcpy(myString, myString, strlen(myString) - 1);
+    ret = (char*)memcpy(myString, myString, strlen(myString) - 1);
   else
-    return strdup(myString);
+    ret = strdup(myString);
+  LOGD("Returning config value");
+  return ret;
 }
 

@@ -131,9 +131,10 @@ logger_static_level_to_str(tLoggerLevel lvl)
   char* ret;
   switch (lvl)
     {
-    case LL_INFO: ret = "II";  break;
-    case LL_WARN: ret = "WW";  break;
-    default:      ret = "EE";
+    case LL_DEBUG: ret = "DD";  break;
+    case LL_INFO:  ret = "II";  break;
+    case LL_WARN:  ret = "WW";  break;
+    default:       ret = "EE";
     }
   return strdup(ret);
 }
