@@ -31,6 +31,7 @@ typedef enum {
 
 
 #ifdef __FILE_NAME__
+/// Log a debug message. See logger.h documentation for more.
 #  define LOGD(MSG) logger_static_log(__FILE_NAME__, __LINE__, LL_DEBUG, MSG)
 /// Log an information message. See logger.h documentation for more.
 #  define LOGI(MSG) logger_static_log(__FILE_NAME__, __LINE__, LL_INFO, MSG)
@@ -41,6 +42,7 @@ typedef enum {
 // We don't have __FILE_NAME__ : fallback to FILE but it WILL show full path
 // (mainly for CI on github actions)
 
+/// Log a debug message. See logger.h documentation for more.
 #  define LOGD(MSG) logger_static_log(__FILE__, __LINE__, LL_DEBUG, MSG)
 /// Log an information message. See logger.h documentation for more.
 #  define LOGI(MSG) logger_static_log(__FILE__, __LINE__, LL_INFO, MSG)

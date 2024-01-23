@@ -118,8 +118,7 @@ config_get_value(Config* config, const char* key)
   //  ctn[strcspn(ctn, "\n")] = 0;
   
   char* ret = strdup(ctn);
-  free(ctn);
-  // Use config_get_file_content here
+  //  free(ctn); // May cause a memory error
   
   return ret;
 }

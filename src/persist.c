@@ -50,7 +50,7 @@ persist_create()
 {
   bson_error_t error = {0};
   
-  Persist* p = malloc(sizeof(Persist*));
+  Persist* p = malloc(sizeof(Persist));
   
   Config* cfg = config_create();
   char* uri = config_get_value(cfg, "mongo_uri");
@@ -75,7 +75,7 @@ persist_create()
     {
       // Error condition.
       LOGE(error.message);
-      return 0;
+      return NULL;
   }
 
   
