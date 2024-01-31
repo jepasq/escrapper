@@ -7,7 +7,8 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-12 (11 Dec. 2023 - ???) SLOC ?,??? UT ??
-- (7) Add a NULL check on mongodb client pointer
+- (8) Add mongo URI to NULL client error message
+- Add a NULL check on mongodb client pointer
 - Remove a spurious free() call in persist.c
 - Add debug log level and LOGD macro
 - Fix a README typo and add config basedir log

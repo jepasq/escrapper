@@ -70,8 +70,11 @@ persist_create()
   
   mongoc_init();
   p->client = mongoc_client_new(connstr);
-  if (p->client ==NULL) {
-    LOGE("The mongodb client is NULL. This program WILL crash.");
+  if (!p->client) {
+    char msg[180];
+    sprintf(msg, "The mongodb client is NULL. This program WILL crash.\n"
+	    "Connstring was '%s'", connstr);
+    LOGE(msg);
   }
   
   mongoc_server_api_t* api = mongoc_server_api_new (MONGOC_SERVER_API_V1);
