@@ -1,3 +1,13 @@
+* v0.0.0-12 (11 Dec. 2023 - 31 Jan. 2024) SLOC 1,131 UT 18
+- Add mongo URI to NULL client error message
+- Add a NULL check on mongodb client pointer
+- Remove a spurious free() call in persist.c
+- Add debug log level and LOGD macro
+- Fix a README typo and add config basedir log
+- Add a main binary calling unit test for the actual memory error
+- Replace license text with GPL one (was Affero)
+- Cmake default to debug build type to create symbol table
+
 * v0.0.0-11 (10 Nov. 2023 - 11 Dec. 2023) SLOC 1,102 UT 17
 - Improve API documentation and add a brief description
 - More LOGI usage in config.c and persist.c

@@ -6,12 +6,5 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     SLOC is the result of `sloc src/`
     UT the number of ./escrapper-tests Checks
 
-* v0.0.0-12 (11 Dec. 2023 - ???) SLOC ?,??? UT ??
-- (8) Add mongo URI to NULL client error message
-- Add a NULL check on mongodb client pointer
-- Remove a spurious free() call in persist.c
-- Add debug log level and LOGD macro
-- Fix a README typo and add config basedir log
-- Add a main binary calling unit test for the actual memory error
-- Replace license text with GPL one (was Affero)
-- Cmake default to debug build type to create symbol table
+* v0.0.0-13 (31 Jan. 2024 - ???) SLOC ?,??? UT ??
+
