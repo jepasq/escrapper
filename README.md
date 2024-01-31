@@ -59,4 +59,6 @@ directory
 
 * mongo_uri : The URI without the protocol. Often the IP and the dbname (i.e
   **127.0.0.1/dbname**).
-* mongo_user :   
+* mongo_user : The mongodb user name.
+* mongo_pwd : The user password saved as a clear non-obfsucated string.
+

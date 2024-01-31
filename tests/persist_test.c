@@ -11,6 +11,12 @@ START_TEST (test_persist_create)
 }
 END_TEST
 
+
+/** The persistence test suite
+  *
+  * \return The check Suite.
+  *
+  */
 Suite*
 persist_suite(void)
 {
