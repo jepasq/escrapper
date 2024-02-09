@@ -43,12 +43,14 @@ check_value(const char* value, Config* cfg, const char* key)
   * The retrieved values are then checked with a check_value() for each
   * field.
   *
+  * \param test_db If true, will prepend dbname with '-test' for unit tests.
+  *
   * \return A dynamically allocated object that should free with a call to
   *         persist_free().
   *
   */
 Persist*
-persist_create()
+persist_create(bool test_db)
 {
   bson_error_t error = {0};
   
@@ -64,9 +66,17 @@ persist_create()
   
   int port = 27017;
   char connstr[180];
-  //  sprintf(connstr, "mongodb+srv://%s:%s@%s:%d", usr, pwd, uri, port);
-  sprintf(connstr, "mongodb://%s:%s@%s:%d", usr, pwd, uri, port);
 
+  if (test_db)
+    {
+      //  sprintf(connstr, "mongodb+srv://%s:%s@%s:%d", usr, pwd, uri, port);
+      sprintf(connstr, "mongodb://%s:%s@%s:%d", usr, pwd, uri, port);
+    }
+  else
+    {
+      sprintf(connstr, "mongodb://%s:%s@%s-test:%d", usr, pwd, uri, port);
+    }
+      
   char msg[180];
   sprintf(msg, "Trying to connect to '%s'\n", connstr);
   LOGI(msg);

@@ -4,7 +4,7 @@
 START_TEST (test_persist_create)
 {
   /* unit test code */
-  Persist *p = persist_create();
+  Persist *p = persist_create(true);
   ck_assert_ptr_ne(p, NULL);
 
   persist_free(p);

@@ -143,7 +143,7 @@ elm_main(int argc, char **argv)
   elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
 
   LOGI("Creating persistence object");
-  Persist* pers = persist_create();
+  Persist* pers = persist_create(false);
 
   char* ui = 
 #if UI_USE_BOX > 0
