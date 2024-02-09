@@ -66,7 +66,8 @@ persist_create()
   
   int port = 27017;
   char connstr[180];
-  sprintf(connstr, "mongodb+srv://%s:%s@%s:%d", usr, pwd, uri, port);
+  //  sprintf(connstr, "mongodb+srv://%s:%s@%s:%d", usr, pwd, uri, port);
+  sprintf(connstr, "mongodb://%s:%s@%s:%d", usr, pwd, uri, port);
 
   char msg[180];
   sprintf(msg, "Trying to connect to '%s'\n", connstr);

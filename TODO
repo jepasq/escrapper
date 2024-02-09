@@ -7,4 +7,5 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-13 (31 Jan. 2024 - ???) SLOC ?,??? UT ??
-- (1) Better exit status in persist.c
+- (2) Removing +srv protocol makes the whol persist think work
+- Better exit status in persist.c
