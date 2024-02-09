@@ -107,6 +107,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO Work on persistence
 :LOGBOOK:
+CLOCK: [2024-02-09 ven. 16:53]--[2024-02-09 ven. 17:27] =>  0:34
 CLOCK: [2024-01-31 mer. 17:33]--[2024-01-31 mer. 17:41] =>  0:08
 CLOCK: [2024-01-31 mer. 16:14]--[2024-01-31 mer. 16:33] =>  0:19
 CLOCK: [2024-01-23 mar. 15:22]--[2024-01-23 mar. 15:43] =>  0:21
@@ -132,8 +133,7 @@ CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21
   Save full HTML or only AST representation
 - [X] Use mongo C driver
   see https://www.mongodb.com/docs/drivers/c/    
-
-- [ ] We still have an invalid pointer error when running without arg
+- [X] We still have an invalid pointer error when running without arg
   When running unit tests, we have =CRI<17438>:eina_log ../src/lib/ecore/ecore_thread.c:341 _ecore_short_job_cleanup() unknown log domain -1, original message level was: DBG=
   - It seems due to a free() call in persist.c
   

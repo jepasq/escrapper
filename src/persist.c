@@ -12,6 +12,10 @@
 #include "logger.h"
 #include "config.h"
 
+// Define some exit status related to error with mongodb server
+#define EXIT_NO_MONGO_SERVER  1
+#define EXIT_MONGO_SERVER_API 2
+
 /** Check for the given value. Print an error if NULL then assert value
  *
  * \param value The value to be NULL-checked.
@@ -72,17 +76,17 @@ persist_create()
   p->client = mongoc_client_new(connstr);
   if (!p->client) {
     char msg[180];
-    sprintf(msg, "The mongodb client is NULL. This program WILL crash.\n"
-	    "Connstring was '%s'", connstr);
+    sprintf(msg, "Mongodb client is NULL. Maybe the mongodb server is OFF.\n"
+	    "  Connstring was '%s'", connstr);
     LOGE(msg);
+    exit(EXIT_NO_MONGO_SERVER);
   }
   
   mongoc_server_api_t* api = mongoc_server_api_new (MONGOC_SERVER_API_V1);
   if (!mongoc_client_set_server_api (p->client, api, &error))
     {
-      // Error condition.
       LOGE(error.message);
-      return NULL;
+      exit(EXIT_MONGO_SERVER_API);
   }
 
   
