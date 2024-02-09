@@ -6,15 +6,15 @@
 #include <Elementary.h>
 #include <assert.h>
 
+#include "constants.h"  // USES EXIT_ status
 #include "config.h"
-#include "logger.h"  // USES logger_static_create() and logger_static_free()
+#include "logger.h"     // USES logger_static_create() and logger_static_free()
 #include "persist.h"
 #include "scrapper.h"
 #include "ui.h"
 
 Scrapper* scrapper;     //!< The general static scrapper object
 
-#define EXIT_INVALID_URL 3
 
 /** The Quit button callback
   *

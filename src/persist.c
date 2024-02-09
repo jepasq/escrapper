@@ -9,12 +9,10 @@
 #include <assert.h> // USES assert()
 #include <stdio.h>  // USES sprintf()
 
+#include "constants.h"  // USES EXIT_ status
+
 #include "logger.h"
 #include "config.h"
-
-// Define some exit status related to error with mongodb server
-#define EXIT_NO_MONGO_SERVER  1
-#define EXIT_MONGO_SERVER_API 2
 
 /** Check for the given value. Print an error if NULL then assert value
  *
