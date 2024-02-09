@@ -14,6 +14,8 @@
 
 Scrapper* scrapper;     //!< The general static scrapper object
 
+#define EXIT_INVALID_URL 3
+
 /** The Quit button callback
   *
   * In fact it deletes the caller pointed by the data paramater.
@@ -129,6 +131,13 @@ elm_main(int argc, char **argv)
 	scrapper_set_url(scrapper, argv[1]);
 	ScrapperResult* res = scrapper_run(scrapper);
 	return (res->httpStatusCode == 200);
+      }
+    else
+      {
+	char msg[80];
+	sprintf(msg, "arg1 is not a valid URL ('%s'), Bye !!", argv[1]);
+	LOGI(msg);
+	exit(EXIT_INVALID_URL);
       }
   
   elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
