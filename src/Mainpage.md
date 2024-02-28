@@ -11,7 +11,7 @@ Once indexed and parsed, the website can then be viewed offline via the
 main application UI. The data and its persistance is done using a 
 *mongodb* server.
 
-# Starting
+## Starting
 
 It's non-standard for C source code but the main entry function for the 
 binary linking is called elm_main().
@@ -25,7 +25,7 @@ in a *log file*.
 
 You can also read the file list to know more about the project organisation.
 
-# UI switch
+## UI switch
 
 In ui.h is defined a special macro used to chose the *User Interface I* layout
 version between *box* and *table*. If you define `UI_USE_BOX` with a value 
@@ -33,7 +33,13 @@ greater than 0, you will use **box** version :
 
 	#define UI_USE_BOX 1
 
-# License
+## Constants
+
+Most of the macro-based application-wide constants are defined in the 
+src/constants.h header.
+
+
+## License
 
 `escrapper` is licensed under GPLv3 license. It is free software: you can 
 redistribute it and/or modify it under the terms of the 

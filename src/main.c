@@ -13,7 +13,7 @@
 #include "scrapper.h"
 #include "ui.h"
 
-Scrapper* scrapper;     //!< The general static scrapper object
+Scrapper* scrapper = NULL;  //!< The general static scrapper object
 
 
 /** The Quit button callback
