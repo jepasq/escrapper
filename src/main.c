@@ -120,6 +120,9 @@ elm_main(int argc, char **argv)
   sprintf(msg, "Config basedir is '%s'", cbasedir);
   LOGI(msg);
 
+  // Create the static instance
+  scrapper = scrapper_create();
+  
   /** Try to scrap eventual URL passed in argv */
   if (argc > 0)
     if (scrapper_url_is_valid(argv[1]))

@@ -117,8 +117,6 @@ START_TEST (test_config_get_content)
   ck_assert_ptr_ne(c, NULL);
 }
 
-
-#include <stdio.h>
 START_TEST (test_config_eol)
 {
   char* c;
