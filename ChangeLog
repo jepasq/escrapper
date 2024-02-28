@@ -1,3 +1,13 @@
+* v0.0.0-13 (31 Jan. 2024 - 28 Feb. 2024) SLOC 1,726 UT 18
+- Add persist_save skeleton function
+- Fix remaining undocumented members and add a constants section
+- Create a scrapper instance in main() to fix an assert
+- persist_create() use a different db for unit tests
+- Move exit statuses in a new constants header
+- Exit if argv1 is an invalid URL
+- Removing +srv protocol makes the whole persist think work
+- Better exit status in persist.c
+
 * v0.0.0-12 (11 Dec. 2023 - 31 Jan. 2024) SLOC 1,131 UT 18
 - Add mongo URI to NULL client error message
 - Add a NULL check on mongodb client pointer
