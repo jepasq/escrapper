@@ -131,8 +131,13 @@ elm_main(int argc, char **argv)
 	char msg[80];
 	sprintf(msg, "arg1 is an URL ('%s'), trying to scrap it !!", argv[1]);
 	LOGI(msg);
+
+	LOGI("Creating persistence object");
+	Persist* pers = persist_create(false);
+	
 	scrapper_set_url(scrapper, argv[1]);
 	ScrapperResult* res = scrapper_run(scrapper);
+	persist_free(pers);
 	return (res->httpStatusCode == 200);
       }
     else
@@ -144,9 +149,6 @@ elm_main(int argc, char **argv)
       }
   
   elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
-
-  LOGI("Creating persistence object");
-  Persist* pers = persist_create(false);
 
   char* ui = 
 #if UI_USE_BOX > 0
@@ -164,7 +166,7 @@ elm_main(int argc, char **argv)
   elm_run();
 
   scrapper_free(scrapper);
-  persist_free(pers);
+  //  persist_free(pers);
   logger_static_free();
   
   return 0;

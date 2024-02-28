@@ -11,6 +11,21 @@ START_TEST (test_persist_create)
 }
 END_TEST
 
+/// Save an test document
+START_TEST (test_persist_save)
+{
+  /* unit test code */
+  Persist *p = persist_create(true);
+
+  ScrapperResult sr;
+  persist_save(p, &sr);
+  //ck_assert_ptr_ne(p, NULL);
+
+  persist_free(p);
+}
+END_TEST
+
+
 
 /** The persistence test suite
   *
@@ -28,6 +43,7 @@ persist_suite(void)
     /* Core test case */
     tc_core = tcase_create("Core");
     tcase_add_test(tc_core, test_persist_create);
+    tcase_add_test(tc_core, test_persist_save);
     
     return s;
 }

@@ -115,3 +115,16 @@ persist_free(Persist* p)
   mongoc_cleanup();
   free(p);
 }
+
+/** Save the given document to the underlying mongo database
+  *
+  * \param p  A valid persist object.
+  * \param sr The document to be saved.
+  *
+  */
+void
+persist_save(Persist* p, const ScrapperResult* sr)
+{
+  LOGE("persist_save() NYI");
+}
+
