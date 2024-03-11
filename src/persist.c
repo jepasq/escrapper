@@ -90,6 +90,7 @@ persist_create(bool test_db)
     LOGE(msg);
     exit(EXIT_NO_MONGO_SERVER);
   }
+  LOGI("Connected to mongo!");
   
   mongoc_server_api_t* api = mongoc_server_api_new (MONGOC_SERVER_API_V1);
   if (!mongoc_client_set_server_api (p->client, api, &error))
@@ -97,8 +98,6 @@ persist_create(bool test_db)
       LOGE(error.message);
       exit(EXIT_MONGO_SERVER_API);
   }
-
-  
   return p;
 }
 

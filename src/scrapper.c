@@ -13,7 +13,15 @@
 
 #include "logger.h"   // uses LOGI()
 
+/** Callback used with curl easay */
+size_t
+callback_func(void *ptr, size_t size, size_t count, void *stream)
+{
+      /* ptr - your string variable.
+      stream - data chuck you received */
 
+     printf("%.*s", size, (char*)stream);
+}
 /** Create and malloc a new Scrapper struct
   *
   * The scrapper is initialized with empty current_url;
@@ -64,20 +72,31 @@ scrapper_set_url(Scrapper* s, const char* u)
 ScrapperResult*
 scrapper_run(Scrapper* s)
 {
+  LOGI("Inside scrapper_run...");
   CURL* session;
   CURLcode curl_code;
   long http_code = 0;
+  char* str = 0;  // Will contain the website content
     
   curl_global_init(CURL_GLOBAL_ALL);
   session = curl_easy_init();
-  if (session)
+  if (!session)
+    {
+      LOGE("Invalid curl_easy session");
+    }
+  else
     {
       curl_easy_setopt(session, CURLOPT_URL, s->current_url);
       // Speed up and disable print in terminal
       curl_easy_setopt(session, CURLOPT_NOBODY, 1); 
-      
+
+      // Set a callback function
+      curl_easy_setopt(session, CURLOPT_WRITEFUNCTION, callback_func);
+      curl_easy_setopt(session, CURLOPT_WRITEDATA, &str);
+	
       curl_code = curl_easy_perform(session);
       curl_easy_getinfo (session, CURLINFO_RESPONSE_CODE, &http_code);
+      printf(str);
       curl_easy_cleanup(session);
     }
   curl_global_cleanup();
