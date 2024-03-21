@@ -3,6 +3,7 @@
 #include <check.h>
 
 #include "src/logger.h"
+#include "src/persist.h"
 
 #include "config.h"
 #include "logger_test.h"
@@ -51,7 +52,10 @@ int main(void)
   int lret = logger_static_create(LOGENV_TEST, "escrapper-tests.log");
   if (lret)
     printf("Error creating logger : %d!\n", lret);
-      
+
+  // Check if mongo is running. Should exit if failed to connect.
+  Persist* p = persist_create(true); 
+  
   SRunner *sr = srunner_create(main_suite());
 
   srunner_add_suite(sr, config_suite());
