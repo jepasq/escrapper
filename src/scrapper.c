@@ -13,7 +13,16 @@
 
 #include "logger.h"   // uses LOGI()
 
-/** Callback used with curl easay */
+/** Callback used with curl easy
+  *
+  * See more online at https://curl.se/libcurl/c/CURLOPT_WRITEFUNCTION.html
+  *
+  * \param ptr    your string variable a.k.a delivered data.
+  * \param size   Is always 1.
+  * \param count  Size of delivered data.
+  * \param stream stream userdata used when calling CURLOPT_WRITEDATA.
+  *
+  */
 size_t
 callback_func(void *ptr, size_t size, size_t count, void *stream)
 {
