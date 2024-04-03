@@ -16,7 +16,7 @@
   */
 START_TEST (test_main_invalid_pointer)
 {
-  int return_code = system("./escrapper > /dev/null");
+  int return_code = system("./escrapper http://google.com> /dev/null");
   ck_assert_int_eq(return_code, 0);
 }
 END_TEST

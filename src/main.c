@@ -124,7 +124,7 @@ elm_main(int argc, char **argv)
   scrapper = scrapper_create();
   
   /** Try to scrap eventual URL passed in argv */
-  if (argc > 0)
+  if (argc > 1)
     if (scrapper_url_is_valid(argv[1]))
       {
 	assert(argv[1] && "ARGV[1] is valid");
