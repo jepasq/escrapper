@@ -62,3 +62,8 @@ directory
 * mongo_user : The mongodb user name.
 * mongo_pwd : The user password saved as a clear non-obfsucated string.
 
+## systemd relationship
+
+Actually, a *systemd* command is used to test if the **mongodb** daemon is 
+running. It may fail if your distribution uses an alternative. This solution
+is implemented in the `persist_mongo_is_running()` function.

@@ -7,7 +7,8 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-14 (28 Feb. 2024 - ???) SLOC ?,??? UT ??
-- (4) Improve CURLOPT_WRITEFUNCTION's callback parameters documentation
+- (5) Implement and use mongo_is_running() function
+- Improve CURLOPT_WRITEFUNCTION's callback parameters documentation
 - Fix the main.c invalid pointer return value test
 - Tests shouldn't run if mongo can't be found
 - Add curl_easy callback function and data variable

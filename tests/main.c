@@ -48,6 +48,11 @@ main_suite(void)
   */
 int main(void)
 {
+  if (!persist_mongo_is_running())
+    {
+      printf("Can't run tests : mongodb daemon isn't running!\n");
+      return EXIT_FAILURE;
+    }
   // Create logger or print error
   int lret = logger_static_create(LOGENV_TEST, "escrapper-tests.log");
   if (lret)

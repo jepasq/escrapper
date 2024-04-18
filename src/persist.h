@@ -20,6 +20,8 @@ typedef struct
   mongoc_database_t* pagesdb;  //!< The pages collection
 } Persist;
 
+bool     persist_mongo_is_running(void);
+
 Persist* persist_create(bool test_db);
 void     persist_free(Persist*);
 

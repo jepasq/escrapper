@@ -127,3 +127,17 @@ persist_save(Persist* p, const ScrapperResult* sr)
   LOGE("persist_save() NYI");
 }
 
+/** Check is the mongodb daemon is active
+  *
+  * This function doesn't need a persist_create() before.
+  *
+  */
+bool
+persist_mongo_is_running(void)
+{
+  // --no-pager option from https://askubuntu.com/q/961025
+  int ret = system("systemctl status mongodb > /dev/null --no-pager");
+  return (ret == 0); // ret == 3 is not running
+}
+
+
