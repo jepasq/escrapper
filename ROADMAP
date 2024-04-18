@@ -108,6 +108,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO Work on persistence
 :LOGBOOK:
+CLOCK: [2024-04-18 jeu. 10:58]--[2024-04-18 jeu. 11:05] =>  0:07
 CLOCK: [2024-04-18 jeu. 10:00]--[2024-04-18 jeu. 10:30] =>  0:30
 CLOCK: [2024-03-21 jeu. 08:16]--[2024-03-21 jeu. 08:50] =>  0:34
 CLOCK: [2024-03-11 lun. 03:40]--[2024-03-11 lun. 04:09] =>  0:29
@@ -152,6 +153,9 @@ CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21
   Mayybe try to run =systemctl status mongodb= through system()
   $? == 3 if inactive
   $? == 0 if its running
+
+- [ ] CI must install and start mondo server
+  Try to add mongo service to CI action
   
 - [ ] May try external tools to save sites as md file
   - =html-to-markdown= provided python-html2text_2016.1.8-1_all bug
