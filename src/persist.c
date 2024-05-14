@@ -135,8 +135,13 @@ persist_save(Persist* p, const ScrapperResult* sr)
 bool
 persist_mongo_is_running(void)
 {
+  
+  
   // --no-pager option from https://askubuntu.com/q/961025
-  int ret = system("systemctl status mongodb > /dev/null --no-pager");
+  //  int ret = system("systemctl status mongodb > /dev/null --no-pager");
+
+  // Tryint another way from https://stackoverflow.com/a/36263843
+  int ret = system("pgrep mongod > /dev/null");
   return (ret == 0); // ret == 3 is not running
 }
 
