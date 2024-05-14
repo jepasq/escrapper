@@ -157,7 +157,7 @@ CLOCK: [2023-09-04 lun. 11:53]--[2023-09-04 lun. 12:14] =>  0:21
 
 - [ ] CI must install and start mongo server
   Try to add mongo service to CI action : it seems to work
-  Anyway, it doesn't work on CI : try to connect to 27017
+  - [ ] Anyway, it doesn't work on CI : try to connect to 27017
   
 - [ ] May try external tools to save sites as md file
   - =html-to-markdown= provided python-html2text_2016.1.8-1_all bug

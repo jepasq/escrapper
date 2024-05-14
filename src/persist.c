@@ -30,7 +30,7 @@ check_value(const char* value, Config* cfg, const char* key)
       sprintf(msg, "ERR: Can't find config file '%s'\n", 
 	      config_basedir_concat(cfg, key));
       LOGE(msg);
-      assert(value);
+      //      assert(value);
     }
 }
 
