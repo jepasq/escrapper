@@ -6,12 +6,5 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     SLOC is the result of `sloc src/ tests/`
     UT the number of ./escrapper-tests Checks
 
-* v0.0.0-14 (28 Feb. 2024 - ???) SLOC ?,??? UT ??
-- (8) Close a new persistsnce-related ROADMAP section
-- Test another way to check if mongo is running (using pgrep)
-- Try to install mongodb on CI actions
-- Implement and use mongo_is_running() function
-- Improve CURLOPT_WRITEFUNCTION's callback parameters documentation
-- Fix the main.c invalid pointer return value test
-- Tests shouldn't run if mongo can't be found
-- Add curl_easy callback function and data variable
+* v0.0.0-15 (30 May 2024 - ???) SLOC ?,??? UT ??
+
