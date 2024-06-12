@@ -22,6 +22,8 @@
   * \param count  Size of delivered data.
   * \param stream stream userdata used when calling CURLOPT_WRITEDATA.
   *
+  * \return This function can return CURL_WRITEFUNC_PAUSE to pause the transfer.
+  *
   */
 size_t
 callback_func(void *ptr, size_t size, size_t count, void *stream)

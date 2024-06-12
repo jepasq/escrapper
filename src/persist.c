@@ -131,6 +131,8 @@ persist_save(Persist* p, const ScrapperResult* sr)
   *
   * This function doesn't need a persist_create() before.
   *
+  * \return A boolean equal to true if theserver is running. False otherwise.
+  *
   */
 bool
 persist_mongo_is_running(void)
