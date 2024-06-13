@@ -28,10 +28,12 @@
 size_t
 callback_func(void *ptr, size_t size, size_t count, void *stream)
 {
-      /* ptr - your string variable.
-      stream - data chuck you received */
-
-     printf("%.*s", size, (char*)stream);
+  /* ptr - your string variable.
+     stream - data chuck you received */
+  strncat((char*)ptr, (char*)stream, count);
+  
+  printf("CallbackF=='%.*s'", count, (char*)ptr);
+  return size*count;
 }
 /** Create and malloc a new Scrapper struct
   *
@@ -87,7 +89,7 @@ scrapper_run(Scrapper* s)
   CURL* session;
   CURLcode curl_code;
   long http_code = 0;
-  char* str = 0;  // Will contain the website content
+  char str[512];  // Will contain the website content
     
   curl_global_init(CURL_GLOBAL_ALL);
   session = curl_easy_init();
@@ -107,7 +109,8 @@ scrapper_run(Scrapper* s)
 	
       curl_code = curl_easy_perform(session);
       curl_easy_getinfo (session, CURLINFO_RESPONSE_CODE, &http_code);
-      printf(str);
+      printf("HTTP code : '%s'", http_code);
+      printf("Received data : '%s'", str);
       curl_easy_cleanup(session);
     }
   curl_global_cleanup();

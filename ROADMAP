@@ -111,14 +111,19 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 - [ ] May test memory leaks using valgrind
 
 **** TODO HTML to persistence work    
+:LOGBOOK:
+CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
+:END:
+- [X] Must check if config check correctly read config file with trailing
+  space/EOL char.
+  - WIP but we need more config test. It seems it doesn't work with full path
+    Fixed using config file generated with fixtures
+- [ ] scrapper's fallback_func should work
+
 - [ ] May try external tools to save sites as md file
   - =html-to-markdown= provided python-html2text_2016.1.8-1_all bug
   - https://github.com/suntong/html2md
   - Can be found in AUR : https://aur.archlinux.org/packages/html2md
-- [ ] Must check if config check correctly read config file with trailing
-  space/EOL char.
-  - WIP but we need more config test. It seems it doesn't work with full path
-    Fixed using config file generated with fixtures
 **** DONE Work on persistence
 :LOGBOOK:
 CLOCK: [2024-05-14 mar. 14:57]--[2024-05-14 mar. 15:14] =>  0:17

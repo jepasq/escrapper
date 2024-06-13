@@ -77,9 +77,11 @@ persist_create(bool test_db)
       sprintf(connstr, "mongodb://%s:%s@%s-test:%d", usr, pwd, uri, port);
     }
       
+  /** // Removed for security reasons
   char msg[180];
   sprintf(msg, "Trying to connect to '%s'\n", connstr);
   LOGI(msg);
+  */
   
   mongoc_init();
   p->client = mongoc_client_new(connstr);
