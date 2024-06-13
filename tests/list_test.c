@@ -8,10 +8,28 @@ START_TEST (test_list_create)
   ck_assert_ptr_ne(l, NULL);
 
   ck_assert_ptr_eq(l->next, NULL);
+  ck_assert_int_eq(list_len(l), 0);
 
   list_free(l);
 }
 END_TEST
+
+/// A Scrapper struct unit tests suite
+START_TEST (test_list_len)
+{
+  /* unit test code */
+  List *l = list_create();
+  ck_assert_int_eq(list_len(l), 0);
+
+  l->val = (void*) 1;
+
+  ck_assert_int_eq(list_len(l), 1);
+
+  
+  list_free(l);
+}
+END_TEST
+
 
 /** The list test suite
   *

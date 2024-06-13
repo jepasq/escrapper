@@ -7,6 +7,7 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-15 (30 May 2024 - ???) SLOC ?,??? UT ??
-- (3) Add basic note_t/list create/free implementation
+- (4) Basic and naive/incomplete list_len() function implementation
+- Add basic note_t/list create/free implementation
 - curl easy write callback uses strncat
 - Improve persist.c API documentation comments
