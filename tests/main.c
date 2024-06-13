@@ -6,6 +6,7 @@
 #include "src/persist.h"
 
 #include "config.h"
+#include "list_test.h"
 #include "logger_test.h"
 #include "persist_test.h"
 #include "scrapper_test.h"
@@ -66,6 +67,7 @@ int main(void)
   srunner_add_suite(sr, config_suite());
   srunner_add_suite(sr, scrapper_suite());
   srunner_add_suite(sr, persist_suite());
+  srunner_add_suite(sr, list_suite());
   srunner_add_suite(sr, logger_suite());
   
   srunner_run_all(sr, CK_NORMAL);

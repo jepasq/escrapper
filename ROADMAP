@@ -112,6 +112,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO HTML to persistence work    
 :LOGBOOK:
+CLOCK: [2024-06-13 jeu. 23:15]--[2024-06-13 jeu. 23:48] =>  0:33
 CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
 :END:
 - [X] Must check if config check correctly read config file with trailing
@@ -119,7 +120,12 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
   - WIP but we need more config test. It seems it doesn't work with full path
     Fixed using config file generated with fixtures
 - [ ] scrapper's fallback_func should work
-
+  Maybe a special string type used to concatenate result based on a
+  linked list
+  - [ ] First, a fully tested list type,
+    see https://www.learn-c.org/en/Linked_lists
+  - [ ] Then, a link-based string type
+  - [ ] Then , use it to fix current scrapper_test segfault  
 - [ ] May try external tools to save sites as md file
   - =html-to-markdown= provided python-html2text_2016.1.8-1_all bug
   - https://github.com/suntong/html2md
