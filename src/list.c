@@ -2,6 +2,11 @@
 
 #include <stdlib.h> // USES malloc()
 
+/** Create an empty list with a first NULL-value element
+  *
+  * \return The newly cerate dynamically-allocated list.
+  *
+  */
 List*
 list_create(void)
 {
@@ -9,6 +14,11 @@ list_create(void)
   return l;
 }
 
+/** Free a dynamically-allocated list
+  *
+  * \param The list.
+  *
+  */
 void
 list_free(List* l)
 {

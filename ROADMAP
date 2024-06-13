@@ -126,7 +126,7 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
   - [-] First, a fully tested list type,
     see https://www.learn-c.org/en/Linked_lists
     - [X] Add a len function : basic and naive impl.
-    - [ ] Add a append function  
+    - [ ] Add a append function
   - [ ] Then, a link-based string type
   - [ ] Then , use it to fix current scrapper_test segfault  
 - [ ] May try external tools to save sites as md file
