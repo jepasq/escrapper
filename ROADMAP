@@ -110,7 +110,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 - [ ] May test memory leaks using valgrind
 
-**** TODO HTML to persistence work    
+**** TODO HTML to persistence work
 :LOGBOOK:
 CLOCK: [2024-06-13 jeu. 23:58]--[2024-06-14 ven. 00:08] =>  0:10
 CLOCK: [2024-06-13 jeu. 23:15]--[2024-06-13 jeu. 23:48] =>  0:33

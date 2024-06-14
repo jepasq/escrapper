@@ -4,7 +4,7 @@
 START_TEST (test_list_create)
 {
   /* unit test code */
-  List *l = list_create();
+  List *l = list_create(&"aze");
   ck_assert_ptr_ne(l, NULL);
 
   ck_assert_ptr_eq(l->next, NULL);
@@ -18,13 +18,8 @@ END_TEST
 START_TEST (test_list_len)
 {
   /* unit test code */
-  List *l = list_create();
-  ck_assert_int_eq(list_len(l), 0);
-
-  l->val = (void*) 1;
-
+  List *l = list_create(&"aze");
   ck_assert_int_eq(list_len(l), 1);
-
   
   list_free(l);
 }
@@ -47,6 +42,8 @@ list_suite(void)
     /* Core test case */
     tc_core = tcase_create("Core");
     tcase_add_test(tc_core, test_list_create);
+    tcase_add_test(tc_core, test_list_len);
+    //    tcase_add_test(tc_core, test_list_append);
     
     return s;
 }
