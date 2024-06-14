@@ -46,3 +46,23 @@ list_len(List* l)
     return 333;
 }
 
+void
+list_append(List* l, void* val)
+{
+  List* l1 = l;
+  while (l1->next)
+    {
+      l1 = l->next;
+    }
+  List* l2 = list_create(val);
+  l1->next = l2;
+}
+
+/** Flatten the given list and return its char* representation
+  *
+  */
+char*
+list_flatten(List*)
+{
+
+}

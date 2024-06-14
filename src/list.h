@@ -8,21 +8,28 @@
 
 #include <stddef.h> // USES size_t
 
-/** The basic list node
+/** The basic list node mainly used to flatten curl easy WRITEDATA stream
   *
-  * This list always contains at least one element.
+  * This list always contains at least one element : the first value.
+  *
+  * The values_len member is used to exactly know the full lenght of the
+  * flatten list, to avoid a complete unneeded traversal before final
+  * concat.
   *
   */
 typedef struct node_t {
-    void*         val;
-    struct node_t * next;
+  void*          val;
+  struct node_t* next;       //!< The next node
+  size_t         values_len; //!< Sum of all values 
 } List;
 
-List* list_create(void*);
-void  list_free(List*);
+List*  list_create(void*);
+void   list_free(List*);
 
-size_t  list_len(List*);
+size_t list_len(List*);
 
+void   list_append(List*, void*);
+char*  list_flatten(List*);
 
 #endif // !__LIST_H__
 
