@@ -20,7 +20,6 @@ END_TEST
 
 START_TEST (test_list_len)
 {
-  /* unit test code */
   List *l = list_create("aze");
   ck_assert_int_eq(list_len(l), 1);
   
@@ -30,7 +29,6 @@ END_TEST
 
 START_TEST (test_list_append)
 {
-  /* unit test code */
   List *l = list_create("aze");
   ck_assert_int_eq(list_len(l), 1);
 
@@ -47,7 +45,6 @@ END_TEST
 
 START_TEST (test_list_flatten)
 {
-  /* unit test code */
   List *l = list_create("aaa");
   ck_assert_int_eq(list_len(l), 1);
 

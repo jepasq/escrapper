@@ -127,6 +127,8 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
   - [-] First, a fully tested list type,
     see https://www.learn-c.org/en/Linked_lists
     - [X] Add a len function : basic and naive impl.
+    - [ ] Unit tests should fail now
+      Maube the scrapper segfault makes the list tests skipped
     - [ ] Add a append function
     - [ ] Also a flatten function that returns the concat text  
   - [ ] Then, a link-based string type
