@@ -2,6 +2,10 @@
 
 #include <stdlib.h> // USES malloc()
 #include <assert.h> // USES assert()
+#include <string.h> // USES strlen()
+
+#include <stdio.h>
+
 
 /** Create an empty list with a first NULL-value element
   *
@@ -16,6 +20,7 @@ list_create(void* val)
   assert(val && "List val can't be NULL");
   List* l = malloc(sizeof(List));
   l->val = val;
+  l->values_len = strlen((char*)val);
   l->next = NULL;
   return l;
 }
@@ -40,10 +45,14 @@ list_len(List* l)
   if (l == NULL)
     return 0;
 
-  if (l->next == NULL)
-    return 1;
-  else
-    return 333;
+  size_t len = 1;
+  List* l1 = l;
+  while (l1->next);
+    {
+      len++;
+      l1 = l1->next;
+    }
+    return len;
 }
 
 void
@@ -64,9 +73,25 @@ list_append(List* l, void* val)
   *
   * \param l The list to be processed.
   *
+  * \return A newly dynamically allocated char array. Must be free() after
+  *         usage.
+  *
   */
 char*
 list_flatten(List* l)
 {
+  char* ret = malloc(sizeof(char) * (l->values_len + 1));
 
+  List* l1 = l;
+  strcpy(ret, l1->val);
+  while (l1->next);
+    {
+      printf("> %s\n", l1->val);
+      strcat(ret, l1->val);
+      l1 = l1->next;
+    }
+  printf("> Returning '%s'\n", ret);
+
+  
+  return ret;
 }

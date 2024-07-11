@@ -10,7 +10,7 @@ START_TEST (test_list_create)
   ck_assert_ptr_ne(l, NULL);
 
   ck_assert_ptr_eq(l->next, NULL);
-  ck_assert_int_eq(list_len(l), 0);
+  ck_assert_int_eq(list_len(l), 1); // List minimum is always 1 (first node)
 
   ck_assert_int_eq(l->values_len, 3);
 
@@ -52,7 +52,6 @@ START_TEST (test_list_flatten)
   list_append(l, "ccc");
 
   ck_assert_int_eq(strcmp(list_flatten(l), "aaabbbccc"), 0);
-  ck_assert_int_eq(1, 0);
   
   list_free(l);
 }

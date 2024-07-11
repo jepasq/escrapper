@@ -112,6 +112,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO HTML to persistence work
 :LOGBOOK:
+CLOCK: [2024-07-11 jeu. 07:21]--[2024-07-11 jeu. 08:12] =>  0:51
 CLOCK: [2024-07-11 jeu. 06:52]--[2024-07-11 jeu. 07:11] =>  0:19
 CLOCK: [2024-06-14 ven. 05:06]--[2024-06-14 ven. 05:51] =>  0:45
 CLOCK: [2024-06-13 jeu. 23:58]--[2024-06-14 ven. 00:08] =>  0:10
@@ -129,8 +130,10 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
     see https://www.learn-c.org/en/Linked_lists
     - [X] Add a len function : basic and naive impl.
     - [X] Unit tests should fail now
-    - [ ] Add a append function
-    - [ ] Also a flatten function that returns the concat text  
+    - [X] Add an append function
+    - [ ] Also a flatten function that returns the concat text
+      We have an endless loop here
+    - [ ] Really implement list_len() Currently returning 333  
   - [ ] Then, a link-based string type
   - [ ] Then , use it to fix current scrapper_test segfault
 - [ ] Main test suite name is spurious (prints random letters)
