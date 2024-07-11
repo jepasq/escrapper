@@ -60,9 +60,13 @@ list_append(List* l, void* val)
 
 /** Flatten the given list and return its char* representation
   *
+  * All its element will be joined to a char*.
+  *
+  * \param l The list to be processed.
+  *
   */
 char*
-list_flatten(List*)
+list_flatten(List* l)
 {
 
 }

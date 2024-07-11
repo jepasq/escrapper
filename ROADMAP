@@ -112,6 +112,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO HTML to persistence work
 :LOGBOOK:
+CLOCK: [2024-07-11 jeu. 06:52]--[2024-07-11 jeu. 07:11] =>  0:19
 CLOCK: [2024-06-14 ven. 05:06]--[2024-06-14 ven. 05:51] =>  0:45
 CLOCK: [2024-06-13 jeu. 23:58]--[2024-06-14 ven. 00:08] =>  0:10
 CLOCK: [2024-06-13 jeu. 23:15]--[2024-06-13 jeu. 23:48] =>  0:33
@@ -127,12 +128,12 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
   - [-] First, a fully tested list type,
     see https://www.learn-c.org/en/Linked_lists
     - [X] Add a len function : basic and naive impl.
-    - [ ] Unit tests should fail now
-      Maube the scrapper segfault makes the list tests skipped
+    - [X] Unit tests should fail now
     - [ ] Add a append function
     - [ ] Also a flatten function that returns the concat text  
   - [ ] Then, a link-based string type
   - [ ] Then , use it to fix current scrapper_test segfault
+- [ ] Main test suite name is spurious (prints random letters)
 - [ ] May try external tools to save sites as md file
   - =html-to-markdown= provided python-html2text_2016.1.8-1_all bug
   - https://github.com/suntong/html2md

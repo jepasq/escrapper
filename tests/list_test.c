@@ -1,6 +1,7 @@
 #include "list_test.h"
 
 #include <string.h>   // USES strcmp()
+#include <stdio.h>
 
 START_TEST (test_list_create)
 {
@@ -46,12 +47,12 @@ END_TEST
 START_TEST (test_list_flatten)
 {
   List *l = list_create("aaa");
-  ck_assert_int_eq(list_len(l), 1);
 
   list_append(l, "bbb");
   list_append(l, "ccc");
-  
+
   ck_assert_int_eq(strcmp(list_flatten(l), "aaabbbccc"), 0);
+  ck_assert_int_eq(1, 0);
   
   list_free(l);
 }
@@ -76,6 +77,7 @@ list_suite(void)
     tcase_add_test(tc_core, test_list_len);
     tcase_add_test(tc_core, test_list_append);
     tcase_add_test(tc_core, test_list_flatten);
+    suite_add_tcase(s, tc_core);
     
     return s;
 }

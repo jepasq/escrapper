@@ -16,9 +16,12 @@
   * flatten list, to avoid a complete unneeded traversal before final
   * concat.
   *
+  * This list was primarly created to handle curl_easy response and to be
+  * flatten at the end.
+  *
   */
 typedef struct node_t {
-  void*          val;
+  void*          val;      //!< The current node value (casted to void pointer) 
   struct node_t* next;       //!< The next node
   size_t         values_len; //!< Sum of all values 
 } List;
