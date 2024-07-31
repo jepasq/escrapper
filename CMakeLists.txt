@@ -44,6 +44,15 @@ target_include_directories(escrapper PUBLIC
   ${PROJECT_BINARY_DIR}
 )
 
+add_executable(escrapper-example-list ${SRCS} src/examples/list.c)
+target_link_libraries(escrapper-example-list ${DEPS_LIBRARIES})
+target_include_directories(escrapper-example-list PUBLIC
+  ${DEPS_INCLUDE_DIRS}
+  ${PROJECT_BINARY_DIR}
+  ${PROJECT_SOURCE_DIR}/src/
+)
+
+
 pkg_check_modules(CHCK check)
 if(NOT CHCK_FOUND)
   message(WARNING "Check library not found. Can't enable unit tests")

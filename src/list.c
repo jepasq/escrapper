@@ -64,6 +64,7 @@ list_append(List* l, void* val)
       l1 = l->next;
     }
   List* l2 = list_create(val);
+  l1->values_len += strlen(val);
   l1->next = l2;
 }
 
@@ -80,15 +81,17 @@ list_append(List* l, void* val)
 char*
 list_flatten(List* l)
 {
+  printf("> Flattening a list of %d values_len\n", l->values_len);
+  
   char* ret = malloc(sizeof(char) * (l->values_len + 1));
 
   List* l1 = l;
   strcpy(ret, l1->val);
   while (l1->next);
     {
+      l1 = l1->next;
       printf("> %s\n", l1->val);
       strcat(ret, l1->val);
-      l1 = l1->next;
     }
   printf("> Returning '%s'\n", ret);
 
