@@ -110,8 +110,9 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 - [ ] May test memory leaks using valgrind
 
-**** TODO [fix_FlattenEndlessLoop] HTML to persistence work
+**** TODO HTML to persistence work
 :LOGBOOK:
+CLOCK: [2024-08-22 jeu. 11:29]--[2024-08-22 jeu. 11:56] =>  0:27
 CLOCK: [2024-08-22 jeu. 11:07]--[2024-08-22 jeu. 11:22] =>  0:15
 CLOCK: [2024-07-31 mer. 07:07]--[2024-07-31 mer. 07:29] =>  0:22
 CLOCK: [2024-07-11 jeu. 07:21]--[2024-07-11 jeu. 08:12] =>  0:51
@@ -135,7 +136,8 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
     - [X] Add an append function
     - [X] Also a flatten function that returns the concat text
       We have an endless loop here. Added an example, still failing
-    - [ ] Really implement list_len() Currently returning 333  
+    - [ ] Really implement list_len() Currently returning 333
+      Current tests exit with a timeout error at list_test.c:30
   - [ ] Then, a link-based string type
   - [ ] Then, use it to fix current scrapper_test segfault
 - [ ] Main test suite name is spurious (prints random letters)

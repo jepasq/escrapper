@@ -38,6 +38,10 @@ list_free(List* l)
 
 /** Returns the length of the list in element
   *
+  * \param l The list to return the length for.
+  *
+  * \return The list length in number of elements as size_t.
+  *
   */
 size_t
 list_len(List* l)
@@ -47,7 +51,7 @@ list_len(List* l)
 
   size_t len = 1;
   List* l1 = l;
-  while (l1->next);
+  while (l1->next)
     {
       len++;
       l1 = l1->next;
@@ -55,6 +59,12 @@ list_len(List* l)
     return len;
 }
 
+/** Append the given value at the end of the list
+  *
+  * \param l   The list to append the value to.
+  * \param val The value to be added.
+  *
+  */
 void
 list_append(List* l, void* val)
 {

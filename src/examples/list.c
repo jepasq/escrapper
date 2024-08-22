@@ -8,7 +8,11 @@ int
 main(int atgc, char** argv)
 {
   List* lst = list_create("aa");
+  printf("- List len is %d elem.\n", list_len(lst));
+  
   list_append(lst, "bb");
-  printf("%s\n", list_flatten(lst));
+  printf("- List len is %d elem.\n", list_len(lst));
+
+  printf("Flatten result : %s\n", list_flatten(lst));
   return 0;
 }
