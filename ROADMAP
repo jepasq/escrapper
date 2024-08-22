@@ -112,6 +112,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO [fix_FlattenEndlessLoop] HTML to persistence work
 :LOGBOOK:
+CLOCK: [2024-08-22 jeu. 11:07]--[2024-08-22 jeu. 11:22] =>  0:15
 CLOCK: [2024-07-31 mer. 07:07]--[2024-07-31 mer. 07:29] =>  0:22
 CLOCK: [2024-07-11 jeu. 07:21]--[2024-07-11 jeu. 08:12] =>  0:51
 CLOCK: [2024-07-11 jeu. 06:52]--[2024-07-11 jeu. 07:11] =>  0:19
@@ -132,7 +133,7 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
     - [X] Add a len function : basic and naive impl.
     - [X] Unit tests should fail now
     - [X] Add an append function
-    - [ ] Also a flatten function that returns the concat text
+    - [X] Also a flatten function that returns the concat text
       We have an endless loop here. Added an example, still failing
     - [ ] Really implement list_len() Currently returning 333  
   - [ ] Then, a link-based string type

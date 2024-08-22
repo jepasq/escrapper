@@ -87,14 +87,10 @@ list_flatten(List* l)
 
   List* l1 = l;
   strcpy(ret, l1->val);
-  while (l1->next);
+  while (l1->next != NULL)
     {
       l1 = l1->next;
-      printf("> %s\n", l1->val);
       strcat(ret, l1->val);
     }
-  printf("> Returning '%s'\n", ret);
-
-  
   return ret;
 }
