@@ -1,3 +1,13 @@
+* v0.0.0-15 (30 May 2024 - 22 Aug. 2024) SLOC 2,059 UT 22
+- Add more unit tests for list_len
+- Fix the string flatten() endless loop issue
+- Finally execute current list failing tests
+- Add values_len member to List struct
+- Basic and naive/incomplete list_len() function implementation
+- Add basic note_t/list create/free implementation
+- curl easy write callback uses strncat
+- Improve persist.c API documentation comments
+
 * v0.0.0-14 (28 Feb. 2024 - 30 May 2024) SLOC 1,783 UT 18
 - Close a new persistsnce-related ROADMAP section
 - Test another way to check if mongo is running (using pgrep)
