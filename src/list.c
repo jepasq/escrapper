@@ -87,7 +87,7 @@ list_flatten(List* l)
 
   List* l1 = l;
   strcpy(ret, l1->val);
-  while (l1->next != NULL)
+  while (l1->next)
     {
       l1 = l1->next;
       strcat(ret, l1->val);
