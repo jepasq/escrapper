@@ -109,7 +109,7 @@ scrapper_run(Scrapper* s)
 	
       curl_code = curl_easy_perform(session);
       curl_easy_getinfo (session, CURLINFO_RESPONSE_CODE, &http_code);
-      printf("HTTP code : '%s'", http_code);
+      printf("HTTP code : '%d'", http_code);
       printf("Received data : '%s'", str);
       curl_easy_cleanup(session);
     }

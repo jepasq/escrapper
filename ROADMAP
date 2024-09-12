@@ -112,6 +112,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO HTML to persistence work
 :LOGBOOK:
+CLOCK: [2024-09-12 jeu. 17:13]--[2024-09-12 jeu. 17:37] =>  0:24
 CLOCK: [2024-08-22 jeu. 11:29]--[2024-08-22 jeu. 11:56] =>  0:27
 CLOCK: [2024-08-22 jeu. 11:07]--[2024-08-22 jeu. 11:22] =>  0:15
 CLOCK: [2024-07-31 mer. 07:07]--[2024-07-31 mer. 07:29] =>  0:22
@@ -126,6 +127,9 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
   space/EOL char.
   - WIP but we need more config test. It seems it doesn't work with full path
     Fixed using config file generated with fixtures
+- [X] We actually have a segfault in =scrapper_run()=
+  src/scrapper.c:112 (on a printf/printf_buffer call)
+  
 - [-] scrapper's fallback_func should work
   Maybe a special string type used to concatenate result based on a
   linked list
