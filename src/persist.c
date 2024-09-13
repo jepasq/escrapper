@@ -8,6 +8,7 @@
 #include <stdlib.h> // USES malloc() and free()
 #include <assert.h> // USES assert()
 #include <stdio.h>  // USES sprintf()
+#include <bson/bson.h>
 
 #include "constants.h"  // USES EXIT_ status
 
@@ -117,7 +118,7 @@ persist_free(Persist* p)
   free(p);
 }
 
-/** Save the given document to the underlying mongo database
+/** Save the given document to the underlying @a MongoDB database.
   *
   * \param p  A valid persist object.
   * \param sr The document to be saved.
@@ -149,4 +150,32 @@ persist_mongo_is_running(void)
   return (ret == 0); // ret == 3 is not running
 }
 
+/** Count the document in the pages collection
+  *
+  * @param p The correctly create Persist instance.
+  *
+  * @return The number od documents.
+  *
+  */
+int64_t
+persist_count(Persist* p)
+{
+  bson_error_t error;
+  int64_t count;
+  bson_t* opts = BCON_NEW ("skip", BCON_INT64(5));
+  bson_t* filter = NULL;
+  mongoc_collection_count_documents( p->pagescoll, filter, opts,
+				     NULL, NULL, &error);
+
+  bson_destroy (opts);
+
+  if (count < 0)
+    {
+      fprintf (stderr, "Count failed: %s\n", error.message);
+    } else {
+    printf ("%" PRId64 " documents counted.\n", count);
+  }
+  
+  return count;
+}
 

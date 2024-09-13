@@ -93,14 +93,17 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
   - [X] Make the switch possible with a macro
 - [X] ui's set_str_utlr should be set_str_status
 
-- [ ] We have an =munmap_chunk(): invalid pointer= error when runnign GUI
+- [ ] We have an =munmap_chunk(): invalid pointer= error when running GUI
 
 - [ ] continue box layout version
   - [ ] event handling
         
 - [ ] URL is not completely shown : change entry width
   May try the wrap attribute
-  
+
+- [ ] If we add a newline char at the end of the input, the returned text
+  contains =<br/>=, prevent this
+
 - [ ] Scrapper shouldn't scrap an empty URL : unit test
 
 - [ ] Maybe create main UI with a conformant ?
@@ -112,6 +115,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO HTML to persistence work
 :LOGBOOK:
+CLOCK: [2024-09-13 ven. 10:54]--[2024-09-13 ven. 11:29] =>  0:35
 CLOCK: [2024-09-13 ven. 10:08]--[2024-09-13 ven. 10:30] =>  0:22
 CLOCK: [2024-09-12 jeu. 17:13]--[2024-09-12 jeu. 17:37] =>  0:24
 CLOCK: [2024-08-22 jeu. 11:29]--[2024-08-22 jeu. 11:56] =>  0:27
