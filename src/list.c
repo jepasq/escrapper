@@ -1,5 +1,10 @@
 #include "list.h"
 
+/** \file list.c
+  * The linked list implementation file.
+  *
+  */
+
 #include <stdlib.h> // USES malloc()
 #include <assert.h> // USES assert()
 #include <string.h> // USES strlen()
@@ -7,11 +12,13 @@
 #include <stdio.h>
 
 
-/** Create an empty list with a first NULL-value element
+/** Create an empty list with a first @c NULL-value element
   *
-  * \param val The head element value.
+  * You must call @ref list_free() function on the returned list.
   *
-  * \return The newly cerate dynamically-allocated list.
+  * @param val The head element value.
+  *
+  * @return The newly cerate dynamically-allocated list.
   *
   */
 List*
@@ -27,7 +34,7 @@ list_create(void* val)
 
 /** Free a dynamically-allocated list
   *
-  * \param The list.
+  * \param l The list.
   *
   */
 void
