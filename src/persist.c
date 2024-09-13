@@ -56,6 +56,9 @@ persist_create(bool test_db)
   bson_error_t error = {0};
   
   Persist* p = malloc(sizeof(Persist));
+  p->client    = NULL;
+  p->pagesdb   = NULL;
+  p->pagescoll = NULL;
   
   Config* cfg = config_create();
   char* uri = config_get_value(cfg, "mongo_uri");
@@ -100,7 +103,7 @@ persist_create(bool test_db)
     {
       LOGE(error.message);
       exit(EXIT_MONGO_SERVER_API);
-  }
+    }
   return p;
 }
 
