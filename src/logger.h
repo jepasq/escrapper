@@ -56,11 +56,10 @@ extern struct _Logger* logger; //!< The global logger defined in impl. file
 int logger_static_create(tLoggerEnvironment, const char*);
 void logger_static_free();
 
-void logger_static_log(const char*, int, tLoggerLevel, const char*);
+void logger_static_log(const char*, int, tLoggerLevel, const char*, ...);
 char* logger_static_level_to_str(tLoggerLevel);
 
 tLoggerEnvironment logger_static_get_env(void);
 void logger_static_set_env(tLoggerEnvironment);
-
 
 #endif // !__LOGGER_H__

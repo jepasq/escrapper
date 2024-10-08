@@ -49,6 +49,7 @@ CLOCK: [2023-09-05 mar. 07:28]--[2023-09-05 mar. 07:47] =>  0:19
 - [ ] Must add \file block for each header and implementation
 **** TODO Logger may handle vararg values in LOG* macros
 :LOGBOOK:
+CLOCK: [2024-10-08 mar. 09:50]--[2024-10-08 mar. 10:29] =>  0:39
 CLOCK: [2023-11-27 lun. 09:15]--[2023-11-27 lun. 09:25] =>  0:10
 CLOCK: [2023-09-21 jeu. 11:02]--[2023-09-21 jeu. 11:18] =>  0:16
 CLOCK: [2023-09-20 mer. 07:07]--[2023-09-20 mer. 07:19] =>  0:12
@@ -69,7 +70,10 @@ CLOCK: [2023-09-15 ven. 14:47]--[2023-09-15 ven. 15:00] =>  0:13
   Only an environment setter, because for file, it's more complicated
   
 - [ ] May be overriden by environment variable
-- [ ] Work on the vararg thing  
+- [ ] Work on the vararg thing
+  see https://jameshfisher.com/2016/11/23/c-varargs/
+- [ ] Try to avoid redifinition of all macro depending on __FILE__
+  or __FILENAME__  
 **** TODO Retry to create UI with boxes in ui.h/.c
 :LOGBOOK:
 CLOCK: [2023-12-11 lun. 11:59]--[2023-12-11 lun. 12:06] =>  0:07
@@ -92,12 +96,14 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
     https://docs.enlightenment.org/elementary/1.15.0/box_example_01.html
   - [X] Make the switch possible with a macro
 - [X] ui's set_str_utlr should be set_str_status
+- [X] Add unit tests using check ?
+  May add the `make check` rule and fix README
 
 - [ ] We have an =munmap_chunk(): invalid pointer= error when running GUI
-
+        
 - [ ] continue box layout version
   - [ ] event handling
-        
+
 - [ ] URL is not completely shown : change entry width
   May try the wrap attribute
 
@@ -105,11 +111,8 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
   contains =<br/>=, prevent this
 
 - [ ] Scrapper shouldn't scrap an empty URL : unit test
-
 - [ ] Maybe create main UI with a conformant ?
   https://docs.tizen.org/application/native/guides/ui/efl/container-conformant/
-- [ ] Add unit tests using check ?
-  May add the `make check` rule and fix README
 
 - [ ] May test memory leaks using valgrind
 
@@ -151,11 +154,16 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
       Current tests exit with a timeout error at list_test.c:30
   - [ ] Then, a link-based string type
   - [ ] Then, use it to fix current scrapper_test segfault
+
+- [ ] list example's print_len may use vararg
 - [ ] Main test suite name is spurious (prints random letters)
 - [ ] May try external tools to save sites as md file
   - =html-to-markdown= provided python-html2text_2016.1.8-1_all bug
   - https://github.com/suntong/html2md
   - Can be found in AUR : https://aur.archlinux.org/packages/html2md
+**** TODO Unit test and CI-related work
+- [ ] May add the `make check` rule and fix README
+
 **** DONE Work on persistence
 :LOGBOOK:
 CLOCK: [2024-05-14 mar. 14:57]--[2024-05-14 mar. 15:14] =>  0:17

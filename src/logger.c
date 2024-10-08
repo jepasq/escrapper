@@ -10,6 +10,8 @@
 #include <stdlib.h>    // USES malloc() and free()
 #include <stdio.h>     // USES fopen(), fclose() etc...
 
+#include <stdarg.h>    // USES va_list, va_start()
+
 /** The size of the char array used as log message buffer
   *
   * If this value is to low, some unit tests may fail.
@@ -93,13 +95,26 @@ logger_static_free()
   * \param file    The file the message come from.
   * \param line    The line the message come from.
   * \param level   The message level.
-  * \param message The message to be printed/logged.
+  * \param message The - possibly formatted - message to be printed/logged.
   *
   */
 void
 logger_static_log(const char* file, int line,
-		  tLoggerLevel level, const char* message)
+		  tLoggerLevel level, const char* message, ...)
 {
+  va_list argp;
+  va_start(argp, message);
+
+  const char* format = message;
+  
+  // varargs handling
+  while (*format != '\0')
+    {
+      // see https://jameshfisher.com/2016/11/23/c-varargs/ for more
+      putchar(*format);
+      format++;
+  }
+  
   if (strlen(message) > MSGLEN - 40)
     printf("Warning : log message is long and may fail. Please check MSGLEN\n");
     
@@ -113,6 +128,8 @@ logger_static_log(const char* file, int line,
   fprintf(logger->file, buffer);
   fflush(logger->file);
   free(lvl);
+
+  va_end(argp);
 }
 
 /** Return a 2 chars dynamically allocated string that represent the given

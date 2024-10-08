@@ -52,6 +52,14 @@ target_include_directories(escrapper-example-list PUBLIC
   ${PROJECT_SOURCE_DIR}/src/
 )
 
+add_executable(escrapper-example-logger ${SRCS} src/examples/logger.c)
+target_link_libraries(escrapper-example-logger ${DEPS_LIBRARIES})
+target_include_directories(escrapper-example-logger PUBLIC
+  ${DEPS_INCLUDE_DIRS}
+  ${PROJECT_BINARY_DIR}
+  ${PROJECT_SOURCE_DIR}/src/
+)
+
 
 pkg_check_modules(CHCK check)
 if(NOT CHCK_FOUND)
