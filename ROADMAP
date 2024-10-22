@@ -10,6 +10,7 @@ API documentation https://www.enlightenment.org/develop/api/start
 **** Maybe a latex-based rasterisation engine
 **** Implement the scrapper
 :LOGBOOK:
+CLOCK: [2024-10-22 mar. 12:52]--[2024-10-22 mar. 13:21] =>  0:29
 CLOCK: [2024-10-22 mar. 12:27]--[2024-10-22 mar. 12:48] =>  0:21
 CLOCK: [2023-11-27 lun. 10:18]--[2023-11-27 lun. 10:27] =>  0:09
 CLOCK: [2023-11-27 lun. 09:53]--[2023-11-27 lun. 10:00] =>  0:07
@@ -28,7 +29,8 @@ via unit tests
 
 - [ ] If a URL passed as argv1 is not valid, try to prepend with https://
   Using scraper_prepend_https() function
-
+  - Actually, strcat cause a segfault
+  
 - [-] Now, implement scrapper_run wich must return a 404 status code
   for a non existant domain/page
   - [X] First search for check

@@ -175,8 +175,8 @@ scrapper_prepend_https(const char* url)
   if (url == NULL)
     return NULL;
 
-  char* ret = (char*) malloc(strlen(url) + 8); // 8= 'https://'
-  ret = "https://";
+  char* ret = (char*) malloc(strlen(url) + 9); // 9= 'https://' + \0
+  strcpy(ret, "https://");
   strcat(ret, url);
   return ret;
 }

@@ -99,6 +99,19 @@ input_cb(void* data, Evas_Object* obj, void* event)
   //  printf("Evas obj. : %s !\n", ce);
 }
 
+static int
+run_scrapper_on(char* url)
+{
+  LOGI("Creating persistence object");
+  Persist* pers = persist_create(false);
+	
+  scrapper_set_url(scrapper, url);
+  ScrapperResult* res = scrapper_run(scrapper);
+  persist_free(pers);
+  
+  return (res->httpStatusCode == 200);
+}
+
 /** The application main function
   *
   * This function initialize ELM stack and load example.edj compiled file.
@@ -133,21 +146,27 @@ elm_main(int argc, char **argv)
 	sprintf(msg, "arg1 is an URL ('%s'), trying to scrap it !!", url);
 	LOGI(msg);
 
-	LOGI("Creating persistence object");
-	Persist* pers = persist_create(false);
-	
-	scrapper_set_url(scrapper, url);
-	ScrapperResult* res = scrapper_run(scrapper);
-	persist_free(pers);
-	return (res->httpStatusCode == 200);
+	return run_scrapper_on(url);
       }
     else
       {
-	
-	char msg[80];
-	sprintf(msg, "arg1 is not a valid URL ('%s'), Bye !!", url);
-	LOGI(msg);
-	exit(EXIT_INVALID_URL);
+	char* urlp = scrapper_prepend_https(url);
+	sprintf(msg, "arg1 is not a valid URL ('%s'), trying with '%s' !!",
+		url, urlp);
+	if (scrapper_url_is_valid(urlp))
+	  {
+	    int ret = run_scrapper_on(urlp);
+	    free(urlp);
+	    return ret;
+	  }
+	else
+	  {
+	    free(urlp);
+	    char msg[80];
+	    sprintf(msg, "Can't get a valid URL from '%s', Bye !!", url);
+	    LOGI(msg);
+	    exit(EXIT_INVALID_URL);
+	  }
       }
   
   elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);

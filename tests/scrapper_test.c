@@ -1,6 +1,9 @@
 #include "scrapper_test.h"
 #include <check.h>
 
+#include <stdlib.h>   // USES free()
+
+
 /** The URL that should trigger a 404 HTTP error
   *
   * Check it with :
@@ -71,7 +74,10 @@ END_TEST
 
 START_TEST (test_scrapper_prepend_https)
 {
-  ck_assert_str_eq(scrapper_prepend_https("aze"), "https://aze");
+  char* ret = scrapper_prepend_https("aze");
+  ck_assert_str_eq(ret, "https://aze");
+  free(ret);
+  
   ck_assert_str_eq(scrapper_prepend_https(NULL),  NULL);
 }
 END_TEST
@@ -90,6 +96,7 @@ scrapper_suite(void)
   tcase_add_test(tc_core, test_scrapper_create);
   tcase_add_test(tc_core, test_scrapper_set_url);
   tcase_add_test(tc_core, test_scrapper_check_url);
+  tcase_add_test(tc_core, test_scrapper_prepend_https);
   suite_add_tcase(s, tc_core);
     
   TCase* tc_long = tcase_create("ScrapperLong");

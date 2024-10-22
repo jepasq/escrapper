@@ -7,7 +7,8 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-16 (22 Aug. 2024 - ???) SLOC ?,??? UT ??
-- (7) scrapper_prepend_https function implementation
+- (8) Better scrapper_prepend_https tests implementation
+- scrapper_prepend_https function implementation
 - Add a basic logger example to test for variadic messages
 - Slightly improve list example code
 - persist_ create() sets returned struct members to NULL
