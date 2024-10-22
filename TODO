@@ -6,12 +6,5 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     SLOC is the result of `sloc src/ tests/`
     UT the number of ./escrapper-tests Checks
 
-* v0.0.0-16 (22 Aug. 2024 - ???) SLOC ?,??? UT ??
-- (8) Better scrapper_prepend_https tests implementation
-- scrapper_prepend_https function implementation
-- Add a basic logger example to test for variadic messages
-- Slightly improve list example code
-- persist_ create() sets returned struct members to NULL
-- Add persist_count function stub
-- Improve list.c API documentation
-- Fix segfault due to a bad printf flag
+* v0.0.0-17 (22 Oct. 2024 - ???) SLOC ?,??? UT ??
+

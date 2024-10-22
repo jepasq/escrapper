@@ -1,3 +1,13 @@
+* v0.0.0-16 (22 Aug. 2024 - 22 Oct. 2024) SLOC 2,260 UT 23
+- Better scrapper_prepend_https tests implementation
+- scrapper_prepend_https function implementation
+- Add a basic logger example to test for variadic messages
+- Slightly improve list example code
+- persist_ create() sets returned struct members to NULL
+- Add persist_count function stub
+- Improve list.c API documentation
+- Fix segfault due to a bad printf flag
+
 * v0.0.0-15 (30 May 2024 - 22 Aug. 2024) SLOC 2,059 UT 22
 - Add more unit tests for list_len
 - Fix the string flatten() endless loop issue
