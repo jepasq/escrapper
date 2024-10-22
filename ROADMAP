@@ -10,6 +10,7 @@ API documentation https://www.enlightenment.org/develop/api/start
 **** Maybe a latex-based rasterisation engine
 **** Implement the scrapper
 :LOGBOOK:
+CLOCK: [2024-10-22 mar. 12:27]--[2024-10-22 mar. 12:48] =>  0:21
 CLOCK: [2023-11-27 lun. 10:18]--[2023-11-27 lun. 10:27] =>  0:09
 CLOCK: [2023-11-27 lun. 09:53]--[2023-11-27 lun. 10:00] =>  0:07
 CLOCK: [2023-08-22 mar. 09:06]--[2023-08-22 mar. 09:24] =>  0:18
@@ -24,7 +25,10 @@ via unit tests
 - [X] If we run the main binary with an URL, we automatically scrap it
 - [X] May return a scrapper_result struct with
   {HTTP status, title and markdown text}
-  
+
+- [ ] If a URL passed as argv1 is not valid, try to prepend with https://
+  Using scraper_prepend_https() function
+
 - [-] Now, implement scrapper_run wich must return a 404 status code
   for a non existant domain/page
   - [X] First search for check
@@ -163,7 +167,7 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
   - Can be found in AUR : https://aur.archlinux.org/packages/html2md
 **** TODO Unit test and CI-related work
 - [ ] May add the `make check` rule and fix README
-
+- [ ] list_len stille fails
 **** DONE Work on persistence
 :LOGBOOK:
 CLOCK: [2024-05-14 mar. 14:57]--[2024-05-14 mar. 15:14] =>  0:17

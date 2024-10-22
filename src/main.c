@@ -117,33 +117,35 @@ elm_main(int argc, char **argv)
 
   char* cbasedir = config_basedir_get();
   char msg[80];
+  char url[120];
   sprintf(msg, "Config basedir is '%s'", cbasedir);
   LOGI(msg);
 
   // Create the static instance
   scrapper = scrapper_create();
-  
+  strcpy(url, argv[1]);
   /** Try to scrap eventual URL passed in argv */
   if (argc > 1)
-    if (scrapper_url_is_valid(argv[1]))
+    if (scrapper_url_is_valid(url))
       {
-	assert(argv[1] && "ARGV[1] is valid");
+	assert(url && "URL is valid");
 	char msg[80];
-	sprintf(msg, "arg1 is an URL ('%s'), trying to scrap it !!", argv[1]);
+	sprintf(msg, "arg1 is an URL ('%s'), trying to scrap it !!", url);
 	LOGI(msg);
 
 	LOGI("Creating persistence object");
 	Persist* pers = persist_create(false);
 	
-	scrapper_set_url(scrapper, argv[1]);
+	scrapper_set_url(scrapper, url);
 	ScrapperResult* res = scrapper_run(scrapper);
 	persist_free(pers);
 	return (res->httpStatusCode == 200);
       }
     else
       {
+	
 	char msg[80];
-	sprintf(msg, "arg1 is not a valid URL ('%s'), Bye !!", argv[1]);
+	sprintf(msg, "arg1 is not a valid URL ('%s'), Bye !!", url);
 	LOGI(msg);
 	exit(EXIT_INVALID_URL);
       }

@@ -69,6 +69,14 @@ START_TEST (test_scrapper_check_url)
 }
 END_TEST
 
+START_TEST (test_scrapper_prepend_https)
+{
+  ck_assert_str_eq(scrapper_prepend_https("aze"), "https://aze");
+  ck_assert_str_eq(scrapper_prepend_https(NULL),  NULL);
+}
+END_TEST
+
+
 Suite*
 scrapper_suite(void)
 {

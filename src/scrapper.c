@@ -158,3 +158,26 @@ scrapper_url_is_valid(const char* url)
   return true;
 }
 
+
+/** Prepend the https:// protocol to the given text
+  *
+  * The returned string memory is dynamically allocated using malloc() thus
+  * it must be free'd using free().
+  *
+  * @param url The string you must prepend https string to.
+  *
+  * @return A new dynamically allocated string.
+  *
+  */
+char*
+scrapper_prepend_https(const char* url)
+{
+  if (url == NULL)
+    return NULL;
+
+  char* ret = (char*) malloc(strlen(url) + 8); // 8= 'https://'
+  ret = "https://";
+  strcat(ret, url);
+  return ret;
+}
+

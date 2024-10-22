@@ -41,7 +41,8 @@ typedef struct
 
 ScrapperResult* scrapper_run(Scrapper*);
 
-bool scrapper_url_is_valid(const char*);
+bool  scrapper_url_is_valid(const char*);
+char* scrapper_prepend_https(const char*);
 
 
 #endif // !__SCRAPPER_H__
