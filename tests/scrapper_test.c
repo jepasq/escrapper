@@ -78,7 +78,7 @@ START_TEST (test_scrapper_prepend_https)
   ck_assert_str_eq(ret, "https://aze");
   free(ret);
   
-  ck_assert_str_eq(scrapper_prepend_https(NULL),  NULL);
+  ck_assert_ptr_eq(scrapper_prepend_https(NULL),  NULL);
 }
 END_TEST
 

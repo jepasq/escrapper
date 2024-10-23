@@ -124,6 +124,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO HTML to persistence work
 :LOGBOOK:
+CLOCK: [2024-10-23 mer. 10:02]--[2024-10-23 mer. 10:07] =>  0:05
 CLOCK: [2024-10-08 mar. 08:01]--[2024-10-08 mar. 08:31] =>  0:30
 CLOCK: [2024-09-13 ven. 13:02]--[2024-09-13 ven. 13:14] =>  0:12
 CLOCK: [2024-09-13 ven. 10:54]--[2024-09-13 ven. 11:29] =>  0:35
@@ -156,9 +157,8 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
     - [X] Add an append function
     - [X] Also a flatten function that returns the concat text
       We have an endless loop here. Added an example, still failing
-    - [ ] Really implement list_len() Currently returning 333
-      Current tests exit with a timeout error at list_test.c:30
-  - [ ] Then, a link-based string type
+    - [ ] list_len() current tests exit with a timeout error at list_test.c:30
+  - [ ] Then, a list-based string type
   - [ ] Then, use it to fix current scrapper_test segfault
 
 - [ ] list example's print_len may use vararg
@@ -169,7 +169,7 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
   - Can be found in AUR : https://aur.archlinux.org/packages/html2md
 **** TODO Unit test and CI-related work
 - [ ] May add the `make check` rule and fix README
-- [ ] list_len stille fails
+- [ ] list_len still fails
 **** DONE Work on persistence
 :LOGBOOK:
 CLOCK: [2024-05-14 mar. 14:57]--[2024-05-14 mar. 15:14] =>  0:17
