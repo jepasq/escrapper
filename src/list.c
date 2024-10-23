@@ -63,7 +63,7 @@ list_len(List* l)
       len++;
       l1 = l1->next;
     }
-    return len;
+  return len;
 }
 
 /** Append the given value at the end of the list

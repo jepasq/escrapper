@@ -155,12 +155,12 @@ config_get_file_content(const char* filename)
   fgets(myString, 100, fptr);
 
   // Print the file content
-  sprintf(msg, "File '%s' content is '%s'", filename, myString);
+  sprintf(msg, "File '%s' content is '%s'\n", filename, myString);
   LOGI(msg);
   
   // Close the file
   fclose(fptr);
-  sprintf(msg, "File '%s' closed", filename);
+  sprintf(msg, "File '%s' closed\n", filename);
   LOGI(msg);
 
   LOGD("Creating return value");

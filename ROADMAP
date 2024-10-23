@@ -55,6 +55,7 @@ CLOCK: [2023-09-05 mar. 07:28]--[2023-09-05 mar. 07:47] =>  0:19
 - [ ] Must add \file block for each header and implementation
 **** TODO Logger may handle vararg values in LOG* macros
 :LOGBOOK:
+CLOCK: [2024-10-23 mer. 10:28]--[2024-10-23 mer. 10:37] =>  0:09
 CLOCK: [2024-10-08 mar. 09:50]--[2024-10-08 mar. 10:29] =>  0:39
 CLOCK: [2023-11-27 lun. 09:15]--[2023-11-27 lun. 09:25] =>  0:10
 CLOCK: [2023-09-21 jeu. 11:02]--[2023-09-21 jeu. 11:18] =>  0:16
@@ -74,7 +75,10 @@ CLOCK: [2023-09-15 ven. 14:47]--[2023-09-15 ven. 15:00] =>  0:13
 - [X] A EOL char is missing in unit tests
 - [X] Must also implement getter and setter
   Only an environment setter, because for file, it's more complicated
-  
+
+- [ ] log messages are printed twice
+  The first one has no newline
+
 - [ ] May be overriden by environment variable
 - [ ] Work on the vararg thing
   see https://jameshfisher.com/2016/11/23/c-varargs/
