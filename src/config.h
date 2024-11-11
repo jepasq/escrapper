@@ -8,9 +8,13 @@
 #ifndef __CONFIG_H__
 #define __CONFIG_H__
 
-/** The configuration structure
-  *
-  */
+/** The configuration structure containing values extracted from config files.
+ *
+ * The files are stored in a directory named $HOME/$PROJECT_NAME where
+ * $HOME is the home directory environment variable, and PROJECT_NAME
+ * is defined in cmake-generated @c config.h.
+ *
+ */
 typedef struct
 {
   char* basedir; //!< The basedir of all config files

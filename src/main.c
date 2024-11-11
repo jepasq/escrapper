@@ -99,6 +99,13 @@ input_cb(void* data, Evas_Object* obj, void* event)
   //  printf("Evas obj. : %s !\n", ce);
 }
 
+/** Run a newly instanciated scrapper on the given URL
+ * 
+ *  @param url The URL to be scrapped.
+ *
+ *  @return Whatever the scrapper result is equal to HTTP 200.
+ *
+ */
 static int
 run_scrapper_on(char* url)
 {

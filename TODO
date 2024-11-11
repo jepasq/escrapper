@@ -7,4 +7,5 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-17 (22 Oct. 2024 - ???) SLOC ?,??? UT ??
-- (1) scrapper test uses ptr_eq test to fix failure
+- (2) Slightly improve Config struct API documentation
+- scrapper test uses ptr_eq test to fix failure
