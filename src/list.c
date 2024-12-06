@@ -78,7 +78,7 @@ list_append(List* l, void* val)
   List* l1 = l;
   while (l1->next)
     {
-      l1 = l->next;
+      l1 = l1->next;
     }
   List* l2 = list_create(val);
   l1->values_len += strlen(val);

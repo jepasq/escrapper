@@ -14,7 +14,6 @@ START_TEST (test_list_create)
 
   ck_assert_int_eq(l->values_len, 3);
 
-  
   list_free(l);
 }
 END_TEST
@@ -23,7 +22,7 @@ START_TEST (test_list_len)
 {
   ck_assert_int_eq(list_len(NULL), 0);
 
-  List *l = list_create("aze");
+  List* l = list_create("aze");
   ck_assert_int_eq(list_len(l), 1);
   
   list_append( l, "zer" );

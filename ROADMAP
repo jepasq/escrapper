@@ -151,19 +151,19 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
     Fixed using config file generated with fixtures
 - [X] We actually have a segfault in =scrapper_run()=
   src/scrapper.c:112 (on a printf/printf_buffer call)
-  
+ 
 - [-] scrapper's fallback_func should work
   Maybe a special string type used to concatenate result based on a
   linked list
-  - [-] First, a fully tested list type,
+  - [X] First, a fully tested list type,
     see https://www.learn-c.org/en/Linked_lists
     - [X] Add a len function : basic and naive impl.
     - [X] Unit tests should fail now
     - [X] Add an append function
     - [X] Also a flatten function that returns the concat text
       We have an endless loop here. Added an example, still failing
-    - [ ] list_len() current tests exit with a timeout error at list_test.c:30
-  - [ ] Then, a list-based string type
+    - [X] list_len() current tests exit with a timeout error at list_test.c:30
+  - [ ] Then, a list-based string type (list_flatten?)
   - [ ] Then, use it to fix current scrapper_test segfault
 
 - [ ] list example's print_len may use vararg
@@ -173,8 +173,11 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
   - https://github.com/suntong/html2md
   - Can be found in AUR : https://aur.archlinux.org/packages/html2md
 **** TODO Unit test and CI-related work
+:LOGBOOK:
+CLOCK: [2024-12-06 ven. 10:15]--[2024-12-06 ven. 10:20] =>  0:05
+:END:
+- [X] list_len still fails
 - [ ] May add the `make check` rule and fix README
-- [ ] list_len still fails
 **** DONE Work on persistence
 :LOGBOOK:
 CLOCK: [2024-05-14 mar. 14:57]--[2024-05-14 mar. 15:14] =>  0:17
