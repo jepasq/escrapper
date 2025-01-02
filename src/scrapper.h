@@ -6,6 +6,8 @@
 #ifndef __SCRAPPER_H__
 #define __SCRAPPER_H__
 
+#include "list.h"
+
 #include <stdbool.h>  // USES bool
 
 /** The scrapper configuration and running object
@@ -15,6 +17,8 @@ typedef struct
 {
   /** current URL, eventually a cache etc... */
   char* current_url;
+  /** To-be-flatten list or received network packet */
+  List* content_list; 
 } Scrapper;
 
 Scrapper* scrapper_create();

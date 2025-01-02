@@ -7,6 +7,7 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-17 (22 Oct. 2024 - ???) SLOC ?,??? UT ??
-- (3) Finally fixed the list_append implementation
+- (4) Add a list member to Scrapper struct
+- Finally fixed the list_append implementation
 - Slightly improve Config struct API documentation
 - scrapper test uses ptr_eq test to fix failure

@@ -83,6 +83,15 @@ START_TEST (test_scrapper_prepend_https)
 END_TEST
 
 
+START_TEST (test_scrapper_content_ptr_non_null)
+{
+  Scrapper* s = scrapper_create();
+  
+  ck_assert_ptr_ne(s->content_list,  NULL);
+  scrapper_free(s);
+}
+END_TEST
+
 Suite*
 scrapper_suite(void)
 {
@@ -97,6 +106,7 @@ scrapper_suite(void)
   tcase_add_test(tc_core, test_scrapper_set_url);
   tcase_add_test(tc_core, test_scrapper_check_url);
   tcase_add_test(tc_core, test_scrapper_prepend_https);
+  tcase_add_test(tc_core, test_scrapper_content_ptr_non_null);
   suite_add_tcase(s, tc_core);
     
   TCase* tc_long = tcase_create("ScrapperLong");

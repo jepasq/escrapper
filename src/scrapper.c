@@ -47,6 +47,7 @@ Scrapper* scrapper_create()
 {
   Scrapper* s = malloc(sizeof(Scrapper*));
   s->current_url = "";
+  s->content_list = list_create("");
   return s;
 }
 
@@ -57,6 +58,7 @@ Scrapper* scrapper_create()
   */
 void scrapper_free(Scrapper* s)
 {
+  list_free(s->content_list);
   free(s);
 }
 
