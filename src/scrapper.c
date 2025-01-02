@@ -13,8 +13,8 @@
 
 #include "logger.h"   // uses LOGI()
 
-/// TODO : to be implemented
-char* html_to_markdown(char* c){  return c; } 
+#include "h2m.h"
+
 
 /** Callback used with curl easy
   *

@@ -30,6 +30,7 @@ pkg_check_modules(DEPS REQUIRED elementary libcurl libpcre2-posix
 
 set(SRCS
   src/config.c
+  src/h2m.c
   src/list.c
   src/logger.c
   src/persist.c
@@ -68,6 +69,7 @@ else()
   add_executable(escrapper-tests ${SRCS}
     tests/config.c
     tests/main.c
+    tests/h2m_test.c
     tests/list_test.c
     tests/logger_test.c
     tests/persist_test.c

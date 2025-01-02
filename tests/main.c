@@ -10,6 +10,7 @@
 #include "logger_test.h"
 #include "persist_test.h"
 #include "scrapper_test.h"
+#include "h2m_test.h"
 
 /** This test is used to check if a simple call to our main binary, without
   * any argument because we had an invalid pointer error sometimes.
@@ -69,6 +70,7 @@ int main(void)
   srunner_add_suite(sr, persist_suite());
   srunner_add_suite(sr, list_suite());
   srunner_add_suite(sr, logger_suite());
+  srunner_add_suite(sr, h2m_suite());
   
   srunner_run_all(sr, CK_NORMAL);
   int number_failed = srunner_ntests_failed(sr);
