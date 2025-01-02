@@ -13,6 +13,9 @@
 
 #include "logger.h"   // uses LOGI()
 
+/// TODO : to be implemented
+char* html_to_markdown(char* c){  return c; } 
+
 /** Callback used with curl easy
   *
   * See more online at https://curl.se/libcurl/c/CURLOPT_WRITEFUNCTION.html
@@ -28,11 +31,11 @@
 size_t
 callback_func(void *ptr, size_t size, size_t count, void *stream)
 {
-  /* ptr - your string variable.
-     stream - data chuck you received */
-  strncat((char*)ptr, (char*)stream, count);
+
+  List* l = (List*)ptr;
+  list_append(l, stream);
   
-  printf("CallbackF=='%.*s'", count, (char*)ptr);
+  printf("CallbackF=='%s'", list_flatten(l));
   return size*count;
 }
 /** Create and malloc a new Scrapper struct
@@ -91,7 +94,6 @@ scrapper_run(Scrapper* s)
   CURL* session;
   CURLcode curl_code;
   long http_code = 0;
-  char str[512];  // Will contain the website content
     
   curl_global_init(CURL_GLOBAL_ALL);
   session = curl_easy_init();
@@ -107,21 +109,23 @@ scrapper_run(Scrapper* s)
 
       // Set a callback function
       curl_easy_setopt(session, CURLOPT_WRITEFUNCTION, callback_func);
-      curl_easy_setopt(session, CURLOPT_WRITEDATA, &str);
+      curl_easy_setopt(session, CURLOPT_WRITEDATA, &s->content_list);
 	
       curl_code = curl_easy_perform(session);
       curl_easy_getinfo (session, CURLINFO_RESPONSE_CODE, &http_code);
-      printf("HTTP code : '%d'", http_code);
-      printf("Received data : '%s'", str);
       curl_easy_cleanup(session);
     }
   curl_global_cleanup();
+
   
   // Return
   ScrapperResult* ret = malloc(sizeof(ScrapperResult));
   if (curl_code != CURLE_ABORTED_BY_CALLBACK)
     {
       ret->httpStatusCode = http_code;
+      ret->markdownContent = html_to_markdown(list_flatten(s->content_list));
+      printf("HTTP code : '%d'", http_code);
+      printf("Received data : '%s'", ret->markdownContent);
     }
   else
     {

@@ -39,7 +39,7 @@ typedef struct
     */
   int   httpStatusCode;
   char* pageTitle;       //!< The title of the webpage   
-  char* markdownContent; //!< Cuurently unused char*
+  char* markdownContent; //!< Curently unused char*
   
 } ScrapperResult;
 

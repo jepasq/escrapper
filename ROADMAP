@@ -129,6 +129,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO HTML to persistence work
 :LOGBOOK:
+CLOCK: [2025-01-02 jeu. 12:11]--[2025-01-02 jeu. 12:36] =>  0:25
 CLOCK: [2025-01-02 jeu. 10:40]--[2025-01-02 jeu. 10:54] =>  0:14
 CLOCK: [2024-10-23 mer. 10:02]--[2024-10-23 mer. 10:07] =>  0:05
 CLOCK: [2024-10-08 mar. 08:01]--[2024-10-08 mar. 08:31] =>  0:30
@@ -166,8 +167,7 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
     - [X] list_len() current tests exit with a timeout error at list_test.c:30
   - [X] Then, a list-based string type (list_flatten?)
   - [X] Then, use it to fix current scrapper_test segfault
-
-- [ ] Scrapper uses list and list flatten to create web page content
+- [X] Scrapper uses list and list flatten to create web page content
   The Scrapper struct now own a list pointer
   use it to flatten list to ScrapperResult
   
