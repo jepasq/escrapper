@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.27)
 project(escrapper VERSION 0.0.0)
-set(REVISION 16)
+set(REVISION 17)
 
 # Create gdb symbol table
 set(CMAKE_BUILD_TYPE Debug)

@@ -1,3 +1,13 @@
+* v0.0.0-17 (22 Oct. 2024 - 03 Jan. 2025) SLOC 2,484 UT 31
+- First test_h2m_remove_newlines() implementation
+- Add more h2m to-be-fixed/impl tests
+- Add a first bunch of h2m failing tests
+- Scrapper uses a list to handle result with append without limit
+- Add a list member to Scrapper struct
+- Finally fixed the list_append implementation
+- Slightly improve Config struct API documentation
+- scrapper test uses ptr_eq test to fix failure
+
 * v0.0.0-16 (22 Aug. 2024 - 22 Oct. 2024) SLOC 2,260 UT 23
 - Better scrapper_prepend_https tests implementation
 - scrapper_prepend_https function implementation
