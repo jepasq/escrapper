@@ -129,6 +129,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO HTML to persistence work
 :LOGBOOK:
+CLOCK: [2025-01-03 ven. 10:03]--[2025-01-03 ven. 11:01] =>  0:58
 CLOCK: [2025-01-02 jeu. 12:39]--[2025-01-02 jeu. 13:12] =>  0:33
 CLOCK: [2025-01-02 jeu. 12:11]--[2025-01-02 jeu. 12:36] =>  0:25
 CLOCK: [2025-01-02 jeu. 10:40]--[2025-01-02 jeu. 10:54] =>  0:14
@@ -175,7 +176,10 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
 - [ ] Start to implement html to markdown converter
   see https://github.com/JohannesKaufmann/html-to-markdown for basic replace
   and finally comply with https://www.markdownguide.org/basic-syntax/
-
+  - [ ] Add an h2m_impl header that can be private but used in unit tests
+  - [ ] Create a node detection function that return it and a function
+    telling here is remaining node  
+    
 - [ ] list example's print_len may use vararg
 - [ ] Main test suite name is spurious (prints random letters)
 - [ ] May try external tools to save sites as md file

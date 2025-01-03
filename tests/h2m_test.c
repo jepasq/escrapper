@@ -1,6 +1,34 @@
 #include "h2m_test.h"
 
-/// A Scrapper struct unit tests suite
+#include "src/h2m.h"
+#include "src/h2m_impl.h"
+
+START_TEST (test_h2m_remove_newlines)
+{
+  ck_assert_str_eq(h2m_remove_newlines("aze\nzer"),     "aze zer");
+}
+END_TEST
+
+START_TEST (test_h2m_node_remaining)
+{
+  ck_assert(h2m_node_remaining("<aaa></aaa>") == true);
+  ck_assert(h2m_node_remaining("<aaa></aab>") == false);
+  ck_assert(h2m_node_remaining("sample text") == false);
+}
+END_TEST
+
+START_TEST (test_h2m_replace_node)
+{
+  ck_assert_str_eq(h2m_remove_node("<aaa>bb</aaa>", "aaa", "cc"), "");
+  ck_assert(h2m_node_remaining("<aaa></aab>") == false);
+  ck_assert(h2m_node_remaining("sample text") == false);
+}
+END_TEST
+
+
+
+/// LATER
+
 START_TEST (test_h2m_bold)
 {
   ck_assert_str_eq(html_to_markdown("<bold>aze</bold>"),     "**aze**");
@@ -47,6 +75,11 @@ h2m_suite(void)
 
     /* Core test case */
     tc_core = tcase_create("Core");
+    tcase_add_test(tc_core, test_h2m_remove_newlines);
+    tcase_add_test(tc_core, test_h2m_node_remaining);
+    tcase_add_test(tc_core, test_h2m_replace_node);
+
+    
     tcase_add_test(tc_core, test_h2m_bold);
     tcase_add_test(tc_core, test_h2m_italic);
     tcase_add_test(tc_core, test_h2m_double_bold);
