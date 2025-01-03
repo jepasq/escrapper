@@ -2,10 +2,29 @@
 
 #include "h2m_impl.h"
 
+#include <stdlib.h>  // USES malloc()
+#include <string.h>  // USES strlen()
+
+/** Replace all newline char (EOL) with a space
+ *
+ * @param s The char to be copied.
+ *
+ * @return A dynamically allocated string that must be freed.
+ *
+ */
 char*
-h2m_remove_newlines(const char* )
+h2m_remove_newlines(const char* s)
 {
 
+  int l = strlen(s);
+  char* ret = (char*) malloc( l + 1);
+  for (int i = 0; i < l; ++i)
+    {
+      char c = s[i];
+      ret[i] = (c == '\n') ? ' ' : c;
+    }
+  ret[l] = '\0';
+  return ret;
 }
 
 bool

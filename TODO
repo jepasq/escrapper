@@ -7,7 +7,8 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-17 (22 Oct. 2024 - ???) SLOC ?,??? UT ??
-- (7) Add more h2m to-be-fixed/impl tests
+- (8) First test_h2m_remove_newlines() implementation
+- Add more h2m to-be-fixed/impl tests
 - Add a first bunch of h2m failing tests
 - Scrapper uses a list to handle result with append without limit
 - Add a list member to Scrapper struct
