@@ -61,6 +61,13 @@ target_include_directories(escrapper-example-logger PUBLIC
   ${PROJECT_SOURCE_DIR}/src/
 )
 
+add_executable(escrapper-example-h2m ${SRCS} src/examples/h2m.c)
+target_link_libraries(escrapper-example-h2m ${DEPS_LIBRARIES})
+target_include_directories(escrapper-example-h2m PUBLIC
+  ${DEPS_INCLUDE_DIRS}
+  ${PROJECT_BINARY_DIR}
+  ${PROJECT_SOURCE_DIR}/src/
+)
 
 pkg_check_modules(CHCK check)
 if(NOT CHCK_FOUND)

@@ -3,7 +3,7 @@
 #include <stdio.h> // USES printf()
 #include <stdbool.h>  // USES bool
 
-// Created after a endless loop/seghfault in list_flatten
+// Created after a endless loop/segfault in list_flatten
 
 // Forward declarations
 void print_len(List*, bool);

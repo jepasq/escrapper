@@ -10,7 +10,7 @@ START_TEST (test_h2m_remove_newlines)
   ck_assert_str_eq(s2,  "aze zer");
   ck_assert_int_eq(strlen(s1), strlen(s2));
   
-  free(s1);
+  free(s2);
 }
 END_TEST
 
