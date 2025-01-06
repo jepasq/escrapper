@@ -22,9 +22,6 @@ char* h2m_remove_newlines(const char*);
  */
 bool h2m_node_remaining(const char*);
 
-/** Remove the named node (open and close tags)
- *
- */
-char* h2m_remove_node(const char*, const char*, const char*);
+char* h2m_replace_node(const char*, const char*, const char*);
 
 #endif // !__HTML_TO_MARKDOWN_IMPL_H_

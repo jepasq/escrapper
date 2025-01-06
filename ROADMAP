@@ -129,6 +129,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO HTML to persistence work
 :LOGBOOK:
+CLOCK: [2025-01-06 lun. 12:33]--[2025-01-06 lun. 12:46] =>  0:13
 CLOCK: [2025-01-06 lun. 10:47]--[2025-01-06 lun. 10:56] =>  0:09
 CLOCK: [2025-01-03 ven. 11:11]--[2025-01-03 ven. 11:26] =>  0:15
 CLOCK: [2025-01-03 ven. 10:03]--[2025-01-03 ven. 11:01] =>  0:58
@@ -181,8 +182,9 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
   - [X] Create a node detection function that return it and a function
     telling here is remaining node
   - [X] Actual =test_h2m_remove_newlines= implementation causes a segfault
-  - [ ] Add an h2m_impl header that can be private but used in unit tests
-    
+  - [X] Add an h2m_impl header that can be private but used in unit tests
+  - [ ] Continue implementation to fix unit tests
+        
 - [ ] list example's print_len may use vararg
 - [ ] Main test suite name is spurious (prints random letters)
 - [ ] May try external tools to save sites as md file

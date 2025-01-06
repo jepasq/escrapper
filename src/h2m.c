@@ -4,6 +4,55 @@
 
 #include <stdlib.h>  // USES malloc()
 #include <string.h>  // USES strlen()
+#include <stdio.h>   // USES sprintf()
+
+// You must free the result if result is non-NULL. (from
+// https://stackoverflow.com/a/779960)
+char* str_replace(const char *orig, char *rep, const char *with) {
+    char *result; // the return string
+    char *ins;    // the next insert point
+    char *tmp;    // varies
+    int len_rep;  // length of rep (the string to remove)
+    int len_with; // length of with (the string to replace rep with)
+    int len_front; // distance between rep and end of last rep
+    int count;    // number of replacements
+
+    // sanity checks and initialization
+    if (!orig || !rep)
+        return NULL;
+    len_rep = strlen(rep);
+    if (len_rep == 0)
+        return NULL; // empty rep causes infinite loop during count
+    if (!with)
+        with = "";
+    len_with = strlen(with);
+
+    // count the number of replacements needed
+    ins = (char*) orig;
+    for (count = 0; (tmp = strstr(ins, rep)); ++count) {
+        ins = tmp + len_rep;
+    }
+
+    tmp = result = malloc(strlen(orig) + (len_with - len_rep) * count + 1);
+
+    if (!result)
+        return NULL;
+
+    // first time through the loop, all the variable are set correctly
+    // from here on,
+    //    tmp points to the end of the result string
+    //    ins points to the next occurrence of rep in orig
+    //    orig points to the remainder of orig after "end of rep"
+    while (count--) {
+        ins = strstr(orig, rep);
+        len_front = ins - orig;
+        tmp = strncpy(tmp, orig, len_front) + len_front;
+        tmp = strcpy(tmp, with) + len_with;
+        orig += len_front + len_rep; // move to next "end of rep"
+    }
+    strcpy(tmp, orig);
+    return result;
+}
 
 /** Replace all newline char (EOL) with a space
  *
@@ -33,10 +82,21 @@ h2m_node_remaining(const char*)
 
 }
 
+/** Replace the named node (open and close tags) with the given text
+ *
+ *  @return A new aloocated string that *must* be freed.
+ *
+ */
 char*
-h2m_remove_node(const char*, const char*, const char*)
+h2m_replace_node(const char* source, const char* tag, const char* with)
 {
+  char otag[200], ctag[200];
 
+  sprintf(otag, "<%s>", tag);
+  sprintf(ctag, "</%s>", tag);
+
+  char* ret2 = str_replace(source, otag, with);
+  return str_replace(ret2, ctag, with);
 }
 
 
