@@ -127,7 +127,23 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 - [ ] May test memory leaks using valgrind
 
-**** TODO HTML to persistence work
+**** TODO h2m work
+- [ ] Continue h2m implementation to fix unit tests
+  comply with https://www.markdownguide.org/basic-syntax/
+        
+- [ ] list example's print_len may use vararg
+- [ ] Main test suite name is spurious (prints random letters)
+- [ ] May try external tools to save sites as md file
+  - =html-to-markdown= provided python-html2text_2016.1.8-1_all bug
+  - https://github.com/suntong/html2md
+  - Can be found in AUR : https://aur.archlinux.org/packages/html2md
+**** TODO Unit test and CI-related work
+:LOGBOOK:
+CLOCK: [2024-12-06 ven. 10:15]--[2024-12-06 ven. 10:20] =>  0:05
+:END:
+- [X] list_len still fails
+- [ ] May add the `make check` rule and fix README
+**** DONE HTML to persistence work
 :LOGBOOK:
 CLOCK: [2025-01-06 lun. 12:33]--[2025-01-06 lun. 12:46] =>  0:13
 CLOCK: [2025-01-06 lun. 10:47]--[2025-01-06 lun. 10:56] =>  0:09
@@ -175,28 +191,14 @@ CLOCK: [2024-06-13 jeu. 22:45]--[2024-06-13 jeu. 22:55] =>  0:10
 - [X] Scrapper uses list and list flatten to create web page content
   The Scrapper struct now own a list pointer
   use it to flatten list to ScrapperResult
-
-- [-] Start to implement html to markdown converter
+- [X] Start to implement html to markdown converter
   see https://github.com/JohannesKaufmann/html-to-markdown for basic replace
-  and finally comply with https://www.markdownguide.org/basic-syntax/
+  and finally 
   - [X] Create a node detection function that return it and a function
     telling here is remaining node
   - [X] Actual =test_h2m_remove_newlines= implementation causes a segfault
   - [X] Add an h2m_impl header that can be private but used in unit tests
-  - [ ] Continue implementation to fix unit tests
-        
-- [ ] list example's print_len may use vararg
-- [ ] Main test suite name is spurious (prints random letters)
-- [ ] May try external tools to save sites as md file
-  - =html-to-markdown= provided python-html2text_2016.1.8-1_all bug
-  - https://github.com/suntong/html2md
-  - Can be found in AUR : https://aur.archlinux.org/packages/html2md
-**** TODO Unit test and CI-related work
-:LOGBOOK:
-CLOCK: [2024-12-06 ven. 10:15]--[2024-12-06 ven. 10:20] =>  0:05
-:END:
-- [X] list_len still fails
-- [ ] May add the `make check` rule and fix README
+    
 **** DONE Work on persistence
 :LOGBOOK:
 CLOCK: [2024-05-14 mar. 14:57]--[2024-05-14 mar. 15:14] =>  0:17
