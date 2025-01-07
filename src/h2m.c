@@ -86,17 +86,33 @@ h2m_node_remaining(const char*)
  *
  *  @return A new aloocated string that *must* be freed.
  *
+ *  @param with_o Replace opening tag with with string.
+ *  @param with_c Replace closing tag with with string.
+ *
  */
 char*
-h2m_replace_node(const char* source, const char* tag, const char* with)
+h2m_replace_node_c(const char* source, const char* tag,
+		 const char* with_o, const char* with_c)
 {
   char otag[200], ctag[200];
 
   sprintf(otag, "<%s>", tag);
   sprintf(ctag, "</%s>", tag);
 
-  char* ret2 = str_replace(source, otag, with);
-  return str_replace(ret2, ctag, with);
+  char* ret2 = str_replace(source, otag, with_o);
+  return str_replace(ret2, ctag, with_c);
+}
+
+
+/** Replace the named node (open and close tags) with the given text
+ *
+ *  @return A new aloocated string that *must* be freed.
+ *
+ */
+char*
+h2m_replace_node(const char* source, const char* tag, const char* with)
+{
+  return h2m_replace_node_c(source, tag, with, with);
 }
 
 

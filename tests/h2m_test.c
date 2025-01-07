@@ -27,12 +27,20 @@ START_TEST (test_h2m_replace_node)
   char* rep = h2m_replace_node("<aaa>bb</aaa>", "aaa", "cc");
   ck_assert_str_eq(rep, "ccbbcc");
   free(rep);
-  
+
   ck_assert(h2m_node_remaining("<aaa></aab>") == false);
   ck_assert(h2m_node_remaining("sample text") == false);
 }
 END_TEST
 
+// This version handles close tag separately
+START_TEST (test_h2m_replace_node_c)
+{
+  char* rep = h2m_replace_node_c("<aaa>bb</aaa>", "aaa", "cc", "dddd");
+  ck_assert_str_eq(rep, "ccbbdddd");
+  free(rep);
+}
+END_TEST
 
 
 /// LATER
@@ -86,6 +94,7 @@ h2m_suite(void)
     tcase_add_test(tc_core, test_h2m_remove_newlines);
     tcase_add_test(tc_core, test_h2m_node_remaining);
     tcase_add_test(tc_core, test_h2m_replace_node);
+    tcase_add_test(tc_core, test_h2m_replace_node_c);
 
     
     tcase_add_test(tc_core, test_h2m_bold);

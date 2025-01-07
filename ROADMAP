@@ -128,6 +128,11 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 - [ ] May test memory leaks using valgrind
 
 **** TODO h2m work
+:LOGBOOK:
+CLOCK: [2025-01-07 mar. 10:37]--[2025-01-07 mar. 10:56] =>  0:19
+:END:
+- [X] Modify actual impl. to be able to replace close with a different string
+  
 - [ ] Continue h2m implementation to fix unit tests
   comply with https://www.markdownguide.org/basic-syntax/
         
