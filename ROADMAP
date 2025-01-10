@@ -129,6 +129,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO h2m work
 :LOGBOOK:
+CLOCK: [2025-01-10 ven. 11:26]--[2025-01-10 ven. 11:40] =>  0:14
 CLOCK: [2025-01-07 mar. 10:37]--[2025-01-07 mar. 10:56] =>  0:19
 :END:
 - [X] Modify actual impl. to be able to replace close with a different string
@@ -136,7 +137,7 @@ CLOCK: [2025-01-07 mar. 10:37]--[2025-01-07 mar. 10:56] =>  0:19
 - [ ] Continue h2m implementation to fix unit tests
   comply with https://www.markdownguide.org/basic-syntax/
   - [ ] Should work on static char buffer. Returning two buffer is a mess
-  
+    
 - [ ] list example's print_len may use vararg
 - [ ] Main test suite name is spurious (prints random letters)
 - [ ] May try external tools to save sites as md file

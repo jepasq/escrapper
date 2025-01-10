@@ -115,17 +115,27 @@ h2m_replace_node(const char* source, const char* tag, const char* with)
   return h2m_replace_node_c(source, tag, with, with);
 }
 
-
 /// TODO : to be implemented
 char*
 html_to_markdown(char* c)
 {
-  char* ret;
-
-  ret = h2m_replace_node(c, "bold", "**");
-  ret = h2m_replace_node(ret, "strong", "**");
-  ret = h2m_replace_node(ret, "i", "*");
-  ret = h2m_replace_node(ret, "em", "*");
+  char *ret, *tmp;
+  
+  tmp = h2m_replace_node(c, "bold", "**");
+  strcpy(ret, tmp);
+  free(tmp);
+  
+  tmp = h2m_replace_node(ret, "strong", "**");
+  strcpy(ret, tmp);
+  free(tmp);
+  
+  tmp = h2m_replace_node(ret, "i", "*");
+  strcpy(ret, tmp);
+  free(tmp);
+  
+  tmp = h2m_replace_node(ret, "em", "*");
+  strcpy(ret, tmp);
+  free(tmp);
   
   return ret;
 };
