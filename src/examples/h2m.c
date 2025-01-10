@@ -1,9 +1,9 @@
+#include "h2m.h"
 #include "h2m_impl.h"
 
 #include <stdio.h> // USES printf()
 #include <stdbool.h>  // USES bool
 
-// Created after a endless segfault in h2m_remove_newlines
 
 /** HTML to Markdown example main entry
   *
@@ -16,10 +16,17 @@
 int
 main(int argc, char** argv)
 {
-  const char* t1 = "Text with \n Newline\n";
+// Created after a endless segfault in h2m_remove_newlines
+  /*  const char* t1 = "Text with \n Newline\n";
   char*       t2 = h2m_remove_newlines(t1);
   
   printf("t1 : %s\ny2 : %s", t1, t2);
-  return 0;
+  */
+
+  // Then, check for memory leaks using valgrind  
+  char* m = html_to_markdown("<bold>AAA</bold><em>iii</em>");
+  printf("md : %s\n", m);
+  free(m);
+  return 1;
 }
 

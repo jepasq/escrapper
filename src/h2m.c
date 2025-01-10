@@ -120,6 +120,12 @@ h2m_replace_node(const char* source, const char* tag, const char* with)
 char*
 html_to_markdown(char* c)
 {
-  return c;
+  char* ret;
 
+  ret = h2m_replace_node(c, "bold", "**");
+  ret = h2m_replace_node(ret, "strong", "**");
+  ret = h2m_replace_node(ret, "i", "*");
+  ret = h2m_replace_node(ret, "em", "*");
+  
+  return ret;
 };

@@ -7,7 +7,8 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-18 (03 Jan. 2025 - ???) SLOC ?,??? UT ??
-- (4) Implement a new h2m replace function with independant closing tag
+- (5) First h2m implementation with some memory leaks
+- Implement a new h2m replace function with independant closing tag
 - Close a first HTML/persistance ROADMAP section
 - Basic h2m_replace_node(à implmentation to fix tests
 - Created h2m example and fix h2m_remove_newlines() memory issue
