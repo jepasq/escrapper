@@ -27,6 +27,6 @@ main(int argc, char** argv)
   char* m = html_to_markdown("<bold>AAA</bold><em>iii</em>");
   printf("md : %s\n", m);
   free(m);
-  return 1;
+  return 0;
 }
 

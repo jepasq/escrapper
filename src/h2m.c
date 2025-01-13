@@ -119,7 +119,8 @@ h2m_replace_node(const char* source, const char* tag, const char* with)
 char*
 html_to_markdown(char* c)
 {
-  char *ret, *tmp;
+  char* tmp;
+  char* ret = malloc(strlen(c) + 1);
   
   tmp = h2m_replace_node(c, "bold", "**");
   strcpy(ret, tmp);
