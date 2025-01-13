@@ -6,12 +6,5 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     SLOC is the result of `sloc src/ tests/`
     UT the number of ./escrapper-tests Checks
 
-* v0.0.0-18 (03 Jan. 2025 - ???) SLOC ?,??? UT ??
-- (8) Fix the double-strong unit test with a special case
-- Fix a missing malloc in h2m implementation
-- Fix most of the memory leaks using strcpy/free statements
-- First h2m implementation with some memory leaks
-- Implement a new h2m replace function with independant closing tag
-- Close a first HTML/persistance ROADMAP section
-- Basic h2m_replace_node(à implmentation to fix tests
-- Created h2m example and fix h2m_remove_newlines() memory issue
+* v0.0.0-19 (13 Jan. 2025 - ???) SLOC ?,??? UT ??
+
