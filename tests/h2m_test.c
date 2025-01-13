@@ -63,7 +63,7 @@ END_TEST
 START_TEST (test_h2m_double_bold)
 {
   ck_assert_str_eq(html_to_markdown("<strong><strong>aze</strong></strong>"),
-		   "*aze*");
+		   "**aze**");
 }
 END_TEST
 

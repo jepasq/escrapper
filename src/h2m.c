@@ -8,7 +8,8 @@
 
 // You must free the result if result is non-NULL. (from
 // https://stackoverflow.com/a/779960)
-char* str_replace(const char *orig, char *rep, const char *with) {
+char*
+str_replace(const char *orig, char *rep, const char *with) {
     char *result; // the return string
     char *ins;    // the next insert point
     char *tmp;    // varies
@@ -121,6 +122,8 @@ html_to_markdown(char* c)
 {
   char* tmp;
   char* ret = malloc(strlen(c) + 1);
+
+  // Special case for double strong
   
   tmp = h2m_replace_node(c, "bold", "**");
   strcpy(ret, tmp);
@@ -137,6 +140,12 @@ html_to_markdown(char* c)
   tmp = h2m_replace_node(ret, "em", "*");
   strcpy(ret, tmp);
   free(tmp);
+
+  // Special case for double strong
+  tmp = str_replace(ret, "****", "**");
+  strcpy(ret, tmp);
+  free(tmp);
+
   
   return ret;
 };
