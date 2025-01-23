@@ -15,6 +15,10 @@
 
 Scrapper* scrapper = NULL;  //!< The general static scrapper object
 
+// Forward declarations
+int help(void);
+// End of forward declarations
+
 
 /** The Quit button callback
   *
@@ -141,6 +145,9 @@ elm_main(int argc, char **argv)
   sprintf(msg, "Config basedir is '%s'", cbasedir);
   LOGI(msg);
 
+  if (strcmp(argv[1], "-h") == 0)
+    return help();
+  
   // Create the static instance
   scrapper = scrapper_create();
   strcpy(url, argv[1]);
@@ -200,4 +207,19 @@ elm_main(int argc, char **argv)
   return 0;
 }
 ELM_MAIN()
+
+
+int
+help(void)
+{
+  printf("escrapper logger\n");
+
+  printf("\nUsage :\n");
+  printf("  escrapper [-h] <URL>\n");
+
+  printf("\nOptions :\n");
+  printf("  -h   Show this help/usage message ans exit peacefully\n");
+
   
+  return 0; // Alwayd quit peacefully
+}

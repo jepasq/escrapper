@@ -7,4 +7,4 @@ escrapper - GPLv3 - An EFL-based  web scrapper, indexer and offline viewer.
     UT the number of ./escrapper-tests Checks
 
 * v0.0.0-19 (13 Jan. 2025 - ???) SLOC ?,??? UT ??
-
+- (1) Make the main binary handle the short help option
