@@ -1,16 +1,16 @@
+/** @file h2m_impl.h
+ *  This header is private and it shouldn't be used by end user
+ *  It is mainly used to unit test for private functions.
+ *
+ *  These functions are implemented in the h2m.c file.
+ *
+ */
+
 #ifndef __HTML_TO_MARKDOWN_IMPL_H_
 #define __HTML_TO_MARKDOWN_IMPL_H_
 
 #include <stdlib.h>  // You will need free()
 #include <stdbool.h> // USES bool type
-
-/* This header is private and it shouldn't be used by end user
- * It is mainly used to unit test for private functions.
- *
- * These functions are implement in the h2m.c file.
- *
- */
-
 
 /** Replace all the newline characters with a space
  *

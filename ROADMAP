@@ -44,6 +44,7 @@ via unit tests
   
 **** TODO Work on doxygen API documentation
 :LOGBOOK:
+CLOCK: [2025-02-19 mer. 11:37]--[2025-02-19 mer. 11:47] =>  0:10
 CLOCK: [2024-11-11 lun. 13:48]--[2024-11-11 lun. 14:04] =>  0:16
 CLOCK: [2024-06-12 mer. 20:34]--[2024-06-12 mer. 20:41] =>  0:07
 CLOCK: [2024-04-03 mer. 11:15]--[2024-04-03 mer. 11:24] =>  0:09
@@ -152,6 +153,9 @@ CLOCK: [2025-01-10 ven. 10:00]--[2025-01-10 ven. 10:07] =>  0:07
 CLOCK: [2024-12-06 ven. 10:15]--[2024-12-06 ven. 10:20] =>  0:05
 :END:
 - [X] list_len still fails
+- [ ] =./escrapper -h= currently fail with a ecore_con/efl_net_server_fd.c
+  error : *setsockopt(23, SOL_SOCKET, SO_REUSEPORT, 1): Operation not supported*
+  
 - [ ] May add the `make check` rule and fix README
 **** DONE HTML to persistence work
 :LOGBOOK:

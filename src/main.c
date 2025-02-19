@@ -209,6 +209,11 @@ elm_main(int argc, char **argv)
 ELM_MAIN()
 
 
+/** Print to stdout a short introfuction and usable options
+ *
+ *  @return Alwasy 0 to be chained with main()'s return value.
+ *
+ */
 int
 help(void)
 {
@@ -221,5 +226,5 @@ help(void)
   printf("  -h   Show this help/usage message ans exit peacefully\n");
 
   
-  return 0; // Alwayd quit peacefully
+  return 0; // Always quit peacefully
 }

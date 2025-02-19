@@ -6,8 +6,18 @@
 #include <string.h>  // USES strlen()
 #include <stdio.h>   // USES sprintf()
 
-// You must free the result if result is non-NULL. (from
-// https://stackoverflow.com/a/779960)
+/** Replace a substring then return a new string
+ *
+ *  You must free the result if result is non-NULL. (from
+ *  Partly from https://stackoverflow.com/a/779960)
+ *
+ *  @param orig The original string.
+ *  @param rep  The string to be replaced.
+ *  @param with The substring we will replace rep with.
+ *
+ *  @return A new string with changes or NULL.
+ *
+ */
 char*
 str_replace(const char *orig, char *rep, const char *with) {
     char *result; // the return string
@@ -57,9 +67,9 @@ str_replace(const char *orig, char *rep, const char *with) {
 
 /** Replace all newline char (EOL) with a space
  *
- * @param s The char to be copied.
+ *  @param s The char to be copied.
  *
- * @return A dynamically allocated string that must be freed.
+ *  @return A dynamically allocated string that must be freed.
  *
  */
 char*
