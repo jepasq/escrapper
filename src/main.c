@@ -145,44 +145,46 @@ elm_main(int argc, char **argv)
   sprintf(msg, "Config basedir is '%s'", cbasedir);
   LOGI(msg);
 
-  if (strcmp(argv[1], "-h") == 0)
+  if (argc > 1 && strcmp(argv[1], "-h") == 0)
     return help();
   
   // Create the static instance
   scrapper = scrapper_create();
-  strcpy(url, argv[1]);
   /** Try to scrap eventual URL passed in argv */
   if (argc > 1)
-    if (scrapper_url_is_valid(url))
-      {
-	assert(url && "URL is valid");
-	char msg[80];
-	sprintf(msg, "arg1 is an URL ('%s'), trying to scrap it !!", url);
-	LOGI(msg);
+    {
+      strcpy(url, argv[1]);
 
-	return run_scrapper_on(url);
-      }
-    else
-      {
-	char* urlp = scrapper_prepend_https(url);
-	sprintf(msg, "arg1 is not a valid URL ('%s'), trying with '%s' !!",
-		url, urlp);
-	if (scrapper_url_is_valid(urlp))
-	  {
-	    int ret = run_scrapper_on(urlp);
-	    free(urlp);
-	    return ret;
-	  }
-	else
-	  {
-	    free(urlp);
-	    char msg[80];
-	    sprintf(msg, "Can't get a valid URL from '%s', Bye !!", url);
-	    LOGI(msg);
-	    exit(EXIT_INVALID_URL);
-	  }
-      }
-  
+      if (scrapper_url_is_valid(url))
+	{
+	  assert(url && "URL is valid");
+	  char msg[80];
+	  sprintf(msg, "arg1 is an URL ('%s'), trying to scrap it !!", url);
+	  LOGI(msg);
+	  
+	  return run_scrapper_on(url);
+	}
+      else
+	{
+	  char* urlp = scrapper_prepend_https(url);
+	  sprintf(msg, "arg1 is not a valid URL ('%s'), trying with '%s' !!",
+		  url, urlp);
+	  if (scrapper_url_is_valid(urlp))
+	    {
+	      int ret = run_scrapper_on(urlp);
+	      free(urlp);
+	      return ret;
+	    }
+	  else
+	    {
+	      free(urlp);
+	      char msg[80];
+	      sprintf(msg, "Can't get a valid URL from '%s', Bye !!", url);
+	      LOGI(msg);
+	      exit(EXIT_INVALID_URL);
+	    }
+	}
+    }
   elm_policy_set(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
 
   char* ui = 
