@@ -130,6 +130,7 @@ CLOCK: [2023-09-21 jeu. 12:59]--[2023-09-21 jeu. 13:13] =>  0:14
 
 **** TODO h2m work
 :LOGBOOK:
+CLOCK: [2025-02-20 jeu. 10:13]--[2025-02-20 jeu. 10:25] =>  0:12
 CLOCK: [2025-01-13 lun. 11:03]--[2025-01-13 lun. 11:09] =>  0:06
 CLOCK: [2025-01-10 ven. 11:26]--[2025-01-10 ven. 11:40] =>  0:14
 CLOCK: [2025-01-07 mar. 10:37]--[2025-01-07 mar. 10:56] =>  0:19
@@ -140,6 +141,7 @@ CLOCK: [2025-01-07 mar. 10:37]--[2025-01-07 mar. 10:56] =>  0:19
   - [X] Should work on static char buffer. Returning two buffer is a mess
     
 - [ ] list example's print_len may use vararg
+  Don't know anymore where we could use it
 - [ ] Main test suite name is spurious (prints random letters)
 - [ ] May try external tools to save sites as md file
   - =html-to-markdown= provided python-html2text_2016.1.8-1_all bug
@@ -147,6 +149,7 @@ CLOCK: [2025-01-07 mar. 10:37]--[2025-01-07 mar. 10:56] =>  0:19
   - Can be found in AUR : https://aur.archlinux.org/packages/html2md
 **** TODO Unit test and CI-related work
 :LOGBOOK:
+CLOCK: [2025-02-20 jeu. 09:52]--[2025-02-20 jeu. 10:08] =>  0:16
 CLOCK: [2025-01-23 jeu. 13:23]--[2025-01-23 jeu. 14:04] =>  0:41
 CLOCK: [2025-01-13 lun. 10:51]--[2025-01-13 lun. 11:00] =>  0:09
 CLOCK: [2025-01-10 ven. 10:00]--[2025-01-10 ven. 10:07] =>  0:07
@@ -157,6 +160,8 @@ CLOCK: [2024-12-06 ven. 10:15]--[2024-12-06 ven. 10:20] =>  0:05
   error : *setsockopt(23, SOL_SOCKET, SO_REUSEPORT, 1): Operation not supported*
   
 - [ ] May add the `make check` rule and fix README
+  - 2028.20.02 : Some test always fail with the same error :
+    =CMake Error: The inter-target dependency graph)=
 **** DONE HTML to persistence work
 :LOGBOOK:
 CLOCK: [2025-01-06 lun. 12:33]--[2025-01-06 lun. 12:46] =>  0:13

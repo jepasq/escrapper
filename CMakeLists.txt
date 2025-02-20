@@ -92,11 +92,11 @@ else()
   )
 
   enable_testing()
-  add_test(NAME escrapper-tests COMMAND escrapper-tests)
+  add_test(NAME AllTests COMMAND escrapper-tests)
   
-  #add_custom_target(check #ALL
-  #  COMMAND escrapper-tests
-    #DEPENDS escrapper-tests
-  #  VERBATIM
-  #)
+#  add_custom_target(check
+#    COMMAND escrapper-tests
+#    DEPENDS escrapper-tests
+#  )
+
 endif()
