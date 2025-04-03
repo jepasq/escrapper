@@ -87,18 +87,27 @@ h2m_remove_newlines(const char* s)
   return ret;
 }
 
+/** Is there still some HTML node ?
+ *
+ *  @param i The input text.
+ *
+ *  @return Returns true if there's stille at least one HTML node.
+ *
+ */
 bool
-h2m_node_remaining(const char*)
+h2m_node_remaining(const char* i)
 {
 
 }
 
 /** Replace the named node (open and close tags) with the given text
  *
- *  @return A new aloocated string that *must* be freed.
- *
+ *  @param source The source string.
+ *  @param tag    The tag to be replaced.
  *  @param with_o Replace opening tag with with string.
  *  @param with_c Replace closing tag with with string.
+ *
+ *  @return A new alocated string that *must* be freed.
  *
  */
 char*
@@ -117,6 +126,10 @@ h2m_replace_node_c(const char* source, const char* tag,
 
 /** Replace the named node (open and close tags) with the given text
  *
+ *  @param source The source string.
+ *  @param tag    The tag to be replaced.
+ *  @param with   Replace opening tag with with string.
+ *
  *  @return A new aloocated string that *must* be freed.
  *
  */
@@ -126,7 +139,13 @@ h2m_replace_node(const char* source, const char* tag, const char* with)
   return h2m_replace_node_c(source, tag, with, with);
 }
 
-/// TODO : to be implemented
+/** Convert a HTML page to markdown
+ *
+ *  @param c A HTML text from the scrapper.
+ *
+ *  @return The same text as markdown.
+ *
+ */
 char*
 html_to_markdown(char* c)
 {
